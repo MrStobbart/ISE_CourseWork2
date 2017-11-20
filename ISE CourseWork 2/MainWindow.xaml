@@ -1,0 +1,26 @@
+﻿<Window x:Class="ISE_CourseWork_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="Gray">
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Right" Margin="5,0">
+                <Button Content="Login" MinWidth="70" Click="BtnClickLogin"/>
+                <Button Content="Sign Up" MinWidth="70" Click="BtnClickSignUp"/>
+            </StackPanel>
+        </DockPanel>
+        <Frame x:Name="Main" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
