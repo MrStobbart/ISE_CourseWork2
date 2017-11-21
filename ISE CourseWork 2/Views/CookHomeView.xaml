@@ -1,0 +1,19 @@
+﻿<Page x:Class="ISE_CourseWork_2.Views.CookHomeView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ISE_CourseWork_2.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="CookHomeView">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Button x:Name="btnPastMealShares" Content="Past Meal-Shares"  Width="150" Margin="5" Click="BtnClick_PastMealShares"/>
+            <Button x:Name="btnUpcomingMealShares" Content="Upcoming Meal-Shares" Width="150" Margin="5" Click="BtnClick_UpcomingMealShares"/>
+            <Button x:Name="btnNewMealShare" Content="New Meal-Share" Width="150" Margin="5" Click="BtnClick_NewMealShare"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace ISE_CourseWork_2.Views
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for AdminView.xaml
     /// </summary>
-    public partial class LoginView : Page
+    public partial class AdminView : Page
     {
-
-        public LoginView()
+        public AdminView()
         {
             InitializeComponent();
-        }
-
-        private void BtnClick_Login(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
-            ((MainWindow)App.Current.MainWindow).UpdateView("toast");
         }
     }
 }

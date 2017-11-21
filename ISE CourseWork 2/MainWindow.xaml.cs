@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ISE_CourseWork_2.Views;
 
 namespace ISE_CourseWork_2
 {
@@ -20,10 +21,18 @@ namespace ISE_CourseWork_2
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public String data { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
             Main.Content = new HomeView();
+        }
+
+        public void UpdateView(String newData)
+        {
+            txtRandom.Text = newData;
         }
 
         private void BtnClickLogin(object sender, RoutedEventArgs e)
@@ -34,6 +43,11 @@ namespace ISE_CourseWork_2
         private void BtnClickSignUp(object sender, RoutedEventArgs e)
         {
             Main.Content = new SignUpView();
+        }
+
+        private void BtnClickHome(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new HomeView();
         }
     }
 }

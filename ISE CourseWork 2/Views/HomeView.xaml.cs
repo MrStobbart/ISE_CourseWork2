@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ISE_CourseWork_2
+namespace ISE_CourseWork_2.Views
 {
     /// <summary>
     /// Interaction logic for HomePage.xaml
