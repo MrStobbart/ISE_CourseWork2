@@ -9,11 +9,28 @@
 	Title="SignUpPage">
 
     <Grid>
-        <TextBlock Text="Sign up" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
+                <TextBox x:Name="TxtWarning" Visibility="Hidden" BorderThickness="0" Foreground="Red"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label >MyLabel</Label>
-                <TextBox VerticalAlignment="Center" Width="100">MyText</TextBox>
+                <Label MinWidth="130">Email address*</Label>
+                <TextBox x:Name="TxtEmail" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Password*</Label>
+                <PasswordBox x:Name="TxtPassword" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Repeat password*</Label>
+                <PasswordBox x:Name="TxtPasswordRepeat" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
+                <Button x:Name="BtnSignUpEater" Content="Sign up as eater" MinWidth="120" Click="BtnSignUpEater_Click"  Margin="5,0" />
+                <Button x:Name="BtnSignUpCook" Content="Sign up as cook" MinWidth="120" Click="BtnSignUpCook_Click"  Margin="5,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
+                <TextBox BorderThickness="0" FontSize="11">Fields marked with a star (*) are mandatory.</TextBox>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ISE_CourseWork_2.Views;
+using ISE_CourseWork_2.Models;
 
 namespace ISE_CourseWork_2
 {

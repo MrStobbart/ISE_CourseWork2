@@ -1,0 +1,52 @@
+﻿<Page x:Class="ISE_CourseWork_2.Views.SignUpEaterView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ISE_CourseWork_2.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="300"
+      Title="SignUpEaterView">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
+                <TextBox x:Name="TxtWarning" Visibility="Hidden" BorderThickness="0" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">First Name*</Label>
+                <TextBox x:Name="TxtFirstName" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Surname*</Label>
+                <TextBox x:Name="TxtSurname" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Street*</Label>
+                <TextBox x:Name="TxtStreet" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">House number*</Label>
+                <TextBox x:Name="TxtHouseNumber" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">ZIP code*</Label>
+                <TextBox x:Name="TxtZipCode" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">City*</Label>
+                <TextBox x:Name="TxtCity" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Phone number</Label>
+                <TextBox x:Name="TxtPhoneNumber" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
+                <Button x:Name="BtnSignUp" Content="Sign up" MinWidth="120" Click="BtnSignUp_Click"  Margin="5,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
+                <TextBox BorderThickness="0" FontSize="11">Fields marked with a star (*) are mandatory.</TextBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
