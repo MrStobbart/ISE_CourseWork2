@@ -8,7 +8,7 @@
       d:DesignHeight="500" d:DesignWidth="300"
       Title="SignUpEaterView">
 
-    <Grid>
+    <Grid >
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock x:Name="TxtInformation" FontSize="14" MaxWidth="270" TextWrapping="Wrap" Margin="0, 20">
                 To let cooks know what you like to eat you can add food preferences in the following field.

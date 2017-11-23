@@ -39,14 +39,19 @@ namespace ISE_CourseWork_2.Views
             if (InputIsValid())
             {
                 Eater NewEater = new Eater(Person, FoodPreferences);
+
+                // Add data to runtime db
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddEater(NewEater);
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(Account);
+
+                // Sign in new account
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
 
                 ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
             }
         }
 
-        private Boolean InputIsValid()
+        private bool InputIsValid()
         {
 
             return true;

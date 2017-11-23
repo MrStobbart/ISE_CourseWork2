@@ -32,11 +32,6 @@ namespace ISE_CourseWork_2
             Main.Content = new HomeView();
         }
 
-        public void UpdateView(String newData)
-        {
-            txtRandom.Text = newData;
-        }
-
         private void BtnClickLogin(object sender, RoutedEventArgs e)
         {
             Main.Content = new LoginView();

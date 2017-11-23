@@ -11,7 +11,8 @@
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock x:Name="TxtInformation" FontSize="14" MaxWidth="270" TextWrapping="Wrap" Margin="0, 20">
-                To let cooks know what you like to eat you can add food preferences in the following field.
+                Please let us know what you like to cook and how you can travel to people to share your meal with.<LineBreak />
+                You can change these settings later.
             </TextBlock>
             <StackPanel Orientation="Horizontal">
                 <Label MinWidth="130">Food preferences</Label>
@@ -27,7 +28,7 @@
                 </StackPanel>
             </StackPanel>
             <TextBox x:Name="TxtWarning" Visibility="Hidden" HorizontalAlignment="Center" BorderThickness="0" Foreground="Red" Margin="0,10"/>
-            <Button x:Name="BtnSignUp" HorizontalAlignment="Center" Content="Finish registration" MinWidth="120" Click="BtnSignUp_Click"  Margin="5,0"/>
+            <Button x:Name="BtnSignUp" HorizontalAlignment="Center" Content="Next" MinWidth="120" Click="BtnSignUp_Click"  Margin="5,0"/>
 
         </StackPanel>
     </Grid>

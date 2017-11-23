@@ -65,6 +65,9 @@
     <Compile Include="Views\CookHomeView.xaml.cs">
       <DependentUpon>CookHomeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CookRestrictedHomeView.xaml.cs">
+      <DependentUpon>CookRestrictedHomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EaterHomeView.xaml.cs">
       <DependentUpon>EaterHomeView.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CookHomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CookRestrictedHomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

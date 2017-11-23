@@ -5,26 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ISE_CourseWork_2.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="700" d:DesignWidth="500"
 	Title="LoginPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <Label x:Name="lblUsername" Content="Username" MinWidth="100"/>
-                <TextBox x:Name="txtUsername" Width="180" VerticalContentAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="TxtInformationHeader" HorizontalAlignment="Center" FontSize="18" TextWrapping="Wrap" Margin="0, 20" Grid.ColumnSpan="3" >
+            Insert your details to sign in
+        </TextBlock>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Email address</Label>
+                <TextBox x:Name="TxtEmail" VerticalAlignment="Center" Width="150"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <Label x:Name="lblPassword" Content="Password" MinWidth="100" VerticalContentAlignment="Center" />
-                <TextBox x:Name="txtPassword" Width="180" VerticalContentAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Password</Label>
+                <PasswordBox x:Name="TxtPassword" VerticalAlignment="Center" Width="150"/>
             </StackPanel>
-            <Button x:Name="btnLogin" Content="Login" Click="BtnClick_Login" HorizontalAlignment="Right" Margin="10" Width="100" />
+            <TextBox x:Name="TxtWarning" Visibility="Hidden" HorizontalAlignment="Center" BorderThickness="0" Foreground="Red" Margin="0,10"/>
+            <Button x:Name="BtnSignIn" HorizontalAlignment="Center" Content="Sign in" MinWidth="120" Click="BtnSignIn_Click"  Margin="5,0"/>
         </StackPanel>
     </Grid>
 </Page>

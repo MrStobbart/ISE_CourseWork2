@@ -68,13 +68,22 @@ namespace ISE_CourseWork_2.Views
             }
         }
 
-        private Boolean InputIsValid()
+        private bool InputIsValid()
         {
             Email = TxtEmail.Text;
             Password = TxtPassword.Password.ToString();
             PasswordRepeat = TxtPasswordRepeat.Password.ToString();
 
-            if(TxtEmail.Text == "")
+            Street = TxtStreet.Text;
+            HouseNumber = TxtHouseNumber.Text;
+            City = TxtCity.Text;
+            ZipCode = TxtZipCode.Text;
+            FirstName = TxtFirstName.Text;
+            Surname = TxtSurname.Text;
+            PhoneNumber = TxtPhoneNumber.Text != "" ? TxtPhoneNumber.Text : "None supplied";
+
+
+            if (TxtEmail.Text == "")
             {
                 TxtWarning.Text = "Please insert an email";
                 TxtWarning.Visibility = Visibility.Visible;
@@ -102,15 +111,6 @@ namespace ISE_CourseWork_2.Views
                 return false;
             }
 
-            Street = TxtStreet.Text;
-            HouseNumber = TxtHouseNumber.Text;
-            City = TxtCity.Text;
-            ZipCode = TxtZipCode.Text;
-            FirstName = TxtFirstName.Text;
-            Surname = TxtSurname.Text;
-            PhoneNumber = TxtPhoneNumber.Text != "" ? TxtPhoneNumber.Text : "None supplied";
-
-            Console.WriteLine("Phone number " + PhoneNumber);
 
             if (FirstName == "")
             {

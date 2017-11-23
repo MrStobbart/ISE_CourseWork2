@@ -42,20 +42,24 @@ namespace ISE_CourseWork_2.Views
             {
                 Cook NewCook = new Cook(Person, FoodPreferences, TravelCapabilities);
 
+                // Add data to runtime db
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddCook(NewCook);
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(Account);
 
-                ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView();
+                // Sign in new account
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
+
+                ((MainWindow)App.Current.MainWindow).Main.Content = new CookRestrictedHomeView();
             }
         }
 
-        private Boolean InputIsValid()
+        private bool InputIsValid()
         {
             FoodPreferences = TxtFoodPreferences.Text;
-            Boolean ByFoot = CheckBoxByFoot.IsChecked.Value;
-            Boolean Bike = CheckBoxBike.IsChecked.Value;
-            Boolean Car = CheckBoxCar.IsChecked.Value;
-            Boolean PublicTransport= CheckBoxPublicTransport.IsChecked.Value;
+            bool ByFoot = CheckBoxByFoot.IsChecked.Value;
+            bool Bike = CheckBoxBike.IsChecked.Value;
+            bool Car = CheckBoxCar.IsChecked.Value;
+            bool PublicTransport = CheckBoxPublicTransport.IsChecked.Value;
 
             if(!ByFoot && !Bike && !Car && !PublicTransport)
             {
