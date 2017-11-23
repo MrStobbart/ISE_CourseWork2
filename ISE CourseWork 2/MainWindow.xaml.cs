@@ -23,11 +23,12 @@ namespace ISE_CourseWork_2
     public partial class MainWindow : Window
     {
 
-        public String data { get; set; }
+        public RuntimeDb RuntimeDb { get; }
 
         public MainWindow()
         {
             InitializeComponent();
+            RuntimeDb = new RuntimeDb();
             Main.Content = new HomeView();
         }
 

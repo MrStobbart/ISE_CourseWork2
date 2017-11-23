@@ -56,7 +56,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Cook.cs" />
-    <Compile Include="Models\Data.cs" />
+    <Compile Include="Models\RuntimeDb.cs" />
     <Compile Include="Models\Eater.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Views\AdminView.xaml.cs">

@@ -44,6 +44,7 @@
     <Compile Include="GeneratedCode\Address.cs" />
     <Compile Include="GeneratedCode\Cook.cs" />
     <Compile Include="GeneratedCode\Eater.cs" />
+    <Compile Include="GeneratedCode\MealShare.cs" />
     <Compile Include="GeneratedCode\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

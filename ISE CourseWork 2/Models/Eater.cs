@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    class Eater : Person
+    public class Eater : Person
     {
         public Eater(
             string FirstName,
             string Surname,
             string PhoneNumber,
             Address Address,
-            string FoodPreferences,
-            string TravelCapabilities
+            string FoodPreferences
         ) : base(FirstName, Surname, PhoneNumber, Address)
         {
             this.FoodPreferences = FoodPreferences;

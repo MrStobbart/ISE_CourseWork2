@@ -21,9 +21,6 @@ namespace ISE_CourseWork_2.Views
     /// </summary>
     public partial class SignUpEaterView : Page
     {
-        private Address Adress;
-        private Eater Eater;
-        private Account Account;
 
         private string Email;
         private string Password;
@@ -50,7 +47,13 @@ namespace ISE_CourseWork_2.Views
         {
             if (InputIsValid())
             {
-                // TODO add data to data object in MainWindow
+                Address Address = new Address(Street, HouseNumber, City, ZipCode);
+                Eater NewEater = new Eater(FirstName, Surname, PhoneNumber, Address, "a");
+                Account NewAccount = new Account(Email, Password, "eater", NewEater.Id);
+
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddEater(NewEater);
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(NewAccount);
+
                 ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
             }
         }
@@ -63,7 +66,9 @@ namespace ISE_CourseWork_2.Views
             ZipCode = TxtZipCode.Text;
             FirstName = TxtFirstName.Text;
             Surname = TxtSurname.Text;
-            PhoneNumber = TxtPhoneNumber.Text;
+            PhoneNumber = TxtPhoneNumber.Text != "" ? TxtPhoneNumber.Text : "None supplied" ; 
+
+            Console.WriteLine("Phone number " + PhoneNumber);
 
             if (FirstName == "")
             {

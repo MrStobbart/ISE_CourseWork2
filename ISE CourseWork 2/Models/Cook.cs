@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    class Cook: Person
+    public class Cook: Person
     {
         public Cook (
             string FirstName, 

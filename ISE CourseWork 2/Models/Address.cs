@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    class Address
+    public class Address
     {
         public Address(string Street, string HouseNumber, string City, string ZipCode)
         {

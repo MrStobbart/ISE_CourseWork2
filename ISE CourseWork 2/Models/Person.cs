@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    class Person
+    public class Person
     {
         public Person(string FirstName, string Surname, string PhoneNumber, Address Address)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    class Account
+    public class Account
     {
         public Account(string Email, string Password, string Type, string PersonId)
         {
