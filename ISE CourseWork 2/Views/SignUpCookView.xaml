@@ -10,43 +10,25 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
-                <TextBox x:Name="TxtWarning" Visibility="Hidden" BorderThickness="0" Foreground="Red"/>
+            <TextBlock x:Name="TxtInformation" FontSize="14" MaxWidth="270" TextWrapping="Wrap" Margin="0, 20">
+                To let cooks know what you like to eat you can add food preferences in the following field.
+            </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Label MinWidth="130">Food preferences</Label>
+                <TextBox x:Name="TxtFoodPreferences" VerticalAlignment="Center" Width="150"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">First Name*</Label>
-                <TextBox x:Name="TxtFirstName" VerticalAlignment="Center" Width="150"/>
+                <Label MinWidth="130">Travel capabilities</Label>
+                <StackPanel>
+                    <CheckBox x:Name="CheckBoxByFoot">By foot</CheckBox>
+                    <CheckBox x:Name="CheckBoxBike">Bike</CheckBox>
+                    <CheckBox x:Name="CheckBoxCar">Car</CheckBox>
+                    <CheckBox x:Name="CheckBoxPublicTransport">Public transport</CheckBox>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">Surname*</Label>
-                <TextBox x:Name="TxtSurname" VerticalAlignment="Center" Width="150"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">Street*</Label>
-                <TextBox x:Name="TxtStreet" VerticalAlignment="Center" Width="150"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">House number*</Label>
-                <TextBox x:Name="TxtHouseNumber" VerticalAlignment="Center" Width="150"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">ZIP code*</Label>
-                <TextBox x:Name="TxtZipCode" VerticalAlignment="Center" Width="150"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">City*</Label>
-                <TextBox x:Name="TxtCity" VerticalAlignment="Center" Width="150"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label MinWidth="130">Phone number</Label>
-                <TextBox x:Name="TxtPhoneNumber" VerticalAlignment="Center" Width="150"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
-                <Button x:Name="BtnSignUp" Content="Sign up" MinWidth="120" Click="BtnSignUp_Click"  Margin="5,0"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Center" Margin="0,20">
-                <TextBox BorderThickness="0" FontSize="11">Fields marked with a star (*) are mandatory.</TextBox>
-            </StackPanel>
+            <TextBox x:Name="TxtWarning" Visibility="Hidden" HorizontalAlignment="Center" BorderThickness="0" Foreground="Red" Margin="0,10"/>
+            <Button x:Name="BtnSignUp" HorizontalAlignment="Center" Content="Finish registration" MinWidth="120" Click="BtnSignUp_Click"  Margin="5,0"/>
+
         </StackPanel>
     </Grid>
 </Page>

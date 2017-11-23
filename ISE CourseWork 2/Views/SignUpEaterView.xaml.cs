@@ -22,37 +22,25 @@ namespace ISE_CourseWork_2.Views
     public partial class SignUpEaterView : Page
     {
 
-        private string Email;
-        private string Password;
-
-        private string Street;
-        private string HouseNumber;
-        private string City;
-        private string ZipCode;
-
-        private string FirstName;
-        private string Surname;
-        private string PhoneNumber;
+        private Person Person;
+        private Account Account;
 
         private string FoodPreferences;
 
-        public SignUpEaterView(string Email, string Password)
+        public SignUpEaterView(Person Person, Account Account)
         {
             InitializeComponent();
-            this.Email = Email;
-            this.Password = Password;
+            this.Person = Person;
+            this.Account = Account;
         }
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
             if (InputIsValid())
             {
-                Address Address = new Address(Street, HouseNumber, City, ZipCode);
-                Eater NewEater = new Eater(FirstName, Surname, PhoneNumber, Address, "a");
-                Account NewAccount = new Account(Email, Password, "eater", NewEater.Id);
-
+                Eater NewEater = new Eater(Person, FoodPreferences);
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddEater(NewEater);
-                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(NewAccount);
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(Account);
 
                 ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
             }
@@ -60,52 +48,6 @@ namespace ISE_CourseWork_2.Views
 
         private Boolean InputIsValid()
         {
-            Street = TxtStreet.Text;
-            HouseNumber = TxtHouseNumber.Text;
-            City = TxtCity.Text;
-            ZipCode = TxtZipCode.Text;
-            FirstName = TxtFirstName.Text;
-            Surname = TxtSurname.Text;
-            PhoneNumber = TxtPhoneNumber.Text != "" ? TxtPhoneNumber.Text : "None supplied" ; 
-
-            Console.WriteLine("Phone number " + PhoneNumber);
-
-            if (FirstName == "")
-            {
-                TxtWarning.Text = "Please insert your first name";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
-            if (Surname == "")
-            {
-                TxtWarning.Text = "Please insert your surname";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
-            if (Street == "")
-            {
-                TxtWarning.Text = "Please insert a street";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
-            if (HouseNumber == "")
-            {
-                TxtWarning.Text = "Please insert a house number";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
-            if (City == "")
-            {
-                TxtWarning.Text = "Please insert a city";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
-            if (ZipCode == "")
-            {
-                TxtWarning.Text = "Please insert a ZIP code";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
 
             return true;
         }

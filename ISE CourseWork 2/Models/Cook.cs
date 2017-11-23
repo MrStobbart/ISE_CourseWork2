@@ -8,14 +8,7 @@ namespace ISE_CourseWork_2.Models
 {
     public class Cook: Person
     {
-        public Cook (
-            string FirstName, 
-            string Surname, 
-            string PhoneNumber, 
-            Address Address, 
-            string FoodPreferences, 
-            string TravelCapabilities
-        ) : base(FirstName, Surname, PhoneNumber, Address)
+        public Cook (Person Person, string FoodPreferences, List<string> TravelCapabilities) : base(Person)
         {
             this.FoodPreferences = FoodPreferences;
             this.TravelCapabilities = TravelCapabilities;
@@ -23,18 +16,21 @@ namespace ISE_CourseWork_2.Models
             PvgStatus = "None";
         }
 
-        public Cook() : base()
+        public Cook(Person Person) : base(Person)
         {
+            FoodPreferences = "";
+            TravelCapabilities = new List<string>();
             FoodHygieneStatus = "None";
             PvgStatus = "None";
         }
+
         public string FoodHygieneStatus { get; }
 
         public string PvgStatus { get; }
 
         public string FoodPreferences { get; set; }
 
-        public string TravelCapabilities { get; set; }
+        public List<string> TravelCapabilities { get; set; }
 
     }
 }

@@ -16,7 +16,15 @@ namespace ISE_CourseWork_2.Models
             this.Address = Address;
 
             Id = Guid.NewGuid().ToString();
-            Console.WriteLine("We created this id " + Id);
+        }
+
+        public Person(Person Person)
+        {
+            FirstName = Person.FirstName;
+            Surname = Person.Surname;
+            PhoneNumber = Person.PhoneNumber;
+            Address = Person.Address;
+            Id = Person.Id;
         }
 
         public Person()

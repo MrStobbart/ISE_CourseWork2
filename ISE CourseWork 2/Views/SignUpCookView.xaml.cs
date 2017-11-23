@@ -22,85 +22,66 @@ namespace ISE_CourseWork_2.Views
     public partial class SignUpCookView : Page
     {
 
-        private Address Address;
-        private Eater Eater;
+        private Person Person;
         private Account Account;
 
-        private string Email;
-        private string Password;
-
-        private string Street;
-        private string HouseNumber;
-        private string City;
-        private string ZipCode;
-
-        private string FirstName;
-        private string Surname;
-        private string PhoneNumber;
-
         private string FoodPreferences;
+        private List<string> TravelCapabilities;
 
-        public SignUpCookView(string Email, string Password)
+        public SignUpCookView(Person Person, Account Account)
         {
             InitializeComponent();
-            this.Email = Email;
-            this.Password = Password;
+            TravelCapabilities = new List<string>();
+            this.Person = Person;
+            this.Account = Account;
         }
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
             if (InputIsValid())
             {
-                // TODO add data to data object in MainWindow
-                ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
+                Cook NewCook = new Cook(Person, FoodPreferences, TravelCapabilities);
+
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddCook(NewCook);
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(Account);
+
+                ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView();
             }
         }
 
         private Boolean InputIsValid()
         {
-            Street = TxtStreet.Text;
-            HouseNumber = TxtHouseNumber.Text;
-            City = TxtCity.Text;
-            ZipCode = TxtZipCode.Text;
-            FirstName = TxtFirstName.Text;
-            Surname = TxtSurname.Text;
-            PhoneNumber = TxtPhoneNumber.Text;
+            FoodPreferences = TxtFoodPreferences.Text;
+            Boolean ByFoot = CheckBoxByFoot.IsChecked.Value;
+            Boolean Bike = CheckBoxBike.IsChecked.Value;
+            Boolean Car = CheckBoxCar.IsChecked.Value;
+            Boolean PublicTransport= CheckBoxPublicTransport.IsChecked.Value;
 
-            if (FirstName == "")
+            if(!ByFoot && !Bike && !Car && !PublicTransport)
             {
-                TxtWarning.Text = "Please insert your first name";
+                TxtWarning.Text = "Please select at least one traval capability";
                 TxtWarning.Visibility = Visibility.Visible;
                 return false;
             }
-            if (Surname == "")
+
+            if (ByFoot)
             {
-                TxtWarning.Text = "Please insert your surname";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
+                TravelCapabilities.Add("byFoot");
             }
-            if (Street == "")
+
+            if (Bike)
             {
-                TxtWarning.Text = "Please insert a street";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
+                TravelCapabilities.Add("bike");
             }
-            if (HouseNumber == "")
+
+            if (Car)
             {
-                TxtWarning.Text = "Please insert a house number";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
+                TravelCapabilities.Add("car");
             }
-            if (City == "")
+
+            if (PublicTransport)
             {
-                TxtWarning.Text = "Please insert a city";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
-            }
-            if (ZipCode == "")
-            {
-                TxtWarning.Text = "Please insert a ZIP code";
-                TxtWarning.Visibility = Visibility.Visible;
-                return false;
+                TravelCapabilities.Add("publicTransport");
             }
 
             return true;

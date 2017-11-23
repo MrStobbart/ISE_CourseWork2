@@ -8,15 +8,15 @@ namespace ISE_CourseWork_2.Models
 {
     public class Eater : Person
     {
-        public Eater(
-            string FirstName,
-            string Surname,
-            string PhoneNumber,
-            Address Address,
-            string FoodPreferences
-        ) : base(FirstName, Surname, PhoneNumber, Address)
+
+        public Eater(Person Person, string FoodPreferences) : base(Person)
         {
             this.FoodPreferences = FoodPreferences;
+        }
+
+        public Eater(Person Person) : base(Person)
+        {
+
         }
 
         public string FoodPreferences { get; set; }

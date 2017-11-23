@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ISE_CourseWork_2.Models;
+
 
 namespace ISE_CourseWork_2.Views
 {
@@ -25,6 +27,16 @@ namespace ISE_CourseWork_2.Views
         private string Password;
         private string PasswordRepeat;
 
+        private string Street;
+        private string HouseNumber;
+        private string City;
+        private string ZipCode;
+
+        private string FirstName;
+        private string Surname;
+        private string PhoneNumber;
+
+
 
         public SignUpView()
         {
@@ -35,7 +47,12 @@ namespace ISE_CourseWork_2.Views
         {
             if (InputIsValid())
             {
-                ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpEaterView(Email, Password);
+
+                Address Address = new Address(Street, HouseNumber, City, ZipCode);
+                Person NewPerson = new Person(FirstName, Surname, PhoneNumber, Address);
+                Account NewAccount = new Account(Email, Password, "eater", NewPerson.Id);
+
+                ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpEaterView(NewPerson, NewAccount);
             }
         }
 
@@ -43,7 +60,11 @@ namespace ISE_CourseWork_2.Views
         {
             if (InputIsValid())
             {
-                ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpCookView(Email, Password);
+                Address Address = new Address(Street, HouseNumber, City, ZipCode);
+                Person NewPerson = new Person(FirstName, Surname, PhoneNumber, Address);
+                Account NewAccount = new Account(Email, Password, "cook", NewPerson.Id);
+
+                ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpCookView(NewPerson, NewAccount);
             }
         }
 
@@ -62,24 +83,72 @@ namespace ISE_CourseWork_2.Views
 
             if (Password == "")
             {
-                TxtWarning.Text = "The passwords do not match";
+                TxtWarning.Text = "Please insert a secure password";
                 TxtWarning.Visibility = Visibility.Visible;
                 return false;
             }
 
             if (PasswordRepeat == "")
             {
-                TxtWarning.Text = "Please insert a secure password";
+                TxtWarning.Text = "Please repeat the password";
                 TxtWarning.Visibility = Visibility.Visible;
                 return false;
             }
 
             if(Password != PasswordRepeat)
             {
-                TxtWarning.Text = "Please repeat the password";
+                TxtWarning.Text = "The passwords do not match";
                 TxtWarning.Visibility = Visibility.Visible;
                 return false;
             }
+
+            Street = TxtStreet.Text;
+            HouseNumber = TxtHouseNumber.Text;
+            City = TxtCity.Text;
+            ZipCode = TxtZipCode.Text;
+            FirstName = TxtFirstName.Text;
+            Surname = TxtSurname.Text;
+            PhoneNumber = TxtPhoneNumber.Text != "" ? TxtPhoneNumber.Text : "None supplied";
+
+            Console.WriteLine("Phone number " + PhoneNumber);
+
+            if (FirstName == "")
+            {
+                TxtWarning.Text = "Please insert your first name";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+            if (Surname == "")
+            {
+                TxtWarning.Text = "Please insert your surname";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+            if (Street == "")
+            {
+                TxtWarning.Text = "Please insert a street";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+            if (HouseNumber == "")
+            {
+                TxtWarning.Text = "Please insert a house number";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+            if (City == "")
+            {
+                TxtWarning.Text = "Please insert a city";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+            if (ZipCode == "")
+            {
+                TxtWarning.Text = "Please insert a ZIP code";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+
 
             return true;
         }

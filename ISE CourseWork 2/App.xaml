@@ -7,14 +7,12 @@
             <Setter Property="FontSize" Value="14" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
-        <Style TargetType="{x:Type TextBlock}" x:Key="textBlockStyle">
-            <Setter Property="FontSize" Value="14" />
-        </Style>
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type Label}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource baseStyle}"></Style>
     </Application.Resources>
 </Application>
