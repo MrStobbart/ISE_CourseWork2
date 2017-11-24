@@ -48,13 +48,23 @@ namespace ISE_CourseWork_2.Views
                     ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
                     switch (Account.Type)
                     {
-                        case "eater":
-                            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
+                        case Account.AccountType.Eater:
+                            Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(Account.PersonId);
+                            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView(Eater);
                             break;
-                        case "cook":
-                            ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView();
+                        case Account.AccountType.Cook:
+                            // If Document missing navigate to upload page 
+                            Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(Account.PersonId);
+                            
+                            if(Cook.Pvg != PvgStatus.Ok || Cook.FoodHygiene != FoodHygieneStatus.Ok)
+                            {
+                                ((MainWindow)App.Current.MainWindow).Main.Content = new CookRestrictedHomeView(Cook);
+                                break;
+                            }
+
+                            ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView(Cook);
                             break;
-                        case "administrator":
+                        case Account.AccountType.Administrator:
                             ((MainWindow)App.Current.MainWindow).Main.Content = new AdminView();
                             break;
                         default:

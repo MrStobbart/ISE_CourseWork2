@@ -20,6 +20,41 @@ namespace ISE_CourseWork_2.Models
             Eaters = new List<Eater>();
             Accounts = new List<Account>();
             SignedIn = false;
+
+            CreateDefaultData();
+        }
+
+        private void CreateDefaultData()
+        {
+            Address CookAddress = new Address("Slateford Road", "1E", "Edinburgh", "EH11 1FE");
+            IPerson CookPerson = new IPerson("Marek", "Meyer", "1234567890", CookAddress);
+
+            List<TravelCapability> TravelCapabilities = new List<TravelCapability>();
+            TravelCapabilities.Add(TravelCapability.ByFoot);
+            TravelCapabilities.Add(TravelCapability.Bike);
+
+            Cook Cook = new Cook(CookPerson, "Pasta", TravelCapabilities);
+            AddCook(Cook);
+            Account CookAccount = new Account("cookmail@outlook.com", "cookpass", Account.AccountType.Cook, Cook.Id);
+            Account CookAccountFast = new Account("c", "c", Account.AccountType.Cook, Cook.Id);
+            AddAccount(CookAccount);
+            AddAccount(CookAccountFast);
+
+
+            Address EaterAddress = new Address("Street", "15", "Edinburgh", "EH11 1FE");
+            IPerson EaterPerson = new IPerson("John", "Smith", "0987654321", EaterAddress);
+            Eater Eater = new Eater(EaterPerson, "Fish");
+            AddEater(Eater);
+            Account EaterAccount = new Account("eatermail@outlook.com", "eaterpass", Account.AccountType.Eater, Eater.Id);
+            Account EaterAccountFast = new Account("e", "e", Account.AccountType.Eater, Eater.Id);
+            AddAccount(EaterAccount);
+            AddAccount(EaterAccountFast);
+
+
+            Account AdminAccount = new Account("adminmail@outlook.com", "adminpass", Account.AccountType.Administrator, "admin");
+            Account AdminAccountFast = new Account("a", "a", Account.AccountType.Administrator, "admin");
+            AddAccount(AdminAccount);
+            AddAccount(AdminAccountFast);
         }
 
         public void SignIn(Account Account)

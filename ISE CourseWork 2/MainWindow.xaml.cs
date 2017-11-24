@@ -32,19 +32,52 @@ namespace ISE_CourseWork_2
             Main.Content = new HomeView();
         }
 
-        private void BtnClickLogin(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new LoginView();
-        }
-
-        private void BtnClickSignUp(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new SignUpView();
-        }
-
         private void BtnClickHome(object sender, RoutedEventArgs e)
         {
             Main.Content = new HomeView();
         }
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            ShowDefaultMenuBar();
+            RuntimeDb.SignOut();
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new LoginView();
+        }
+
+        private void BtnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SignUpView();
+        }
+
+        private void Main_ContentRendered(object sender, EventArgs e)
+        {
+            if (RuntimeDb.SignedIn)
+            {
+                ShowLoggedInMenuBar();
+            }
+            else
+            {
+                ShowDefaultMenuBar();
+            }
+        }
+
+        private void ShowLoggedInMenuBar()
+        {
+            BtnLogin.Visibility = Visibility.Collapsed;
+            BtnSignUp.Visibility = Visibility.Collapsed;
+            BtnLogout.Visibility = Visibility.Visible;
+        }
+
+        private void ShowDefaultMenuBar()
+        {
+            BtnLogin.Visibility = Visibility.Visible;
+            BtnSignUp.Visibility = Visibility.Visible;
+            BtnLogout.Visibility = Visibility.Collapsed;
+        }
+
     }
 }

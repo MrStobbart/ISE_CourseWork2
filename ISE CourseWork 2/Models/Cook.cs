@@ -7,66 +7,66 @@ using System.Threading.Tasks;
 namespace ISE_CourseWork_2.Models
 {
 
-    enum PvgStatusEnum {None, AwaitingResult, Rejected, Ok}
-    enum FoodHygieneStatusEnum {None, RenewalWithinThreeMonths, Ok}
+    public enum PvgStatus {None, AwaitingResult, Rejected, Ok}
 
-    public class Cook: Person
+    public enum FoodHygieneStatus {None, RenewalWithinThreeMonths, Ok}
+
+    public enum TravelCapability { ByFoot, Car, Bike, PublicTransport }
+
+    public class Cook: IPerson
     {
-        public Cook (Person Person, string FoodPreferences, List<string> TravelCapabilities) : base(Person)
+        private DateTime FoodHygieneOkDateTime { get; set; }
+
+        private FoodHygieneStatus foodHygiene;
+        public FoodHygieneStatus FoodHygiene
         {
-            this.FoodPreferences = FoodPreferences;
-            this.TravelCapabilities = TravelCapabilities;
-            FoodHygieneStatus = FoodHygieneStatusEnum.None.ToString();
-            PvgStatus = PvgStatusEnum.None.ToString();
+            // TODO check if this works
+            get { return foodHygiene; }
+            set { FoodHygieneOkDateTime = DateTime.Now; foodHygiene = value; }
         }
 
-        public Cook(Person Person) : base(Person)
-        {
-            FoodPreferences = "";
-            TravelCapabilities = new List<string>();
-            FoodHygieneStatus = FoodHygieneStatusEnum.None.ToString();
-            PvgStatus = PvgStatusEnum.None.ToString();
-        }
+        public string FoodHygieneCertificatePath { get; set; }
 
-        public DateTime FoodHygieneStatusOkDateTime{ get; set; }
+        public PvgStatus Pvg { get; set; }
 
-        public string FoodHygieneStatus { get; set; }
-
-        public string PvgStatus { get; set; }
+        public string PvgCertificatePath { get; set; }
 
         public string FoodPreferences { get; set; }
 
-        public List<string> TravelCapabilities { get; set; }
+        public List<TravelCapability> TravelCapabilities { get; set; }
 
-        public void SetFoodHygieneStatusOk()
+
+        public Cook (IPerson Person, string FoodPreferences, List<TravelCapability> TravelCapabilities) : base(Person)
         {
-            FoodHygieneStatus = FoodHygieneStatusEnum.Ok.ToString();
-            FoodHygieneStatusOkDateTime = DateTime.Now;
+            this.FoodPreferences = FoodPreferences;
+            this.TravelCapabilities = TravelCapabilities;
+            FoodHygiene = FoodHygieneStatus.None;
+            Pvg = PvgStatus.None;
+        }
+
+        public Cook(IPerson Person) : base(Person)
+        {
+            FoodPreferences = "";
+            TravelCapabilities = new List<TravelCapability>();
+            FoodHygiene = FoodHygieneStatus.None;
+            Pvg = PvgStatus.None;
+        }
+
+        public void SetFoodHygieneOk()
+        {
+            // TODO have this as a proper setter
+            FoodHygiene = FoodHygieneStatus.Ok;
+            FoodHygieneOkDateTime = DateTime.Now;
         }
 
         public void CheckForFoodHygieneRenewal()
         {
-            TimeSpan DurationSinceOk = DateTime.Now - FoodHygieneStatusOkDateTime;
+            TimeSpan DurationSinceOk = DateTime.Now - FoodHygieneOkDateTime;
             float YearLength = 365.25F;
             if (DurationSinceOk.TotalDays > YearLength * 1.75F)
             {
-                FoodHygieneStatus = FoodHygieneStatusEnum.RenewalWithinThreeMonths.ToString();
+                FoodHygiene = FoodHygieneStatus.RenewalWithinThreeMonths;
             }
-        }
-
-        public void SetPvgStatusAwaitingResult()
-        {
-            PvgStatus = PvgStatusEnum.AwaitingResult.ToString();
-        }
-
-        public void SetPvgStatusRejected()
-        {
-            PvgStatus = PvgStatusEnum.Rejected.ToString();
-        }
-
-        public void SetPvgStatusOk()
-        {
-            PvgStatus = PvgStatusEnum.Ok.ToString();
         }
 
     }

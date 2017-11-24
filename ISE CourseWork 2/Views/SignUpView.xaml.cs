@@ -49,8 +49,8 @@ namespace ISE_CourseWork_2.Views
             {
 
                 Address Address = new Address(Street, HouseNumber, City, ZipCode);
-                Person NewPerson = new Person(FirstName, Surname, PhoneNumber, Address);
-                Account NewAccount = new Account(Email, Password, "eater", NewPerson.Id);
+                IPerson NewPerson = new IPerson(FirstName, Surname, PhoneNumber, Address);
+                Account NewAccount = new Account(Email, Password, Account.AccountType.Eater, NewPerson.Id);
 
                 ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpEaterView(NewPerson, NewAccount);
             }
@@ -61,8 +61,8 @@ namespace ISE_CourseWork_2.Views
             if (InputIsValid())
             {
                 Address Address = new Address(Street, HouseNumber, City, ZipCode);
-                Person NewPerson = new Person(FirstName, Surname, PhoneNumber, Address);
-                Account NewAccount = new Account(Email, Password, "cook", NewPerson.Id);
+                IPerson NewPerson = new IPerson(FirstName, Surname, PhoneNumber, Address);
+                Account NewAccount = new Account(Email, Password, Account.AccountType.Cook , NewPerson.Id);
 
                 ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpCookView(NewPerson, NewAccount);
             }

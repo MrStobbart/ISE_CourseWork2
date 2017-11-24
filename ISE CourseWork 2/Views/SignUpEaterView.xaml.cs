@@ -22,12 +22,12 @@ namespace ISE_CourseWork_2.Views
     public partial class SignUpEaterView : Page
     {
 
-        private Person Person;
+        private IPerson Person;
         private Account Account;
 
         private string FoodPreferences;
 
-        public SignUpEaterView(Person Person, Account Account)
+        public SignUpEaterView(IPerson Person, Account Account)
         {
             InitializeComponent();
             this.Person = Person;
@@ -47,7 +47,7 @@ namespace ISE_CourseWork_2.Views
                 // Sign in new account
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
 
-                ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView();
+                ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView(NewEater);
             }
         }
 

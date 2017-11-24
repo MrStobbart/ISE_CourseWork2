@@ -72,20 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="75f46e78-4f7f-4088-93df-57bb5644b715">
-      <profileInstance Id="849a183f-18ce-453a-bf10-aab77660f95c" name="CSharpProfile">
-        <elementDefinition Id="93bdd3bd-fc57-43fa-bd0f-1f44ca123c14" />
-      </profileInstance>
-      <elementDefinition Id="951cab7d-9d47-4607-9501-828e78d1f065" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="31801730-a6b6-4161-8ce0-a55b65a82ec9">
-      <profileInstance Id="abd15417-99b6-4b89-8bcf-fb1b48e923b4" name="TextTemplateBindings">
-        <elementDefinition Id="4fe243b7-264c-4ad2-bd77-a61d86017f8f" />
-      </profileInstance>
-      <elementDefinition Id="87a3a9d7-2900-4046-b65d-7cc05445b0d3" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="cf18bd04-5bf1-467c-85fb-7c8857570158" name="Person" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -178,6 +164,16 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <lowerValueInternal>
+              <literalString Id="dad53a78-64d7-4d0f-8718-ccd116a529bd" name="Lower" value="1">
+                <elementDefinition Id="39fbdd45-af63-455c-b161-e56b9ece392e" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="e7c4733b-016f-49d8-ac75-28c854938036" name="Upper" value="1">
+                <elementDefinition Id="e5be3d31-92b2-48e7-b2b2-bf423468dc76" />
+              </literalString>
+            </upperValueInternal>
             <elementDefinition Id="2242ef89-c689-417a-b4d3-1c4c1cf456d5" />
             <type_NamedElement>
               <referencedTypeMoniker Id="ff4dc36d-e3ce-44c2-bd6f-7c6632606990" LastKnownName="String" />
@@ -452,6 +448,56 @@
             <elementDefinition Id="68805525-216c-40a8-bb68-c98c57702c06" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="920179cf-e205-41fc-bd38-37f48876b5cd" isDerived="false" sourceEndRoleName="Cook" targetEndRoleName="PvgStatus" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="6dfb04d7-a069-4fb4-8768-a75c30ec22d8" LastKnownName="PvgStatus" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8fb5dfe3-44e9-4710-a462-b5aa922ee474" name="Cook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0eb14265-ce3e-492f-8331-f7dc321e42fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c84b34d1-114e-4aa7-a484-6e5465f61b04" name="PvgStatus" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3fe20f60-8fda-41c4-b995-120f5b10e2f2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d1c60883-edb5-4584-b997-0b1d322f2a87" />
+          </association>
+          <association Id="01c681cf-06c9-477e-b5f4-85defb67275b" isDerived="false" sourceEndRoleName="Cook" targetEndRoleName="FoodHygieneStatus" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="261b66a1-f00a-467d-963d-23a0065fa8ee" LastKnownName="FoodHygieneStatus" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="35106887-c7b3-47f0-b961-39cb7b2cdf81" name="Cook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43d98c7a-5e22-4b9c-8fe7-dfde8646b14c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d134ac7f-9e54-447f-b8af-6923337e2af3" name="FoodHygieneStatus" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="39471150-67c9-4e11-ac7c-01ffa28f5120" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1a4c9223-e0cb-4d49-a160-3ab5c2320007" />
+          </association>
+          <association Id="dec4ffea-12c1-4f89-b99b-6109fab50454" isDerived="false" sourceEndRoleName="Cook" targetEndRoleName="TravelCapability" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="5eb12a62-fab9-4817-91a4-536fb9c630fe" LastKnownName="TravelCapability" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5f1d54f1-9ee2-48da-a0f2-708f82aa148a" name="Cook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6c68eda2-2737-4758-8cda-1d11f46e3293" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="20a91c29-9803-428e-b9c5-31fe9ea2a92e" name="TravelCapability" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a8c1574-4fe1-4e25-871d-1baa2e311dbe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ba231740-4907-4d87-967a-03e4dc70d0e4" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="abe35d96-1e72-4a29-aa73-22968527febe" name="TravelCapabilities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
@@ -505,10 +551,10 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="c5345ab3-df4a-46c9-b3c0-a8878c81a7a4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="6d04927c-6ecd-4196-8014-ba9397c1484f" LastKnownName="String" />
+              <referencedTypeMoniker Id="5b2abf26-dff3-407f-b736-ba60b9ff9260" LastKnownName="List&lt;TravelCapability&gt;" />
             </type_NamedElement>
           </property>
-          <property Id="2b8db0cb-e09d-4a3c-bf05-982154eab651" name="PvgStatus" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="2b8db0cb-e09d-4a3c-bf05-982154eab651" name="Pvg" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="6d4a138c-a36e-4316-bcae-db592a1e10d5" name="property" profile="CSharpProfile">
                 <elementDefinition Id="d1cb9689-54e9-4550-9196-fb0130feb0db" />
@@ -559,8 +605,11 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="f106c558-6adb-4651-b0d5-244ab9c6571e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b4cb80f2-b471-457b-bc3f-89882c195c73" LastKnownName="PvgStatus" />
+            </type_NamedElement>
           </property>
-          <property Id="36cff565-60f9-43e7-893a-df36c079f6a6" name="FoodHygieneStatus" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="36cff565-60f9-43e7-893a-df36c079f6a6" name="FoodHygiene" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="0bdc7c76-bc5f-43fd-a458-85da034b04b2" name="property" profile="CSharpProfile">
                 <elementDefinition Id="a0ce12e3-616d-4816-b449-3f50818f8734" />
@@ -611,6 +660,9 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="8540400f-8a64-4198-9a8e-edcd78a827f8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="11b6a8b1-5487-4ec5-b917-d223e4636757" LastKnownName="FoodHygieneStatus" />
+            </type_NamedElement>
           </property>
           <property Id="e8346238-3695-4c1c-8499-31db6b287aa0" name="FoodPreferences" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
@@ -662,9 +714,25 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <lowerValueInternal>
+              <literalString Id="32de1eba-c498-4813-8e79-aa3b41830065" name="Lower" value="*">
+                <elementDefinition Id="4b7cc482-6443-4b1e-9ff3-3984444a3695" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="f5c229d1-b8c9-45e0-9632-d8ae5d92edf1" name="Upper" value="*">
+                <elementDefinition Id="012dd3a9-06f4-479f-b19a-145a2c70025a" />
+              </literalString>
+            </upperValueInternal>
             <elementDefinition Id="7a30e9ca-101b-488b-a5fa-05feedf3171f" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="6d04927c-6ecd-4196-8014-ba9397c1484f" LastKnownName="String" />
+              <referencedTypeMoniker Id="770969a2-f964-42ca-82d6-27665d326cd6" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="e4575524-fa9d-420c-87eb-448e61bc8d51" name="FoodHygieneOkDateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="daeeabbf-bf0f-40df-bdd9-18dd33011abb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cca108a5-1a4b-49c7-a6f3-ca1d36d356c0" LastKnownName="DateTime" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -816,21 +884,53 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="07e1004a-7825-4e12-82c1-4919c3ad03a1" />
         <targetEnds>
-          <association Id="ae0fca6b-d194-4760-986b-6cdc5ec10deb" isDerived="false" sourceEndRoleName="MealShare" targetEndRoleName="Feedback" isLeaf="false" isAbstract="false">
-            <classMoniker Id="8a26d58e-2fc7-4df2-99f8-41ba8b0cbab7" LastKnownName="Feedback" />
+          <association Id="74a69cb5-f065-4d73-824e-9ea9edb17537" isDerived="false" sourceEndRoleName="MealShare" targetEndRoleName="MealShareStatus" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="4df78af3-2eff-408c-ac00-6298d70555bf" LastKnownName="MealShareStatus" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="daecca93-b9c3-4a94-9eca-38b976023117" name="MealShare" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="5762d080-bbdc-4cde-a89a-b0c08fab6084" />
+                <memberEnd Id="2b0d5bcb-b68d-47f5-8cf3-960bb983e1fe" name="MealShare" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bb35eb36-ce10-42eb-82fc-70b72b41588d" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="0dbef3ca-3e00-4afa-8458-1ea5ec4c4189" name="Feedback" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="cd855669-05bd-46f9-baf6-429debb76cfa" />
+                <memberEnd Id="ec31b6df-382d-4164-9343-b10c2a429939" name="MealShareStatus" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="03ff27e6-c89e-4cd8-a9b9-6e86eca99b31" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="4824a55d-9b08-45fb-9901-d48a27b5b822" />
+            <elementDefinition Id="6949f7ba-8ea9-4f53-a4c4-2c4d74b7695c" />
+          </association>
+          <association Id="dacd4796-9ffe-4d50-a8c4-981a97ca704b" isDerived="false" sourceEndRoleName="MealShare" targetEndRoleName="Eater" isLeaf="false" isAbstract="false">
+            <classMoniker Id="799f3b4d-9285-40f2-9460-d1c7ca51c3ac" LastKnownName="Eater" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="80d56520-f882-4820-9c11-68f537552711" name="MealShare" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7268ea34-5680-4488-98bf-2923b19f736a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a71d0253-beda-48ae-944e-f3af020f4411" name="Eater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ad8d152e-56f3-40e5-af51-b84c4cbfcb62" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c2ad2d9b-b86b-4997-a7bc-bb72de856ffc" />
+          </association>
+          <association Id="fb7daabe-7f1d-4b6a-9d6f-b2adac2a4515" isDerived="false" sourceEndRoleName="MealShare" targetEndRoleName="Cook" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0129ba04-f376-4117-9c20-f85d0df7f6b5" LastKnownName="Cook" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9333bb99-860d-4f12-9278-df820c8920fa" name="MealShare" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d0d5a8fc-53e0-4838-a8b7-7775dba739ef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="56dac083-fb23-47f7-9e32-ab33368fe73f" name="Cook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="57e7e5f2-3275-45f5-a23d-f54e44e5f7cf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3dc9711e-b3d0-4eab-83be-7d91a5aaedca" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -941,10 +1041,10 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="759d9158-5b8b-494b-b3d0-ad1a5198eb78" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="6d04927c-6ecd-4196-8014-ba9397c1484f" LastKnownName="String" />
+              <referencedTypeMoniker Id="2bf22a2c-2879-415c-8c98-6b47fd2551f2" LastKnownName="MealShareStatus" />
             </type_NamedElement>
           </property>
-          <property Id="a7060b81-97b0-4103-91e9-f3bfa125a60b" name="Eater" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a7060b81-97b0-4103-91e9-f3bfa125a60b" name="EaterId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="a562b709-41a9-4c3b-8a92-07262d13a5ba" name="property" profile="CSharpProfile">
                 <elementDefinition Id="329a5343-5e68-46b9-bc91-212adbb94c26" />
@@ -996,10 +1096,10 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="8a8c7d79-62c0-4c83-8be6-8332ad9d4ba4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="0683d8bb-fd68-4806-a48b-2997c881e1b7" LastKnownName="Eater" />
+              <referencedTypeMoniker Id="e2651dce-a63b-4966-a9ef-b1033fed04c9" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="baefc939-1173-480e-bd1f-463bac5547ca" name="Cook" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="baefc939-1173-480e-bd1f-463bac5547ca" name="CookId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="d202a88f-1b64-4e96-a3ce-49456fc2ab48" name="property" profile="CSharpProfile">
                 <elementDefinition Id="bbe04eb6-1c4a-4455-987c-f55f4ad44408" />
@@ -1051,7 +1151,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="2e840e16-fee2-4879-8cce-0d200789a706" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="f1615c49-80d3-4b4b-8fac-b7318dbd79f9" LastKnownName="Cook" />
+              <referencedTypeMoniker Id="21fde728-24ac-49fb-bdfb-e0d2b2e9d05d" LastKnownName="String" />
             </type_NamedElement>
           </property>
           <property Id="8e745d56-6837-4232-a149-4fc7afd805b2" name="DateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -1109,59 +1209,10 @@
               <referencedTypeMoniker Id="cca108a5-1a4b-49c7-a6f3-ca1d36d356c0" LastKnownName="DateTime" />
             </type_NamedElement>
           </property>
-          <property Id="021854f6-ed2e-4524-b9ee-2782febd8b01" name="Feedback" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="66bbc00f-33f3-4b04-a88b-c6fd3f36bcf8" name="property" profile="CSharpProfile">
-                <elementDefinition Id="ae9bf641-587e-49f7-baf5-00f0092d6776" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="e9138c9c-d845-4b0a-acd9-e8f0a771071e">
-                    <propertyInstance Id="c78e1009-99b9-4a2a-833c-eaaa04da1d9c" name="ClrAttributes">
-                      <elementDefinition Id="92c849d5-5491-407a-8997-5a7c9e625320" />
-                    </propertyInstance>
-                    <elementDefinition Id="00a6c2b6-2f7d-466e-bfff-dcfa879f9338" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="80f461b6-8b3c-4046-b719-39c672ab91ba">
-                    <propertyInstance Id="283b99d5-8c62-48b0-85fb-c01fc7607a38" name="Get" value="none">
-                      <elementDefinition Id="6d4058a8-f706-4f17-84ef-2a023694ef78" />
-                    </propertyInstance>
-                    <elementDefinition Id="2ff6f57e-f628-41f0-a1df-3a6df7969e0d" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="623914cc-503a-408a-b6ad-edd87e71f43e">
-                    <propertyInstance Id="b16cfb00-7e74-4696-b554-82fdfe66ab66" name="HasBody" value="false">
-                      <elementDefinition Id="ef245afe-75e5-43f3-ad76-08fb1cdb91af" />
-                    </propertyInstance>
-                    <elementDefinition Id="5252f309-bdfe-4c6e-92c8-eaeda3b238be" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="6b88e82b-a64a-42b0-ab43-4386286f5e35">
-                    <propertyInstance Id="461c379f-9625-452d-a0c6-6697a5ffbffd" name="IsUnsafe" value="false">
-                      <elementDefinition Id="e769a3b0-ae11-4d74-b411-a10444475259" />
-                    </propertyInstance>
-                    <elementDefinition Id="fe947cb6-eb47-48f4-baa7-49b1d34a4499" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="f312c3a3-4cf1-407f-857a-1f333dd975fd">
-                    <propertyInstance Id="94cb3547-0851-4867-b5bd-de5eded6576a" name="Inheritance" value="none">
-                      <elementDefinition Id="5dcdfdec-151c-4ead-86bd-b655ccef224a" />
-                    </propertyInstance>
-                    <elementDefinition Id="e0aafdf1-7c26-446d-859b-9bb226ac8b24" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="b2ac0653-ec70-45c9-84fd-8a8379a50f7a">
-                    <propertyInstance Id="44e882cf-eea8-48e5-b50a-a571e4f6def2" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="5840bbfb-28fb-446a-afa4-d89847712273" />
-                    </propertyInstance>
-                    <elementDefinition Id="d6e3aeec-cf36-483f-8c4c-ea0aa94e0575" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="49c429a4-de35-4a3e-8851-de77985f4776">
-                    <propertyInstance Id="31312782-d544-4b42-9245-2f35dfe1404c" name="Set" value="none">
-                      <elementDefinition Id="3a3e228d-1f23-4b14-8ec0-35c58823b8af" />
-                    </propertyInstance>
-                    <elementDefinition Id="b4209611-8486-4ece-b36e-1f56652865c0" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="57f3fc63-6395-4355-88a4-2fca8ba4733f" />
+          <property Id="0fb25412-855b-4d33-af30-40545c82d388" name="ProposedDateTimes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dfc4043f-b47c-46b6-95db-d366361d2eba" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="b58447f7-47f0-408d-b3b1-ebafb0f6f8e8" LastKnownName="Feedback" />
+              <referencedTypeMoniker Id="a6d33656-59bb-48e6-9fbd-55a6ad6d1129" LastKnownName="List&lt;DateTime&gt;" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1475,16 +1526,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="0683d8bb-fd68-4806-a48b-2997c881e1b7" name="Eater" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Eater">
-        <elementDefinition Id="792fd193-6c70-4eed-a928-00d3d20a049a" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="f1615c49-80d3-4b4b-8fac-b7318dbd79f9" name="Cook" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Cook">
-        <elementDefinition Id="50571c67-4b18-43d3-aa0a-358cc1cc056e" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="cca108a5-1a4b-49c7-a6f3-ca1d36d356c0" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
         <elementDefinition Id="4a3a0952-a6f1-49b3-8195-68f165b0ad8e" />
       </referencedType>
@@ -1492,6 +1533,40 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="8a26d58e-2fc7-4df2-99f8-41ba8b0cbab7" name="Feedback" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="2cb73f4c-d72f-458f-9895-6298c99be1fa" />
+        <targetEnds>
+          <association Id="5b5680ed-387e-461e-b14d-86f5c6335ebe" isDerived="false" sourceEndRoleName="Feedback" targetEndRoleName="Person" isLeaf="false" isAbstract="false">
+            <classMoniker Id="cf18bd04-5bf1-467c-85fb-7c8857570158" LastKnownName="Person" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="47b2e6e2-7b57-4e6e-b932-bd903c3d99f5" name="Feedback" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5cd99e15-61f7-4430-9f40-c9f48d915762" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a619ad27-82bb-45f1-89be-553a41ce57e9" name="Person" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="41f89916-e591-477b-90a5-7834446b8134" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3df382af-c606-439f-9261-fe5139d9e336" />
+          </association>
+          <association Id="21213584-cc79-4502-81e0-25c3a0796280" isDerived="false" sourceEndRoleName="Feedback" targetEndRoleName="MealShare" isLeaf="false" isAbstract="false">
+            <classMoniker Id="fb2d98e3-5f7b-4234-81b0-4b0cbfc0f14a" LastKnownName="MealShare" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d16ecadf-3aa4-4b8e-9f63-f48d7b89cc61" name="Feedback" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="44eb315a-e0fd-4630-8e34-2cc7ab4bb6e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b5527a4f-dc6b-4137-a0a6-2d58cb988eb0" name="MealShare" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="99588634-a34f-4dc8-b70e-1236b84ae926" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="eb15024b-1a7d-4ac2-bafb-a64ff7224ab9" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="9631ab28-6f4b-4047-af14-58402e5db645" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="9d5bfb91-3bd8-49b4-ba40-a7ced9328296" />
@@ -1516,6 +1591,9 @@
             <type_NamedElement>
               <referencedTypeMoniker Id="fa42d1fd-1a1a-4f53-aa82-9e4f2674c8a2" LastKnownName="String" />
             </type_NamedElement>
+          </property>
+          <property Id="f186d2df-85a4-4853-b23a-88cc0269f84a" name="MealShareId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c6c411a3-55f8-42b8-b2b0-946858b716ee" />
           </property>
         </ownedAttributesInternal>
       </class>
@@ -1565,6 +1643,40 @@
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <elementDefinition Id="d616ea8e-abf7-482e-a38b-9274ff72a3aa" />
+        <targetEnds>
+          <association Id="abb01a4d-0bf0-4cb9-b188-eba2fcc45ec9" isDerived="false" sourceEndRoleName="Account" targetEndRoleName="AccountType" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="4c4f62f2-0b53-485d-b0c5-0f213691ced4" LastKnownName="AccountType" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c332e2a9-a82d-444d-80f0-5869e7d9b063" name="Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1b8a41a3-0e0b-4e11-868d-1d08f3a6a098" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9e3515ef-8ce4-46fe-b5d3-6e37e4a499e8" name="AccountType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="57ca0a78-9235-45fa-8920-0af0b40c2585" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="735fa67c-ebc2-421b-9fa8-1e8a161ffba1" />
+          </association>
+          <association Id="969af00a-981e-4679-8c4a-075508e3153c" isDerived="false" sourceEndRoleName="Account" targetEndRoleName="Person" isLeaf="false" isAbstract="false">
+            <classMoniker Id="cf18bd04-5bf1-467c-85fb-7c8857570158" LastKnownName="Person" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="272edb66-57ac-437a-8562-413d6c918377" name="Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="97e02499-984a-4d5f-b565-c0d4f3f1386e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aab0bbb0-5994-4040-b162-f04035c558e4" name="Person" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e1217a67-1482-4345-9b2b-61685c4ef6a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0939173f-3038-4fa9-8daa-3364ca931e63" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="8a9f48de-b713-4682-a394-77d247b44686" name="Email" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
@@ -1728,7 +1840,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="c3d998ad-f7f9-4ec2-9761-bf0c66be801f" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="6d04927c-6ecd-4196-8014-ba9397c1484f" LastKnownName="String" />
+              <referencedTypeMoniker Id="2efe5085-b2e3-4497-ad31-8b028055748a" LastKnownName="AccountType" />
             </type_NamedElement>
           </property>
           <property Id="bfd8aa8e-20ba-4612-84b5-4f4badc91667" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -1853,144 +1965,231 @@
       <class Id="0c6f4dae-f235-464f-b6f2-45e2410673b3" name="Data" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="ec739132-713c-4e66-b974-fd1088896c82" />
         <targetEnds>
-          <association Id="1cfd35c4-40ba-47a6-8768-ead034bbfcca" isDerived="false" sourceEndRoleName="Data" targetEndRoleName="Account" isLeaf="false" isAbstract="false">
-            <classMoniker Id="25b5aa87-73e4-494d-8871-edc53194cf2a" LastKnownName="Account" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="299d425f-66b0-456c-92ee-7c075e81c6b7" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="4e633e20-6d21-45cc-a3ac-11dc92306957" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="c36c428d-e0d5-4468-9d39-b901291ffd99" name="Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="53aa4a5d-d117-4bbb-8bc8-d4e39c2291ba" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="2b9d9eff-1fa7-4b51-8d4c-0038fb0bf061" />
-          </association>
-          <association Id="528a742d-8de3-4e36-af7b-6cf08fc8da22" isDerived="false" sourceEndRoleName="Data" targetEndRoleName="Eater" isLeaf="false" isAbstract="false">
-            <classMoniker Id="799f3b4d-9285-40f2-9460-d1c7ca51c3ac" LastKnownName="Eater" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="81d033b8-2962-4d16-b0f6-9f9ed1f8a43f" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="6a63f179-2261-4256-9ef8-db5e3e91b98a" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="28a6f8af-4abc-453a-9677-85fd3ff25b26" name="Eater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="7fca4da8-7806-4fa0-b585-1fe9047ee9b6" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="8cceb0c4-cf68-4efe-bfcf-914ed8025242" />
-          </association>
-          <association Id="fa6cb604-001c-4c4e-aa3f-f4c4a796b874" isDerived="false" sourceEndRoleName="Data" targetEndRoleName="MealShare" isLeaf="false" isAbstract="false">
-            <classMoniker Id="fb2d98e3-5f7b-4234-81b0-4b0cbfc0f14a" LastKnownName="MealShare" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="ee712fb1-76cf-4088-84e9-9c93328f5046" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="d04354ae-c037-410f-b4db-f4ba75dca023" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a7a8fa51-5431-44bb-b5cd-5b07724d112d" name="MealShare" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="55aa4566-892b-4c0c-b32b-4fdcccdb40bd" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="a0129307-abdc-4891-865a-c8ce1465f683" />
-          </association>
-          <association Id="6bbbf706-7ff2-4422-b8d3-5a0529cb96eb" isDerived="false" sourceEndRoleName="Data" targetEndRoleName="Cook" isLeaf="false" isAbstract="false">
-            <classMoniker Id="0129ba04-f376-4117-9c20-f85d0df7f6b5" LastKnownName="Cook" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="1e2102d8-4937-49ee-96ec-6a3552101937" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="73f23fb2-0ff2-4e9a-9d69-bd0718036b61" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="af17fb1a-6cb3-4ffb-a381-82ab8457d385" name="Cook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="bb25a4ca-f439-411f-bf2a-a3fe1d62d1e6" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="e27c3d22-f36f-4124-bc8c-b60f64c3d84f" />
-          </association>
-          <association Id="8586b86a-229e-446c-be7a-4bb59addd007" isDerived="false" sourceEndRoleName="Data" targetEndRoleName="Administrator" isLeaf="false" isAbstract="false">
+          <association Id="5da5d5ba-c1ea-4270-b67d-d08db904cef6" isDerived="false" sourceEndRoleName="Data" targetEndRoleName="Administrator" isLeaf="false" isAbstract="false">
             <classMoniker Id="3da6a108-6767-469c-b7d9-caf1d1b14598" LastKnownName="Administrator" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="a26f85ca-e220-446c-98e0-5d24545c640f" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="38a78321-f16b-4481-860d-4fb2b05b84e8" />
+                <memberEnd Id="64354bd9-056d-488d-89e2-fc3acf3557e6" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e3d3ea91-6c3c-4361-a179-0c4c6947d13e" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="892b26b3-319e-49ff-b3a7-9f2fc0c50c8e" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="f9f8d155-d2a7-4f09-95d5-60777377a7bc" />
+                <memberEnd Id="91ff71f8-bf65-4eff-8be6-77e5fbdcba79" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="303cc1fa-f9f8-4334-8485-f0179eedac29" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="83dfdd87-eb05-411a-adc5-96e4dbb8da5d" />
+            <elementDefinition Id="e8d2f776-83e9-49f6-979e-513d2b2223c3" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="8629c1bd-2947-415f-8b8b-252a1a7242c0" name="Accounts" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="817c4041-31c7-43f7-8e9e-b4795c6ddbf4" name="Lower" value="1">
+                <elementDefinition Id="1ef71185-4c1c-422c-99f8-1937c4f48904" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="55d902b7-c7b5-4f79-b1c8-6de96c6cef3e" name="Upper" value="1">
+                <elementDefinition Id="69f1ac1b-6305-49ab-b876-815ad4310855" />
+              </literalString>
+            </upperValueInternal>
             <elementDefinition Id="49ffae74-2913-43dc-a7f7-cba820119eb2" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="d467ffb0-e2c9-4399-adec-631e76551e7f" LastKnownName="Account" />
+              <referencedTypeMoniker Id="d46290eb-1346-4c16-8b55-88e6e2cc960c" LastKnownName="List&lt;Account&gt;" />
             </type_NamedElement>
           </property>
           <property Id="5d49710b-ac9b-4e87-8544-95ea612578e4" name="Cooks" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f8bba136-a72e-4dca-901c-af328fea064a" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="3bf0e7ec-f101-4b22-8710-0c654454688e" LastKnownName="Cook" />
+              <referencedTypeMoniker Id="8dcafe3b-7b71-4f13-9618-38378fd96ad0" LastKnownName="List&lt;Cook&gt;" />
             </type_NamedElement>
           </property>
           <property Id="36633c5b-b570-46dc-8bb9-79c9b4f7ad0f" name="Eaters" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0d9f215a-a03d-4c23-b8b1-5b9d5413faaa" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="0683d8bb-fd68-4806-a48b-2997c881e1b7" LastKnownName="Eater" />
+              <referencedTypeMoniker Id="dcd311ff-7deb-4557-8132-0c7d26823c96" LastKnownName="List&lt;Eater&gt;" />
             </type_NamedElement>
           </property>
           <property Id="a4ccc8af-58cb-435a-a6e4-bd9fe6c35d18" name="Administrators" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="26631163-f183-4efe-ba47-5f61ebf34806" name="Lower" value="1">
+                <elementDefinition Id="7a1c1b9b-b1bd-4723-8f90-6576de161901" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="0edd791b-e3e4-426e-9cdf-4a031b70f807" name="Upper" value="1">
+                <elementDefinition Id="118291a7-8691-4fb6-a0a0-301c9c8053b9" />
+              </literalString>
+            </upperValueInternal>
             <elementDefinition Id="695be3c4-5ab0-48e2-92a5-6e85e85d7e02" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="1bedb3fc-c5bb-44c8-b521-3bcddc51373c" LastKnownName="Administrator" />
+              <referencedTypeMoniker Id="4bd17a96-18b9-460e-be0a-73a0fc5571b1" LastKnownName="List&lt;Administrator&gt;" />
             </type_NamedElement>
           </property>
           <property Id="dcfc7233-86e8-4f90-872a-40e2d0113dff" name="MealShares" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0827956e-6623-471e-9981-88ab7b22ebde" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="0dfbcfda-484f-4353-bf1a-6c6aa33f8ff7" LastKnownName="MealShare" />
+              <referencedTypeMoniker Id="0da22592-65ab-4eef-8694-9fa841ec6f76" LastKnownName="List&lt;MealShare&gt;" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="d467ffb0-e2c9-4399-adec-631e76551e7f" name="Account" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Account">
-        <elementDefinition Id="d616ea8e-abf7-482e-a38b-9274ff72a3aa" />
+      <referencedType Id="21fde728-24ac-49fb-bdfb-e0d2b2e9d05d" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="1bedb3fc-c5bb-44c8-b521-3bcddc51373c" name="Administrator" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Administrator">
-        <elementDefinition Id="15826705-3d14-485c-86c6-0dc54d56e749" />
+      <referencedType Id="e2651dce-a63b-4966-a9ef-b1033fed04c9" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="3bf0e7ec-f101-4b22-8710-0c654454688e" name="Cook" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Cook">
-        <elementDefinition Id="50571c67-4b18-43d3-aa0a-358cc1cc056e" />
+      <referencedType Id="a6d33656-59bb-48e6-9fbd-55a6ad6d1129" name="List&lt;DateTime&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;DateTime&gt;">
+        <elementDefinition Id="e0b4b259-115f-4944-b6ac-7d3c6b0a1064" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="0dfbcfda-484f-4353-bf1a-6c6aa33f8ff7" name="MealShare" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::MealShare">
-        <elementDefinition Id="07e1004a-7825-4e12-82c1-4919c3ad03a1" />
+      <referencedType Id="8dcafe3b-7b71-4f13-9618-38378fd96ad0" name="List&lt;Cook&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Cook&gt;">
+        <elementDefinition Id="1def3002-5dac-4834-81cd-6c6c6544c2b7" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="b58447f7-47f0-408d-b3b1-ebafb0f6f8e8" name="Feedback" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Feedback">
-        <elementDefinition Id="2cb73f4c-d72f-458f-9895-6298c99be1fa" />
+      <referencedType Id="dcd311ff-7deb-4557-8132-0c7d26823c96" name="List&lt;Eater&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Eater&gt;">
+        <elementDefinition Id="62fb1097-3619-4748-b406-fb77f6373d76" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0da22592-65ab-4eef-8694-9fa841ec6f76" name="List&lt;MealShare&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;MealShare&gt;">
+        <elementDefinition Id="94690317-9b8c-4093-ad8f-071bf03eea25" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="4c4f62f2-0b53-485d-b0c5-0f213691ced4" name="AccountType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="82964a86-5412-47f1-8a8e-81c4d2167c76" />
+        <ownedLiterals>
+          <enumerationLiteral Id="8e738367-bc8a-425c-a404-99aafe15b62d" name="Cook">
+            <elementDefinition Id="b0b7abb8-5652-4019-ac4f-593c3afacb32" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="372d159d-1fef-4f10-aa67-f68a577314c5" name="Eater">
+            <elementDefinition Id="35c983ee-b98b-4abf-a521-c79d0cca95f0" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="115be44d-cda0-400b-a012-c1b73e33323d" name="Administrator">
+            <elementDefinition Id="f09d0a07-8809-4353-96ab-098f631096eb" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2efe5085-b2e3-4497-ad31-8b028055748a" name="AccountType" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::AccountType">
+        <elementDefinition Id="82964a86-5412-47f1-8a8e-81c4d2167c76" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="6dfb04d7-a069-4fb4-8768-a75c30ec22d8" name="PvgStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="18d775f8-3969-4955-87bb-cf6a0f80e421" />
+        <ownedLiterals>
+          <enumerationLiteral Id="2772acce-1b5b-4fc0-8a15-2e3397bf5dba" name="None">
+            <elementDefinition Id="b34e117b-cfff-4e3a-ad2e-9e506a143c46" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="dc9e041d-bf12-4950-84b4-74c10acdf27a" name="Ok">
+            <elementDefinition Id="494892f5-52e5-489a-9b73-06f89897df32" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="4419448c-43e6-461d-8a47-97d3f51f0182" name="Rejected">
+            <elementDefinition Id="5c560c9f-d4fb-4f2b-80ad-8f7eb8c2b23c" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="4ea44400-4853-442c-8d50-d97b278b00d9" name="AwaitingResult">
+            <elementDefinition Id="460db3e3-4d72-4b5d-8152-dae49c29f9d7" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="261b66a1-f00a-467d-963d-23a0065fa8ee" name="FoodHygieneStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bb1b31d0-8400-4c14-9595-efd3638f32e4" />
+        <ownedLiterals>
+          <enumerationLiteral Id="64a1c65e-ae68-4c2f-a523-03480da5a7bf" name="RenewalWithinThreeMonths">
+            <elementDefinition Id="fc2e47aa-4160-4f57-a8fc-f96cfa25c31f" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="f15d2d4a-0d9a-4672-8e90-6f4c24d6c2e7" name="Ok">
+            <elementDefinition Id="582f114c-a672-4bdf-bd77-0aba62466cf0" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="416001d9-6886-4033-b82a-9afcc1a0d502" name="None">
+            <elementDefinition Id="56e9ceeb-cc6d-43fc-abdf-8757df87e27b" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="11b6a8b1-5487-4ec5-b917-d223e4636757" name="FoodHygieneStatus" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::FoodHygieneStatus">
+        <elementDefinition Id="bb1b31d0-8400-4c14-9595-efd3638f32e4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b4cb80f2-b471-457b-bc3f-89882c195c73" name="PvgStatus" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::PvgStatus">
+        <elementDefinition Id="18d775f8-3969-4955-87bb-cf6a0f80e421" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="5eb12a62-fab9-4817-91a4-536fb9c630fe" name="TravelCapability" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="aeffd36b-58ef-484c-b0c1-421a06f58de6" />
+        <ownedLiterals>
+          <enumerationLiteral Id="398e7c25-2c9b-4bc8-a4d3-3d560e609f3e" name="ByFoot">
+            <elementDefinition Id="d140cf58-3fd7-4b04-9a4b-bbd41f3cda64" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="1f253689-d4c5-4f3c-bc63-6dfc5fde39bb" name="Car">
+            <elementDefinition Id="02315e0e-599e-4e66-8d4f-565a758b17c3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="85f21904-d67e-4d0f-9c26-7951002ace00" name="Bike">
+            <elementDefinition Id="e3df46ef-3201-421f-96eb-3c1c1b1d49d9" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="9b69cabf-e3f7-4ac1-a232-2adb2765e9ea" name="PublicTransport">
+            <elementDefinition Id="9b8d693f-536d-4711-8dbb-82f96c72e0b7" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5b2abf26-dff3-407f-b736-ba60b9ff9260" name="List&lt;TravelCapability&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;TravelCapability&gt;">
+        <elementDefinition Id="8e0d60e3-6147-4177-b42e-8d9e346b9903" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="770969a2-f964-42ca-82d6-27665d326cd6" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d46290eb-1346-4c16-8b55-88e6e2cc960c" name="List&lt;Account&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Account&gt;">
+        <elementDefinition Id="cfdbc172-4f4c-428a-95c5-ee50d3f8c276" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4bd17a96-18b9-460e-be0a-73a0fc5571b1" name="List&lt;Administrator&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Administrator&gt;">
+        <elementDefinition Id="189e4407-4a8b-4b17-9219-6befb4f285c7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="4df78af3-2eff-408c-ac00-6298d70555bf" name="MealShareStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b10098-daf6-449f-805d-5a2582c582f4" />
+        <ownedLiterals>
+          <enumerationLiteral Id="faabedd2-515b-4cba-b585-a86d5f9e4a28" name="Done">
+            <elementDefinition Id="a4d489fe-7ab9-41a1-a8f3-0bdadf6b15a2" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="7aedbf20-e0de-41f7-95f4-c2be52896cd0" name="Accepted">
+            <elementDefinition Id="96281992-9726-4982-9bea-7b663a824406" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e8e51d92-7a00-4a75-944a-16609783f891" name="Proposal">
+            <elementDefinition Id="0e7b7645-552b-4671-a493-78ebbdb45d70" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2bf22a2c-2879-415c-8c98-6b47fd2551f2" name="MealShareStatus" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::MealShareStatus">
+        <elementDefinition Id="c1b10098-daf6-449f-805d-5a2582c582f4" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
@@ -2008,6 +2207,18 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="75f46e78-4f7f-4088-93df-57bb5644b715">
+        <profileInstance Id="849a183f-18ce-453a-bf10-aab77660f95c" name="CSharpProfile">
+          <elementDefinition Id="93bdd3bd-fc57-43fa-bd0f-1f44ca123c14" />
+        </profileInstance>
+        <elementDefinition Id="951cab7d-9d47-4607-9501-828e78d1f065" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="31801730-a6b6-4161-8ce0-a55b65a82ec9">
+        <profileInstance Id="abd15417-99b6-4b89-8bcf-fb1b48e923b4" name="TextTemplateBindings">
+          <elementDefinition Id="4fe243b7-264c-4ad2-bd77-a61d86017f8f" />
+        </profileInstance>
+        <elementDefinition Id="87a3a9d7-2900-4046-b65d-7cc05445b0d3" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

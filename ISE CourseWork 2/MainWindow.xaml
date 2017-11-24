@@ -13,8 +13,9 @@
                 <Button x:Name="BtnHome" Content="Home" MinWidth="70" Click="BtnClickHome"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Right" Margin="5,0">
-                <Button x:Name="BtnLogin" Content="Login" MinWidth="70" Click="BtnClickLogin"/>
-                <Button x:Name="BtnSignUp" Content="Sign Up" MinWidth="70" Click="BtnClickSignUp"/>
+                <Button x:Name="BtnLogout" Content="Logout" MinWidth="70"  Click="BtnLogout_Click" Visibility="Collapsed" />
+                <Button x:Name="BtnLogin" Content="Login" MinWidth="70" Click="BtnLogin_Click" />
+                <Button x:Name="BtnSignUp" Content="Sign up" MinWidth="70" Click="BtnSignUp_Click" />
             </StackPanel>
         </DockPanel>
         <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" VerticalScrollBarVisibility="Auto">
@@ -28,7 +29,7 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-            <Frame Grid.Row="1" Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden"/>
+            <Frame Grid.Row="1" Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden" ContentRendered="Main_ContentRendered" />
             </Grid> 
         </ScrollViewer>
     </Grid>

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    public class Eater : Person
+    public class Eater : IPerson
     {
 
-        public Eater(Person Person, string FoodPreferences) : base(Person)
+        public Eater(IPerson Person, string FoodPreferences) : base(Person)
         {
             this.FoodPreferences = FoodPreferences;
         }
 
-        public Eater(Person Person) : base(Person)
+        public Eater(IPerson Person) : base(Person)
         {
 
         }

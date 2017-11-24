@@ -22,16 +22,16 @@ namespace ISE_CourseWork_2.Views
     public partial class SignUpCookView : Page
     {
 
-        private Person Person;
+        private IPerson Person;
         private Account Account;
 
         private string FoodPreferences;
-        private List<string> TravelCapabilities;
+        private List<TravelCapability> TravelCapabilities;
 
-        public SignUpCookView(Person Person, Account Account)
+        public SignUpCookView(IPerson Person, Account Account)
         {
             InitializeComponent();
-            TravelCapabilities = new List<string>();
+            TravelCapabilities = new List<TravelCapability>();
             this.Person = Person;
             this.Account = Account;
         }
@@ -49,7 +49,7 @@ namespace ISE_CourseWork_2.Views
                 // Sign in new account
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
 
-                ((MainWindow)App.Current.MainWindow).Main.Content = new CookRestrictedHomeView();
+                ((MainWindow)App.Current.MainWindow).Main.Content = new CookRestrictedHomeView(NewCook);
             }
         }
 
@@ -70,22 +70,22 @@ namespace ISE_CourseWork_2.Views
 
             if (ByFoot)
             {
-                TravelCapabilities.Add("byFoot");
+                TravelCapabilities.Add(TravelCapability.ByFoot);
             }
 
             if (Bike)
             {
-                TravelCapabilities.Add("bike");
+                TravelCapabilities.Add(TravelCapability.Bike);
             }
 
             if (Car)
             {
-                TravelCapabilities.Add("car");
+                TravelCapabilities.Add(TravelCapability.Car);
             }
 
             if (PublicTransport)
             {
-                TravelCapabilities.Add("publicTransport");
+                TravelCapabilities.Add(TravelCapability.PublicTransport);
             }
 
             return true;

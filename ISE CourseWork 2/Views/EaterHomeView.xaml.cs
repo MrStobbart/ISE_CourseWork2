@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ISE_CourseWork_2.Models;
 
 namespace ISE_CourseWork_2.Views
 {
@@ -20,9 +21,12 @@ namespace ISE_CourseWork_2.Views
     /// </summary>
     public partial class EaterHomeView : Page
     {
-        public EaterHomeView()
+        private Eater Eater;
+
+        public EaterHomeView(Eater Eater)
         {
             InitializeComponent();
+            this.Eater = Eater;
         }
 
         private void BtnClick_PastMealShares(object sender, RoutedEventArgs e)

@@ -56,9 +56,10 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Cook.cs" />
+    <Compile Include="Models\MealShare.cs" />
     <Compile Include="Models\RuntimeDb.cs" />
     <Compile Include="Models\Eater.cs" />
-    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\IPerson.cs" />
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>

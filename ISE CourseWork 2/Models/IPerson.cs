@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    public class Person
+    public class IPerson
     {
-        public Person(string FirstName, string Surname, string PhoneNumber, Address Address)
+        public IPerson(string FirstName, string Surname, string PhoneNumber, Address Address)
         {
             this.FirstName = FirstName;
             this.Surname = Surname;
@@ -18,7 +18,7 @@ namespace ISE_CourseWork_2.Models
             Id = Guid.NewGuid().ToString();
         }
 
-        public Person(Person Person)
+        public IPerson(IPerson Person)
         {
             FirstName = Person.FirstName;
             Surname = Person.Surname;
@@ -27,7 +27,7 @@ namespace ISE_CourseWork_2.Models
             Id = Person.Id;
         }
 
-        public Person()
+        public IPerson()
         {
             Id = Guid.NewGuid().ToString();
         }
