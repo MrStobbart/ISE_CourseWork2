@@ -10,10 +10,9 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center">
-            <Button x:Name="btnPastMealShares" Content="Past Meal-Shares"  Width="150" Margin="5" Click="BtnClick_PastMealShares"/>
-            <Button x:Name="btnUpcomingMealShares" Content="Upcoming Meal-Shares" Width="150" Margin="5" Click="BtnClick_UpcomingMealShares"/>
-            <Button x:Name="btnNewMealShare" Content="New Meal-Share" Width="150" Margin="5" Click="BtnClick_NewMealShare"/>
+            <Button x:Name="BtnNewMealShare" Content="Share a meal" Width="150" Margin="5" Click="BtnNewMealShare_Click"/>
+            <Button x:Name="BtnPastMealShares" Content="Past Meal-Shares"  Width="150" Margin="5" Click="BtnPastMealShares_Click" />
+            <Button x:Name="BtnUpcomingMealShares" Content="Upcoming Meal-Shares" Width="150" Margin="5" Click="BtnUpcomingMealShares_Click" />
         </StackPanel>
-
     </Grid>
 </Page>

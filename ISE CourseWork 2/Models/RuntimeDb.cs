@@ -8,17 +8,19 @@ namespace ISE_CourseWork_2.Models
 {
     public class RuntimeDb
     {
-        public List<Cook> Cooks;
-        public List<Eater> Eaters;
-        public List<Account> Accounts;
-        public bool SignedIn;
-        public Account SignedInAccount;
+        public List<Cook> Cooks { get; set; }
+        public List<Eater> Eaters { get; set; }
+        public List<Account> Accounts { get; set; }
+        public List<MealShare> MealShares { get; private set; }
+        public bool SignedIn { get; private set; }
+        public Account SignedInAccount { get; set; }
 
         public RuntimeDb()
         {
             Cooks = new List<Cook>();
             Eaters = new List<Eater>();
             Accounts = new List<Account>();
+            MealShares = new List<MealShare>();
             SignedIn = false;
 
             CreateDefaultData();
@@ -133,6 +135,16 @@ namespace ISE_CourseWork_2.Models
             }
             Accounts[index] = NewAccount;
 
+        }
+
+        public MealShare FindMealShare(string Id)
+        {
+            return MealShares.Find(MealShare => MealShare.Id == Id);
+        }
+
+        public void AddMealShare(MealShare MealShare)
+        {
+            MealShares.Add(MealShare);
         }
     }
 }

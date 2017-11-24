@@ -1030,18 +1030,18 @@
               <literalString
                 Id="4b7cc482-6443-4b1e-9ff3-3984444a3695"
                 name="Lower"
-                value="*" />
+                value="1" />
             </lowerValueInternal>
             <upperValueInternal>
               <literalString
                 Id="012dd3a9-06f4-479f-b19a-145a2c70025a"
                 name="Upper"
-                value="*" />
+                value="1" />
             </upperValueInternal>
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
+              <undefinedTypeMoniker
+                Id="e5c8c5c0-1885-42b3-b1e8-0fc2ba4b4108"
+                LastKnownName="List&lt;String&gt;"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>

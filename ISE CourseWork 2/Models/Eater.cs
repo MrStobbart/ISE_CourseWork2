@@ -20,5 +20,10 @@ namespace ISE_CourseWork_2.Models
         }
 
         public string FoodPreferences { get; set; }
+
+        public override string ToString()
+        {
+            return FirstName + " " + Surname;
+        }
     }
 }

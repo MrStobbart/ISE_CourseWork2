@@ -23,6 +23,22 @@ namespace ISE_CourseWork_2.Views
         public PastMealSharesView()
         {
             InitializeComponent();
+            //create business data
+            var itemList = new List<StockItem>();
+ 
+            //link business data to CollectionViewSource
+            CollectionViewSource itemCollectionViewSource;
+            itemCollectionViewSource = (CollectionViewSource)(TryFindResource("ItemCollectionViewSource"));
+            itemCollectionViewSource.Source = itemList;
+            itemList.Add(new StockItem { Name = "Many items", Quantity = 100 });
+            itemList.Add(new StockItem { Name = "Enough items", Quantity = 10 });
         }
+    }
+
+    class StockItem
+    {
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+
     }
 }

@@ -31,19 +31,19 @@ namespace ISE_CourseWork_2.Views
             InitializeComponent();
         }
 
-        private void BtnClick_PastMealShares(object sender, RoutedEventArgs e)
+        private void BtnNewMealShare_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)App.Current.MainWindow).Main.Content = new NewMealShareView(Cook);
+        }
+
+        private void BtnPastMealShares_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)App.Current.MainWindow).Main.Content = new PastMealSharesView();
         }
 
-        private void BtnClick_UpcomingMealShares(object sender, RoutedEventArgs e)
+        private void BtnUpcomingMealShares_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)App.Current.MainWindow).Main.Content = new UpcomingMealSharesView();
-        }
-
-        private void BtnClick_NewMealShare(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)App.Current.MainWindow).Main.Content = new NewMealShareView();
         }
     }
 }

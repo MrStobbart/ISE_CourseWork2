@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ISE_CourseWork_2.Models;
+using Xceed.Wpf.Toolkit;
 
 namespace ISE_CourseWork_2.Views
 {
@@ -20,9 +22,52 @@ namespace ISE_CourseWork_2.Views
     /// </summary>
     public partial class NewMealShareView : Page
     {
-        public NewMealShareView()
+        private DateTime SelectedDateTime { get; set; }
+        private Eater Eater { get; set; }
+        private Cook Cook { get; set; }
+
+        public NewMealShareView(Cook Cook)
         {
             InitializeComponent();
+            this.Cook = Cook;
+            SelectEaterBox.ItemsSource = ((MainWindow)App.Current.MainWindow).RuntimeDb.Eaters;
+
+            var DateTimeDefault = DateTime.Now;
+            DateTimeDefault.AddDays(1);
+            DateTimePicker.DefaultValue = DateTimeDefault;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (InputIsValid())
+            {
+                MealShare MealShare = new MealShare(Cook.Id, Eater.Id, SelectedDateTime);
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddMealShare(MealShare);
+                ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView(Cook);
+            }
+        }
+
+        private bool InputIsValid()
+        {
+            SelectedDateTime = (DateTime)DateTimePicker.Value;
+            Eater = (Eater)SelectEaterBox.SelectedItem;
+
+            if(SelectedDateTime == null)
+            {
+                TxtWarning.Text = "Please select a data and time to propose";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            if(Eater == null)
+            {
+                TxtWarning.Text = "Please select an eater";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

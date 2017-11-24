@@ -6,8 +6,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="PastMealSharesView">
+    <Page.Resources>
+        <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
+    </Page.Resources>
+
 
     <Grid>
-        
+        <DataGrid DataContext="{StaticResource ItemCollectionViewSource}" 
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Quantity" FontWeight="Bold"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

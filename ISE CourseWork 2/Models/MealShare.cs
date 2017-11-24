@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
-    class MealShare
+    public class MealShare
     {
         public enum MealShareStatus { Done, Accepted, Proposal }
 
@@ -18,15 +18,15 @@ namespace ISE_CourseWork_2.Models
 
         public DateTime DateTime { get; set; }
 
-        public List<DateTime> ProposedDateTimes { get; set; }
+        public DateTime ProposedDateTime { get; set; }
 
         public MealShareStatus Status { get; set; }
 
-        public MealShare(string CookId, string EaterId, List<DateTime> ProposedDateTimes)
+        public MealShare(string CookId, string EaterId, DateTime ProposedDateTime)
         {
             this.CookId = CookId;
             this.EaterId = EaterId;
-            this.ProposedDateTimes = ProposedDateTimes;
+            this.ProposedDateTime = ProposedDateTime;
             Id = Guid.NewGuid().ToString();
             Status = MealShareStatus.Proposal;
         }
