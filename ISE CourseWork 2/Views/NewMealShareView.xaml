@@ -12,11 +12,19 @@
         <StackPanel HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Label MinWidth="170">Select an eater</Label>
-                <ListBox x:Name="SelectEaterBox" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="160" Margin="0,5"/>
+                <ListBox x:Name="SelectEaterBox" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="300" Margin="0,5"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label MinWidth="170">Propose date and time </Label>
-                <wpfTool:DateTimePicker x:Name="DateTimePicker" Format="Custom" FormatString="dd.MM.yyyy - hh:mm tt" DisplayDefaultValueOnEmptyText="True"  Width="160" Margin="0,5"/>
+                <wpfTool:DateTimePicker 
+                    x:Name="DateTimePicker" 
+                    Format="Custom" 
+                    FormatString="dd.MM.yyyy - hh:mm tt" 
+                    TextAlignment="Center" 
+                    FontSize="14"
+                    DisplayDefaultValueOnEmptyText="True"  
+                    Width="195" 
+                    Margin="0,5"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label MinWidth="170">Type of Meal</Label>

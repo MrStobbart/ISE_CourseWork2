@@ -14,5 +14,6 @@
         <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource baseStyle}"></Style>
         <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource baseStyle}"></Style>
     </Application.Resources>
 </Application>
