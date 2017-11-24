@@ -26,6 +26,8 @@ namespace ISE_CourseWork_2.Views
         private Eater Eater { get; set; }
         private Cook Cook { get; set; }
 
+        private string Meal { get; set; }
+
         public NewMealShareView(Cook Cook)
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace ISE_CourseWork_2.Views
         {
             if (InputIsValid())
             {
-                MealShare MealShare = new MealShare(Cook.Id, Eater.Id, SelectedDateTime);
+                MealShare MealShare = new MealShare(Cook.Id, Eater.Id, SelectedDateTime, Meal);
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddMealShare(MealShare);
                 ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView(Cook);
             }
@@ -51,17 +53,25 @@ namespace ISE_CourseWork_2.Views
         {
             SelectedDateTime = (DateTime)DateTimePicker.Value;
             Eater = (Eater)SelectEaterBox.SelectedItem;
+            Meal = TxtMeal.Text;
 
-            if(SelectedDateTime == null)
+            if (Eater == null)
+            {
+                TxtWarning.Text = "Please select an eater";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            if (SelectedDateTime == null)
             {
                 TxtWarning.Text = "Please select a data and time to propose";
                 TxtWarning.Visibility = Visibility.Visible;
                 return false;
             }
 
-            if(Eater == null)
+            if (Meal == "")
             {
-                TxtWarning.Text = "Please select an eater";
+                TxtWarning.Text = "Please write the type of meal you want to share";
                 TxtWarning.Visibility = Visibility.Visible;
                 return false;
             }

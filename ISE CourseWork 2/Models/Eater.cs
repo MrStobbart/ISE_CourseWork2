@@ -8,6 +8,7 @@ namespace ISE_CourseWork_2.Models
 {
     public class Eater : IPerson
     {
+        public string FoodPreferences { get; set; }
 
         public Eater(IPerson Person, string FoodPreferences) : base(Person)
         {
@@ -19,7 +20,6 @@ namespace ISE_CourseWork_2.Models
 
         }
 
-        public string FoodPreferences { get; set; }
 
         public override string ToString()
         {
