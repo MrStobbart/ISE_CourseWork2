@@ -15,10 +15,12 @@
         <DataGrid DataContext="{StaticResource ItemCollectionViewSource}" 
                   ItemsSource="{Binding}"
                   AutoGenerateColumns="False"
-                  CanUserAddRows="False">
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" FontWeight="Bold"/>
-                <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Quantity" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=CookName}" Header="Cook" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=EaterName}" Header="Eater" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Data and Time" FontWeight="Bold"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

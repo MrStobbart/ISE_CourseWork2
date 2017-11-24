@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ISE_CourseWork_2.Models;
 
 namespace ISE_CourseWork_2.Views
 {
@@ -20,19 +21,42 @@ namespace ISE_CourseWork_2.Views
     /// </summary>
     public partial class PastMealSharesView : Page
     {
+        private List<MealShare> MealShares { get; set; }
+        private List<TableMealShare> TableMealShares { get; set; }
+
         public PastMealSharesView()
         {
             InitializeComponent();
-            //create business data
-            var itemList = new List<StockItem>();
- 
-            //link business data to CollectionViewSource
+
+            TableMealShares = new List<TableMealShare>();
+            MealShares = ((MainWindow)App.Current.MainWindow).RuntimeDb.MealShares;
+
+            CreateTableMealShares();
+        }
+
+        public void CreateTableMealShares()
+        {
+            foreach(MealShare MealShare in MealShares)
+            {
+                Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
+                Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
+                TableMealShares.Add(new TableMealShare { CookName = Cook.FirstName + " " + Cook.Surname, EaterName = Eater.FirstName + " " + Eater.Surname, DateTime = MealShare.ProposedDateTime.ToString()  });
+            }
+
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)(TryFindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = itemList;
-            itemList.Add(new StockItem { Name = "Many items", Quantity = 100 });
-            itemList.Add(new StockItem { Name = "Enough items", Quantity = 10 });
+            itemCollectionViewSource.Source = TableMealShares;
         }
+
+    }
+
+    class TableMealShare
+    {
+        public string CookName { get; set; }
+
+        public string EaterName { get; set; }
+
+        public string DateTime { get; set; }
     }
 
     class StockItem

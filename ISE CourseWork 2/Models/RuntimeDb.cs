@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace ISE_CourseWork_2.Models
 {
@@ -57,6 +58,9 @@ namespace ISE_CourseWork_2.Models
             Account AdminAccountFast = new Account("a", "a", Account.AccountType.Administrator, "admin");
             AddAccount(AdminAccount);
             AddAccount(AdminAccountFast);
+
+            MealShare MealShare = new MealShare(Cook.Id, Eater.Id, DateTime.Now, "Pasta");
+            AddMealShare(MealShare);
         }
 
         public void SignIn(Account Account)
@@ -146,5 +150,6 @@ namespace ISE_CourseWork_2.Models
         {
             MealShares.Add(MealShare);
         }
+
     }
 }
