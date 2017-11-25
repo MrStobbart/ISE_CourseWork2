@@ -70,17 +70,17 @@ namespace ISE_CourseWork_2.Views
 
         private bool InputIsValid()
         {
-            Email = TxtEmail.Text;
+            Email = TxtEmail.Text.Trim();
             Password = TxtPassword.Password.ToString();
             PasswordRepeat = TxtPasswordRepeat.Password.ToString();
 
-            Street = TxtStreet.Text;
-            HouseNumber = TxtHouseNumber.Text;
-            City = TxtCity.Text;
-            ZipCode = TxtZipCode.Text;
-            FirstName = TxtFirstName.Text;
-            Surname = TxtSurname.Text;
-            PhoneNumber = TxtPhoneNumber.Text != "" ? TxtPhoneNumber.Text : "None supplied";
+            Street = TxtStreet.Text.Trim();
+            HouseNumber = TxtHouseNumber.Text.Trim();
+            City = TxtCity.Text.Trim();
+            ZipCode = TxtZipCode.Text.Trim();
+            FirstName = TxtFirstName.Text.Trim();
+            Surname = TxtSurname.Text.Trim();
+            PhoneNumber = TxtPhoneNumber.Text.Trim() != "" ? TxtPhoneNumber.Text.Trim() : "None supplied";
 
 
             if (TxtEmail.Text == "")

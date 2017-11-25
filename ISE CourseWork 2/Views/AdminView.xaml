@@ -48,7 +48,7 @@
             <Button x:Name="BtnShowMealShares" Margin="0,10,0,0" Content="Show all meal-shares" Click="BtnShowMealShares_Click" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                 <TextBlock x:Name="TxtMealSharesCountLabel" TextWrapping="Wrap" FontSize="14" Text="Meal-shares this month: "/>
-                <TextBlock x:Name="TxtMealSharesCount" TextWrapping="Wrap" FontSize="14" Text="2"/>
+                <TextBlock x:Name="TxtMealSharesCount" TextWrapping="Wrap" FontSize="14" Text=""/>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3">
@@ -56,7 +56,7 @@
             <Button x:Name="BtnShowFeedbacks" Margin="0,10,0,0" Content="Show all feedback" Click="BtnShowFeedbacks_Click" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                 <TextBlock x:Name="TxtFeedbacksCountLabel" TextWrapping="Wrap" FontSize="14" Text="Number of feedbacks: "/>
-                <TextBlock x:Name="TxtFeedbacksCount" TextWrapping="Wrap" FontSize="14" Text="2"/>
+                <TextBlock x:Name="TxtFeedbacksCount" TextWrapping="Wrap" FontSize="14" Text=""/>
             </StackPanel>
         </StackPanel>
     </Grid>

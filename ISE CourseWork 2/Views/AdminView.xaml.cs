@@ -23,6 +23,27 @@ namespace ISE_CourseWork_2.Views
         public AdminView()
         {
             InitializeComponent();
+            CalculateValues();
+        }
+
+        private void CalculateValues()
+        {
+            int CooksCount = ((MainWindow)App.Current.MainWindow).RuntimeDb.Cooks.Count();
+            TxtCooksCount.Text = CooksCount.ToString();
+
+            int EatersCount = ((MainWindow)App.Current.MainWindow).RuntimeDb.Eaters.Count();
+            TxtEatersCount.Text = EatersCount.ToString();
+
+            // Count all meal shares this month
+            int MealSharesCount = ((MainWindow)App.Current.MainWindow).RuntimeDb.MealShares.Count(MealShare => MealShare.DateTime.Month == DateTime.Now.Month && MealShare.DateTime.Year == DateTime.Now.Year);
+            TxtMealSharesCount.Text = MealSharesCount.ToString();
+
+            int FeedbacksCount = ((MainWindow)App.Current.MainWindow).RuntimeDb.Feedbacks.Count();
+            TxtFeedbacksCount.Text = FeedbacksCount.ToString();
+
+            // Simplified version of meal shares per week per eater count (this month)
+            double MealSharesPerEaterPerWeek = Math.Round((double)MealSharesCount / (double)EatersCount / 4.3, 2);
+            TxtEatersMealsPerWeek.Text = MealSharesPerEaterPerWeek.ToString();
         }
 
         private void BtnShowCooks_Click(object sender, RoutedEventArgs e)
