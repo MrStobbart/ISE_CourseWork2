@@ -24,5 +24,24 @@ namespace ISE_CourseWork_2.Views
         {
             InitializeComponent();
         }
+
+        private void BtnShowCooks_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminAllCooksView();
+        }
+
+        private void BtnShowEaters_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminAllEatersView();
+        }
+
+        private void BtnShowMealShares_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminAllMealSharesView();
+        }
+
+        private void BtnShowFeedbacks_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

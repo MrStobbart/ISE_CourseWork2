@@ -13,26 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ISE_CourseWork_2.Models;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
 
 namespace ISE_CourseWork_2.Views
 {
     /// <summary>
-    /// Interaction logic for EaterMealSharesView.xaml
+    /// Interaction logic for AdminAllMealSharesView.xaml
     /// </summary>
-    public partial class EaterMealSharesView : Page
+    public partial class AdminAllMealSharesView : Page
     {
-
         private List<MealShare> MealShares { get; set; }
-        private List<EaterMealShareRow> TableData { get; set; }
+        private List<AdminMealShareRow> TableData { get; set; }
 
-        public EaterMealSharesView()
+        public AdminAllMealSharesView()
         {
             InitializeComponent();
 
-            TableData = new List<EaterMealShareRow>();
+            TableData = new List<AdminMealShareRow>();
 
             CreateTableMealShares();
         }
@@ -46,9 +42,9 @@ namespace ISE_CourseWork_2.Views
             {
                 Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
                 Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
-                EaterMealShareRow MealShareRow = new EaterMealShareRow(MealShare.Id);
+                AdminMealShareRow MealShareRow = new AdminMealShareRow(MealShare.Id);
+                MealShareRow.EaterName = Eater.FirstName + " " + Eater.Surname;
                 MealShareRow.CookName = Cook.FirstName + " " + Cook.Surname;
-                MealShareRow.PhoneNumber = Eater.PhoneNumber;
                 MealShareRow.Meal = MealShare.Meal;
                 MealShareRow.Status = MealShare.Status.ToString().ToLower();
                 MealShareRow.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
@@ -58,32 +54,19 @@ namespace ISE_CourseWork_2.Views
             }
 
             CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(TryFindResource("ItemCollecitonViewSource"));
+            itemCollectionViewSource = (CollectionViewSource)(TryFindResource("ItemCollectionViewSource"));
             itemCollectionViewSource.Source = TableData;
         }
 
-        private void RowButton_Click(object sender, RoutedEventArgs e)
-        {
-            EaterMealShareRow ClickedRow = ((FrameworkElement)sender).DataContext as EaterMealShareRow;
-            ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateMealShareStatus(ClickedRow.Id, MealShareStatus.Accepted);
-
-            /*
-             *  Reload the site to update the status
-             *  TODO This should be done with the INotifyPropertyChanged and an ObservableCollection
-             */
-            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterMealSharesView();
-        }
     }
 
-    class EaterMealShareRow
-
+    class AdminMealShareRow
     {
-
-        public string Meal { get; set; }
-
         public string CookName { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public string EaterName { get; set; }
+
+        public string Meal { get; set; }
 
         public string Status { get; set; }
 
@@ -93,11 +76,10 @@ namespace ISE_CourseWork_2.Views
 
         public string Id { get; set; }
 
-        public EaterMealShareRow(string Id)
+        public AdminMealShareRow(string Id)
         {
             this.Id = Id;
         }
-
     }
 
 }

@@ -5,10 +5,59 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ISE_CourseWork_2.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="500" d:DesignWidth="500"
       Title="AdminView">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock x:Name="TxtCooksHeader" TextWrapping="Wrap" Text="Volunteer cooks" FontSize="16" HorizontalAlignment="Center"/>
+            <Button x:Name="BtnShowCooks" Margin="0,10,0,0" Content="Show details about cooks" Click="BtnShowCooks_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="TxtCooksCountLabel" TextWrapping="Wrap" FontSize="14" Text="Total number of cooks: "/>
+                <TextBlock x:Name="TxtCooksCount" TextWrapping="Wrap" FontSize="14" Text=""/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="3">
+            <TextBlock x:Name="TxtEaterHeader" TextWrapping="Wrap" Text="Serving eaters" FontSize="16" HorizontalAlignment="Center"/>
+            <Button x:Name="BtnShowEaters" Margin="0,10,0,0" Content="Show details about eaters" Click="BtnShowEaters_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="TxtEatersCountLabel" TextWrapping="Wrap" FontSize="14" Text="Total number of eaters: "/>
+                <TextBlock x:Name="TxtEatersCount" TextWrapping="Wrap" FontSize="14" Text=""/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="TxtEatersInformation" TextWrapping="Wrap" FontSize="14" Text="Meals per eater per week: "/>
+                <TextBlock x:Name="TxtEatersMealsPerWeek" TextWrapping="Wrap" FontSize="14" Text=""/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <TextBlock x:Name="TxtMealSharesHeader" TextWrapping="Wrap" Text="Organised meal-shares" FontSize="16" HorizontalAlignment="Center"/>
+            <Button x:Name="BtnShowMealShares" Margin="0,10,0,0" Content="Show all meal-shares" Click="BtnShowMealShares_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="TxtMealSharesCountLabel" TextWrapping="Wrap" FontSize="14" Text="Meal-shares this month: "/>
+                <TextBlock x:Name="TxtMealSharesCount" TextWrapping="Wrap" FontSize="14" Text="2"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="3">
+            <TextBlock x:Name="TxtFeedbacksHeader" TextWrapping="Wrap" Text="Feedback" FontSize="16" HorizontalAlignment="Center"/>
+            <Button x:Name="BtnShowFeedbacks" Margin="0,10,0,0" Content="Show all feedback" Click="BtnShowFeedbacks_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="TxtFeedbacksCountLabel" TextWrapping="Wrap" FontSize="14" Text="Number of feedbacks: "/>
+                <TextBlock x:Name="TxtFeedbacksCount" TextWrapping="Wrap" FontSize="14" Text="2"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

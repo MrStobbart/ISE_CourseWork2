@@ -84,6 +84,15 @@
     <Compile Include="Models\RuntimeDb.cs" />
     <Compile Include="Models\Eater.cs" />
     <Compile Include="Models\IPerson.cs" />
+    <Compile Include="Views\AdminAllCooksView.xaml.cs">
+      <DependentUpon>AdminAllCooksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminAllEatersView.xaml.cs">
+      <DependentUpon>AdminAllEatersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminAllMealSharesView.xaml.cs">
+      <DependentUpon>AdminAllMealSharesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>
@@ -126,6 +135,18 @@
     <Compile Include="Views\UpcomingMealSharesView.xaml.cs">
       <DependentUpon>UpcomingMealSharesView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\AdminAllCooksView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminAllEatersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminAllMealSharesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

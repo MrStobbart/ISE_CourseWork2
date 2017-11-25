@@ -1,0 +1,42 @@
+﻿<Page x:Class="ISE_CourseWork_2.Views.AdminAllMealSharesView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ISE_CourseWork_2.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AdminAllMealSharesView">
+
+    <Page.Resources>
+        <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
+        <Style TargetType="{x:Type DataGridCell}" x:Key="cellStyle">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="columnHeaderStyle">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Height" Value="27"/>
+        </Style>
+    </Page.Resources>
+
+
+    <Grid>
+        <DataGrid DataContext="{StaticResource ItemCollectionViewSource}" 
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Center"
+                  CellStyle="{StaticResource cellStyle}"
+                  ColumnHeaderStyle="{StaticResource columnHeaderStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=CookName}" Header="Cook" />
+                <DataGridTextColumn Binding="{Binding Path=EaterName}" Header="Eater" />
+                <DataGridTextColumn Binding="{Binding Path=Meal}" Header="Meal" />
+                <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
+                <DataGridTextColumn Binding="{Binding Path=Date}" Header="Date" />
+                <DataGridTextColumn Binding="{Binding Path=Time}" Header="Time" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

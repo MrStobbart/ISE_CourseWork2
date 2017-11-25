@@ -29,17 +29,12 @@ namespace ISE_CourseWork_2.Views
             this.Eater = Eater;
         }
 
-        private void BtnClick_PastMealShares(object sender, RoutedEventArgs e)
+        private void BtnMealShares_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)App.Current.MainWindow).Main.Content = new EaterMealSharesView();
         }
 
-        private void BtnClick_UpcomingMealShares(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)App.Current.MainWindow).Main.Content = new UpcomingMealSharesView();
-        }
-
-        private void BtnClick_SelectFriends(object sender, RoutedEventArgs e)
+        private void BtnSelectFriends_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)App.Current.MainWindow).Main.Content = new SelectFriendsView();
         }
