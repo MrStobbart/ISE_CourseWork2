@@ -38,7 +38,7 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnPastMealShares_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)App.Current.MainWindow).Main.Content = new PastMealSharesView();
+            ((MainWindow)App.Current.MainWindow).Main.Content = new CookMealSharesView();
         }
 
         private void BtnUpcomingMealShares_Click(object sender, RoutedEventArgs e)

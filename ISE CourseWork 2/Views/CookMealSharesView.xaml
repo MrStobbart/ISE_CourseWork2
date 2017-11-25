@@ -1,0 +1,42 @@
+﻿<Page x:Class="ISE_CourseWork_2.Views.CookMealSharesView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="500"
+	Title="PastMealSharesView">
+    <Page.Resources>
+        <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
+        <Style TargetType="{x:Type DataGridCell}" x:Key="cellStyle">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="columnHeaderStyle">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Height" Value="27"/>
+        </Style>
+    </Page.Resources>
+
+
+    <Grid>
+        <DataGrid DataContext="{StaticResource ItemCollectionViewSource}" 
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Center"
+                  CellStyle="{StaticResource cellStyle}"
+                  ColumnHeaderStyle="{StaticResource columnHeaderStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=EaterName}" Header="Eater" />
+                <DataGridTextColumn Binding="{Binding Path=StreetAndNumber}" Header="Street" />
+                <DataGridTextColumn Binding="{Binding Path=ZipCode}" Header="ZIP code" />
+                <DataGridTextColumn Binding="{Binding Path=City}" Header="City" />
+                <DataGridTextColumn Binding="{Binding Path=PhoneNumber}" Header="Phone number" />
+                <DataGridTextColumn Binding="{Binding Path=Date}" Header="Date" />
+                <DataGridTextColumn Binding="{Binding Path=Time}" Header="Time" />
+                <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

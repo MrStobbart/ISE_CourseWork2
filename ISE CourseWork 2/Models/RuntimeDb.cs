@@ -61,6 +61,9 @@ namespace ISE_CourseWork_2.Models
 
             MealShare MealShare = new MealShare(Cook.Id, Eater.Id, DateTime.Now, "Pasta");
             AddMealShare(MealShare);
+
+            MealShare MealShare2 = new MealShare(Cook.Id, Eater.Id, DateTime.Now, "Fish");
+            AddMealShare(MealShare2);
         }
 
         public void SignIn(Account Account)

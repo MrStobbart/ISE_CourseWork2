@@ -19,16 +19,16 @@ namespace ISE_CourseWork_2.Views
     /// <summary>
     /// Interaction logic for PastMealSharesView.xaml
     /// </summary>
-    public partial class PastMealSharesView : Page
+    public partial class CookMealSharesView : Page
     {
         private List<MealShare> MealShares { get; set; }
-        private List<TableMealShare> TableMealShares { get; set; }
+        private List<MealShareRow> TableMealShares { get; set; }
 
-        public PastMealSharesView()
+        public CookMealSharesView()
         {
             InitializeComponent();
 
-            TableMealShares = new List<TableMealShare>();
+            TableMealShares = new List<MealShareRow>();
             MealShares = ((MainWindow)App.Current.MainWindow).RuntimeDb.MealShares;
 
             CreateTableMealShares();
@@ -40,7 +40,17 @@ namespace ISE_CourseWork_2.Views
             {
                 Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
                 Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
-                TableMealShares.Add(new TableMealShare { CookName = Cook.FirstName + " " + Cook.Surname, EaterName = Eater.FirstName + " " + Eater.Surname, DateTime = MealShare.ProposedDateTime.ToString()  });
+                MealShareRow TableMealShare = new MealShareRow(MealShare.Id);
+                TableMealShare.EaterName = Eater.FirstName + " " + Eater.Surname;
+                TableMealShare.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
+                TableMealShare.ZipCode = Eater.Address.ZipCode;
+                TableMealShare.City = Eater.Address.City;
+                TableMealShare.PhoneNumber = Eater.PhoneNumber;
+                TableMealShare.Status = MealShare.Status.ToString().ToLower();
+                TableMealShare.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
+                TableMealShare.Time = MealShare.DateTime.ToString("hh:mm tt");
+
+                TableMealShares.Add(TableMealShare);
             }
 
             CollectionViewSource itemCollectionViewSource;
@@ -50,19 +60,30 @@ namespace ISE_CourseWork_2.Views
 
     }
 
-    class TableMealShare
+    class MealShareRow
     {
-        public string CookName { get; set; }
-
         public string EaterName { get; set; }
 
-        public string DateTime { get; set; }
+        public string StreetAndNumber { get; set; }
+
+        public string ZipCode { get; set; }
+
+        public string City { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public string Status { get; set; }
+
+        public string Date { get; set; }
+
+        public string Time { get; set; }
+
+        public string Id { get; set; }
+
+        public MealShareRow(string Id)
+        {
+            this.Id = Id;
+        }
     }
 
-    class StockItem
-    {
-        public string Name { get; set; }
-        public int Quantity { get; set; }
-
-    }
 }

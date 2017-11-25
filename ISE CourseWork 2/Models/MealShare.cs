@@ -20,15 +20,13 @@ namespace ISE_CourseWork_2.Models
 
         public DateTime DateTime { get; set; }
 
-        public DateTime ProposedDateTime { get; set; }
-
         public MealShareStatus Status { get; set; }
 
-        public MealShare(string CookId, string EaterId, DateTime ProposedDateTime, string Meal)
+        public MealShare(string CookId, string EaterId, DateTime DateTime, string Meal)
         {
             this.CookId = CookId;
             this.EaterId = EaterId;
-            this.ProposedDateTime = ProposedDateTime;
+            this.DateTime = DateTime;
             this.Meal = Meal;
             Id = Guid.NewGuid().ToString();
             Status = MealShareStatus.Proposal;
