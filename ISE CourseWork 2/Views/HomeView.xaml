@@ -4,12 +4,30 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="500" d:DesignWidth="500"
 	Title="HomePage">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="0,61,0,0" TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit, urna ac posuere luctus, magna enim auctor elit, ut euismod tellus lectus condimentum metus. Nulla elementum nisl ut velit eleifend, nec porta nisi scelerisque. Praesent ullamcorper dui vel commodo sodales. Phasellus elementum erat nec massa ornare, at tincidunt massa imperdiet. Nam non dui sed arcu lacinia accumsan. Mauris eleifend vel nibh ut pellentesque. Sed imperdiet rutrum neque, id ullamcorper metus sagittis ut." VerticalAlignment="Top"/>
-        <TextBlock Margin="44,10,49,0" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"><Run Language="en-gb" Text="Welcome to Meal-Sharers"/></TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Language="en-gb" Text="Welcome to Meal-Sharers"/></TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" >
+            <TextBlock 
+                TextWrapping="Wrap" 
+                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit, urna ac posuere luctus, magna enim auctor elit, ut euismod tellus lectus condimentum metus. Nulla elementum nisl ut velit eleifend, nec porta nisi scelerisque. Praesent ullamcorper dui vel commodo sodales. Phasellus elementum erat nec massa ornare, at tincidunt massa imperdiet. Nam non dui sed arcu lacinia accumsan. Mauris eleifend vel nibh ut pellentesque. Sed imperdiet rutrum neque, id ullamcorper metus sagittis ut." 
+                />
+            <TextBlock 
+                TextWrapping="Wrap" 
+                Text="Please contact us for further information: 01234567890" 
+                />
+        </StackPanel>
 
     </Grid>
 </Page>
