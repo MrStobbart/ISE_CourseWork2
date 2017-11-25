@@ -35,7 +35,7 @@ namespace ISE_CourseWork_2.Views
             SelectEaterBox.ItemsSource = ((MainWindow)App.Current.MainWindow).RuntimeDb.Eaters;
 
             var DateTimeDefault = DateTime.Now;
-            DateTimeDefault.AddDays(1);
+            DateTimeDefault.AddDays(3);
             DateTimePicker.DefaultValue = DateTimeDefault;
         }
 

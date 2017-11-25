@@ -28,6 +28,7 @@
                   CellStyle="{StaticResource cellStyle}"
                   ColumnHeaderStyle="{StaticResource columnHeaderStyle}">
             <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Meal}" Header="Meal" />
                 <DataGridTextColumn Binding="{Binding Path=EaterName}" Header="Eater" />
                 <DataGridTextColumn Binding="{Binding Path=StreetAndNumber}" Header="Street" />
                 <DataGridTextColumn Binding="{Binding Path=ZipCode}" Header="ZIP code" />

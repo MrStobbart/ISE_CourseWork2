@@ -22,40 +22,42 @@ namespace ISE_CourseWork_2.Views
     public partial class CookMealSharesView : Page
     {
         private List<MealShare> MealShares { get; set; }
-        private List<MealShareRow> TableMealShares { get; set; }
+        private List<MealShareRow> TableData { get; set; }
 
         public CookMealSharesView()
         {
             InitializeComponent();
 
-            TableMealShares = new List<MealShareRow>();
-            MealShares = ((MainWindow)App.Current.MainWindow).RuntimeDb.MealShares;
+            TableData = new List<MealShareRow>();
 
             CreateTableMealShares();
         }
 
         public void CreateTableMealShares()
         {
-            foreach(MealShare MealShare in MealShares)
+            MealShares = ((MainWindow)App.Current.MainWindow).RuntimeDb.MealShares.OrderBy(MealShare => MealShare.DateTime).ToList();
+
+            foreach (MealShare MealShare in MealShares)
             {
                 Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
                 Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
-                MealShareRow TableMealShare = new MealShareRow(MealShare.Id);
-                TableMealShare.EaterName = Eater.FirstName + " " + Eater.Surname;
-                TableMealShare.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
-                TableMealShare.ZipCode = Eater.Address.ZipCode;
-                TableMealShare.City = Eater.Address.City;
-                TableMealShare.PhoneNumber = Eater.PhoneNumber;
-                TableMealShare.Status = MealShare.Status.ToString().ToLower();
-                TableMealShare.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
-                TableMealShare.Time = MealShare.DateTime.ToString("hh:mm tt");
+                MealShareRow MealShareRow = new MealShareRow(MealShare.Id);
+                MealShareRow.EaterName = Eater.FirstName + " " + Eater.Surname;
+                MealShareRow.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
+                MealShareRow.ZipCode = Eater.Address.ZipCode;
+                MealShareRow.City = Eater.Address.City;
+                MealShareRow.PhoneNumber = Eater.PhoneNumber;
+                MealShareRow.Meal = MealShare.Meal;
+                MealShareRow.Status = MealShare.Status.ToString().ToLower();
+                MealShareRow.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
+                MealShareRow.Time = MealShare.DateTime.ToString("hh:mm tt");
 
-                TableMealShares.Add(TableMealShare);
+                TableData.Add(MealShareRow);
             }
 
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)(TryFindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = TableMealShares;
+            itemCollectionViewSource.Source = TableData;
         }
 
     }
@@ -77,6 +79,8 @@ namespace ISE_CourseWork_2.Views
         public string Date { get; set; }
 
         public string Time { get; set; }
+
+        public string Meal { get; set; }
 
         public string Id { get; set; }
 

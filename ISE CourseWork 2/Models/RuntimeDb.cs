@@ -59,7 +59,8 @@ namespace ISE_CourseWork_2.Models
             AddAccount(AdminAccount);
             AddAccount(AdminAccountFast);
 
-            MealShare MealShare = new MealShare(Cook.Id, Eater.Id, DateTime.Now, "Pasta");
+
+            MealShare MealShare = new MealShare(Cook.Id, Eater.Id, DateTime.Now.AddDays(1), "Pasta");
             AddMealShare(MealShare);
 
             MealShare MealShare2 = new MealShare(Cook.Id, Eater.Id, DateTime.Now, "Fish");
