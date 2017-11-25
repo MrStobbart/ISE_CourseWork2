@@ -38,8 +38,8 @@ namespace ISE_CourseWork_2.Models
 
             Cook Cook = new Cook(CookPerson, "Pasta", TravelCapabilities);
             AddCook(Cook);
-            Account CookAccount = new Account("cookmail@outlook.com", "cookpass", Account.AccountType.Cook, Cook.Id);
-            Account CookAccountFast = new Account("c", "c", Account.AccountType.Cook, Cook.Id);
+            Account CookAccount = new Account("cookmail@outlook.com", "cookpass", AccountType.Cook, Cook.Id);
+            Account CookAccountFast = new Account("c", "c", AccountType.Cook, Cook.Id);
             AddAccount(CookAccount);
             AddAccount(CookAccountFast);
 
@@ -48,14 +48,14 @@ namespace ISE_CourseWork_2.Models
             IPerson EaterPerson = new IPerson("John", "Smith", "0987654321", EaterAddress);
             Eater Eater = new Eater(EaterPerson, "Fish");
             AddEater(Eater);
-            Account EaterAccount = new Account("eatermail@outlook.com", "eaterpass", Account.AccountType.Eater, Eater.Id);
-            Account EaterAccountFast = new Account("e", "e", Account.AccountType.Eater, Eater.Id);
+            Account EaterAccount = new Account("eatermail@outlook.com", "eaterpass", AccountType.Eater, Eater.Id);
+            Account EaterAccountFast = new Account("e", "e", AccountType.Eater, Eater.Id);
             AddAccount(EaterAccount);
             AddAccount(EaterAccountFast);
 
 
-            Account AdminAccount = new Account("adminmail@outlook.com", "adminpass", Account.AccountType.Administrator, "admin");
-            Account AdminAccountFast = new Account("a", "a", Account.AccountType.Administrator, "admin");
+            Account AdminAccount = new Account("adminmail@outlook.com", "adminpass", AccountType.Administrator, "admin");
+            Account AdminAccountFast = new Account("a", "a", AccountType.Administrator, "admin");
             AddAccount(AdminAccount);
             AddAccount(AdminAccountFast);
 
@@ -153,6 +153,18 @@ namespace ISE_CourseWork_2.Models
         public void AddMealShare(MealShare MealShare)
         {
             MealShares.Add(MealShare);
+        }
+
+        public void UpdateMealShareStatus(string MealShareId, MealShareStatus NewStatus)
+        {
+            int index = MealShares.FindIndex(MealShare => MealShare.Id == MealShareId);
+            if (index == -1)
+            {
+                throw new Exception("An mealshare with the id " + MealShareId  + " does not exist!");
+            }
+            MealShare NewMealShare = MealShares[index];
+            NewMealShare.Status = NewStatus;
+            MealShares[index] = NewMealShare;
         }
 
     }

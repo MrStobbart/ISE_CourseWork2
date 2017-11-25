@@ -7,9 +7,9 @@ using System.Security.Cryptography;
 
 namespace ISE_CourseWork_2.Models
 {
+    public enum AccountType { Eater, Cook, Administrator}
     public class Account
     {
-        public enum AccountType { Eater, Cook, Administrator}
 
         public Account(string Email, string Password, AccountType Type, string PersonId)
         {

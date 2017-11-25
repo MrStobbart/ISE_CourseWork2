@@ -50,7 +50,7 @@ namespace ISE_CourseWork_2.Views
 
                 Address Address = new Address(Street, HouseNumber, City, ZipCode);
                 IPerson NewPerson = new IPerson(FirstName, Surname, PhoneNumber, Address);
-                Account NewAccount = new Account(Email, Password, Account.AccountType.Eater, NewPerson.Id);
+                Account NewAccount = new Account(Email, Password, AccountType.Eater, NewPerson.Id);
 
                 ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpEaterView(NewPerson, NewAccount);
             }
@@ -62,7 +62,7 @@ namespace ISE_CourseWork_2.Views
             {
                 Address Address = new Address(Street, HouseNumber, City, ZipCode);
                 IPerson NewPerson = new IPerson(FirstName, Surname, PhoneNumber, Address);
-                Account NewAccount = new Account(Email, Password, Account.AccountType.Cook , NewPerson.Id);
+                Account NewAccount = new Account(Email, Password, AccountType.Cook , NewPerson.Id);
 
                 ((MainWindow)App.Current.MainWindow).Main.Content = new SignUpCookView(NewPerson, NewAccount);
             }

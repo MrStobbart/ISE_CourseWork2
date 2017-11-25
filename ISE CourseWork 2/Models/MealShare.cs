@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ISE_CourseWork_2.Models
 {
+    public enum MealShareStatus { Done, Accepted, Proposal }
+
     public class MealShare
     {
-        public enum MealShareStatus { Done, Accepted, Proposal }
 
         public string Id { get; set; }
 

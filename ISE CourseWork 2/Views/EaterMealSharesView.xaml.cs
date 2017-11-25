@@ -13,23 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ISE_CourseWork_2.Models;
+using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 
 namespace ISE_CourseWork_2.Views
 {
     /// <summary>
-    /// Interaction logic for CookMealSharesView.xaml
+    /// Interaction logic for EaterMealSharesView.xaml
     /// </summary>
-    public partial class CookMealSharesView : Page
+    public partial class EaterMealSharesView : Page
     {
-        private List<MealShare> MealShares { get; set; }
-        private ObservableCollection<CookMealShareRow> TableData { get; set; }
 
-        public CookMealSharesView()
+        private List<MealShare> MealShares { get; set; }
+        private List<EaterMealShareRow> TableData { get; set; }
+
+        public EaterMealSharesView()
         {
             InitializeComponent();
 
-            TableData = new ObservableCollection<CookMealShareRow>();
+            TableData = new List<EaterMealShareRow>();
 
             CreateTableMealShares();
         }
@@ -43,11 +46,8 @@ namespace ISE_CourseWork_2.Views
             {
                 Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
                 Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
-                CookMealShareRow MealShareRow = new CookMealShareRow(MealShare.Id);
-                MealShareRow.EaterName = Eater.FirstName + " " + Eater.Surname;
-                MealShareRow.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
-                MealShareRow.ZipCode = Eater.Address.ZipCode;
-                MealShareRow.City = Eater.Address.City;
+                EaterMealShareRow MealShareRow = new EaterMealShareRow(MealShare.Id);
+                MealShareRow.CookName = Cook.FirstName + " " + Cook.Surname;
                 MealShareRow.PhoneNumber = Eater.PhoneNumber;
                 MealShareRow.Meal = MealShare.Meal;
                 MealShareRow.Status = MealShare.Status.ToString().ToLower();
@@ -62,17 +62,23 @@ namespace ISE_CourseWork_2.Views
             itemCollectionViewSource.Source = TableData;
         }
 
+        private void RowButton_Click(object sender, RoutedEventArgs e)
+        {
+            EaterMealShareRow ClickedRow = ((FrameworkElement)sender).DataContext as EaterMealShareRow;
+            ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateMealShareStatus(ClickedRow.Id, MealShareStatus.Accepted);
+
+            // Reload the site to update the status
+            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterMealSharesView();
+        }
     }
 
-    class CookMealShareRow
+    class EaterMealShareRow
+
     {
-        public string EaterName { get; set; }
 
-        public string StreetAndNumber { get; set; }
+        public string Meal { get; set; }
 
-        public string ZipCode { get; set; }
-
-        public string City { get; set; }
+        public string CookName { get; set; }
 
         public string PhoneNumber { get; set; }
 
@@ -82,14 +88,13 @@ namespace ISE_CourseWork_2.Views
 
         public string Time { get; set; }
 
-        public string Meal { get; set; }
-
         public string Id { get; set; }
 
-        public CookMealShareRow(string Id)
+        public EaterMealShareRow(string Id)
         {
             this.Id = Id;
         }
+
     }
 
 }

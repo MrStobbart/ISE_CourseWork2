@@ -48,11 +48,11 @@ namespace ISE_CourseWork_2.Views
                     ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
                     switch (Account.Type)
                     {
-                        case Account.AccountType.Eater:
+                        case AccountType.Eater:
                             Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(Account.PersonId);
                             ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView(Eater);
                             break;
-                        case Account.AccountType.Cook:
+                        case AccountType.Cook:
                             // If Document missing navigate to upload page 
                             Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(Account.PersonId);
                             
@@ -64,7 +64,7 @@ namespace ISE_CourseWork_2.Views
 
                             ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView(Cook);
                             break;
-                        case Account.AccountType.Administrator:
+                        case AccountType.Administrator:
                             ((MainWindow)App.Current.MainWindow).Main.Content = new AdminView();
                             break;
                         default:

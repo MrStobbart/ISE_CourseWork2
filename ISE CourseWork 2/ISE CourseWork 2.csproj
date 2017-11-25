@@ -96,6 +96,9 @@
     <Compile Include="Views\EaterHomeView.xaml.cs">
       <DependentUpon>EaterHomeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EaterMealSharesView.xaml.cs">
+      <DependentUpon>EaterMealSharesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EaterHomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EaterMealSharesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
