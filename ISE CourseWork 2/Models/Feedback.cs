@@ -10,18 +10,17 @@ namespace ISE_CourseWork_2.Models
 
     public class Feedback
     {
-        public string Comment { get; set; }
+        public string Comment { get; set; } = "";
 
         public string Id { get; }
 
-        public string UserId { get; set; }
+        public string UserId { get; set; } = "";
 
         public FeedbackType Type { get; set; }
 
-        public string RegardingPersonId { get; set; }
+        public string RegardingPersonId { get; set; } = "";
 
         public DateTime DateTime { get;  }
-
 
         public int Rating { get; set; }
 

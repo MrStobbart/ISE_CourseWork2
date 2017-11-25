@@ -57,27 +57,43 @@ namespace ISE_CourseWork_2.Views
             Rating = RatingField.Value;
             Comment = TxtComment.Text;
 
-            Feedback Feedback = new Feedback(FeedbackType.System, Rating);
-
-            if(Comment != "")
+            if (RatingWasSelected())
             {
-                Feedback.Comment = Comment;
+                Feedback Feedback = new Feedback(FeedbackType.System, Rating);
+
+                if (Comment != "")
+                {
+                    Feedback.Comment = Comment;
+                }
+
+                if (RegardingPersonId != "")
+                {
+                    Feedback.RegardingPersonId = RegardingPersonId;
+                }
+
+                if (((MainWindow)App.Current.MainWindow).RuntimeDb.SignedIn)
+                {
+                    Feedback.UserId = ((MainWindow)App.Current.MainWindow).RuntimeDb.SignedInAccount.Id;
+                }
+
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddFeedback(Feedback);
+
+                RuntimeDb test = ((MainWindow)App.Current.MainWindow).RuntimeDb;
+                Close();
+            }
+            
+        }
+
+        private bool RatingWasSelected()
+        {
+            if (Rating == 0)
+            {
+                TxtWarning.Text = "Please select a rating";
+                TxtWarning.Visibility = Visibility.Visible;
+                return false;
             }
 
-            if(RegardingPersonId != "")
-            {
-                Feedback.RegardingPersonId = RegardingPersonId;
-            }
-
-            if (((MainWindow)App.Current.MainWindow).RuntimeDb.SignedIn)
-            {
-                Feedback.UserId = ((MainWindow)App.Current.MainWindow).RuntimeDb.SignedInAccount.Id;
-            }
-
-            ((MainWindow)App.Current.MainWindow).RuntimeDb.AddFeedback(Feedback);
-
-            RuntimeDb test = ((MainWindow)App.Current.MainWindow).RuntimeDb;
-            Close();
+            return true;
         }
 
     }
