@@ -1,4 +1,4 @@
-﻿<Page x:Class="ISE_CourseWork_2.Views.HomeView"
+﻿<Page x:Class="ISE_CourseWork_2.Views.AboutView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -21,10 +21,12 @@
         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" >
             <TextBlock 
                 TextWrapping="Wrap" 
+                FontSize="14"
                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit, urna ac posuere luctus, magna enim auctor elit, ut euismod tellus lectus condimentum metus. Nulla elementum nisl ut velit eleifend, nec porta nisi scelerisque. Praesent ullamcorper dui vel commodo sodales. Phasellus elementum erat nec massa ornare, at tincidunt massa imperdiet. Nam non dui sed arcu lacinia accumsan. Mauris eleifend vel nibh ut pellentesque. Sed imperdiet rutrum neque, id ullamcorper metus sagittis ut." 
                 />
             <TextBlock 
                 TextWrapping="Wrap" 
+                FontSize="14"
                 Text="Please contact us for further information: 01234567890" 
                 />
         </StackPanel>

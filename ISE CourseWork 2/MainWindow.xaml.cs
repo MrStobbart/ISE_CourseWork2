@@ -29,12 +29,12 @@ namespace ISE_CourseWork_2
         {
             InitializeComponent();
             RuntimeDb = new RuntimeDb();
-            Main.Content = new HomeView();
+            Main.Content = new AboutView();
         }
 
-        private void BtnClickHome(object sender, RoutedEventArgs e)
+        private void BtnAbout_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new HomeView();
+            Main.Content = new AboutView();
         }
 
         private void BtnLogout_Click(object sender, RoutedEventArgs e)
@@ -69,15 +69,38 @@ namespace ISE_CourseWork_2
         {
             BtnLogin.Visibility = Visibility.Collapsed;
             BtnSignUp.Visibility = Visibility.Collapsed;
+
             BtnLogout.Visibility = Visibility.Visible;
+            BtnMyHomePage.Visibility = Visibility.Visible;
         }
 
         private void ShowDefaultMenuBar()
         {
             BtnLogin.Visibility = Visibility.Visible;
             BtnSignUp.Visibility = Visibility.Visible;
+
             BtnLogout.Visibility = Visibility.Collapsed;
+            BtnMyHomePage.Visibility = Visibility.Collapsed;
+
         }
 
+        private void BtnMyHomePage_Click(object sender, RoutedEventArgs e)
+        {
+            Account ActiveAccount = RuntimeDb.SignedInAccount;
+            switch (ActiveAccount.Type)
+            {
+                case AccountType.Eater:
+                    Eater Eater = RuntimeDb.FindEater(ActiveAccount.PersonId);
+                    Main.Content = new EaterHomeView(Eater);
+                    break;
+                case AccountType.Cook:
+                    Cook Cook = RuntimeDb.FindCook(ActiveAccount.PersonId);
+                    Main.Content = new CookHomeView(Cook);
+                    break;
+                case AccountType.Administrator:
+                    Main.Content = new AdminView();
+                    break;
+            }
+        }
     }
 }

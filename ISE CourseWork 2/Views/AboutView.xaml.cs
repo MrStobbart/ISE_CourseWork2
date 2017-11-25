@@ -18,9 +18,9 @@ namespace ISE_CourseWork_2.Views
     /// <summary>
     /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class HomeView : Page
+    public partial class AboutView : Page
     {
-        public HomeView()
+        public AboutView()
         {
             InitializeComponent();
         }

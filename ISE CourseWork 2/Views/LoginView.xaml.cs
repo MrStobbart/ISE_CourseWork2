@@ -68,7 +68,7 @@ namespace ISE_CourseWork_2.Views
                             ((MainWindow)App.Current.MainWindow).Main.Content = new AdminView();
                             break;
                         default:
-                            ((MainWindow)App.Current.MainWindow).Main.Content = new HomeView();
+                            ((MainWindow)App.Current.MainWindow).Main.Content = new AboutView();
                             break;
                     }       
                 }
