@@ -20,12 +20,15 @@ namespace ISE_CourseWork_2.Models
 
         public string RegardingPersonId { get; set; }
 
+        public DateTime DateTime { get;  }
+
 
         public int Rating { get; set; }
 
         public Feedback()
         {
             Id = Guid.NewGuid().ToString();
+            DateTime = DateTime.Now;
         }
 
         public Feedback(FeedbackType Type, int Rating, string RegardingPersonId)
@@ -34,6 +37,7 @@ namespace ISE_CourseWork_2.Models
             this.RegardingPersonId = RegardingPersonId;
             this.Rating = Rating;
             this.Type = Type;
+            DateTime = DateTime.Now;
         }
 
         public Feedback(FeedbackType Type, int Rating)
@@ -41,6 +45,7 @@ namespace ISE_CourseWork_2.Models
             Id = Guid.NewGuid().ToString();
             this.Rating = Rating;
             this.Type = Type;
+            DateTime = DateTime.Now;
         }
 
     }
