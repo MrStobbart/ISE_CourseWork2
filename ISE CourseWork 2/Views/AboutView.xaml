@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:rating="clr-namespace:ISE_CourseWork_2.Utils"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="500"
 	Title="HomePage">
@@ -29,6 +30,13 @@
                 FontSize="14"
                 Text="Please contact us for further information: 01234567890" 
                 />
+            <StackPanel Orientation="Horizontal">
+                <Label>Bad</Label>
+                <Label>Below avarage</Label>
+                <Label>Mediocre</Label>
+                <Label>Good</Label>
+                <Label>Exceptional</Label>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

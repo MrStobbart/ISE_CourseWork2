@@ -102,5 +102,11 @@ namespace ISE_CourseWork_2
                     break;
             }
         }
+
+        private void BtnFeedback_Click(object sender, RoutedEventArgs e)
+        {
+            FeedbackWindow FeedbackWindow = new FeedbackWindow();
+            FeedbackWindow.Show();
+        }
     }
 }

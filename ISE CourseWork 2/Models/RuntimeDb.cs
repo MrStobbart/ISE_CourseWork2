@@ -13,6 +13,7 @@ namespace ISE_CourseWork_2.Models
         public List<Eater> Eaters { get; set; }
         public List<Account> Accounts { get; set; }
         public List<MealShare> MealShares { get; private set; }
+        public List<Feedback> Feedbacks { get; set; }
         public bool SignedIn { get; private set; }
         public Account SignedInAccount { get; set; }
 
@@ -22,6 +23,7 @@ namespace ISE_CourseWork_2.Models
             Eaters = new List<Eater>();
             Accounts = new List<Account>();
             MealShares = new List<MealShare>();
+            Feedbacks = new List<Feedback>();
             SignedIn = false;
 
             CreateDefaultData();
@@ -165,6 +167,11 @@ namespace ISE_CourseWork_2.Models
             MealShare NewMealShare = MealShares[index];
             NewMealShare.Status = NewStatus;
             MealShares[index] = NewMealShare;
+        }
+
+        public void AddFeedback(Feedback Feedback)
+        {
+            Feedbacks.Add(Feedback);
         }
 
     }

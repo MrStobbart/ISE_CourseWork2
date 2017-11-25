@@ -80,10 +80,14 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Cook.cs" />
+    <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\MealShare.cs" />
     <Compile Include="Models\RuntimeDb.cs" />
     <Compile Include="Models\Eater.cs" />
     <Compile Include="Models\IPerson.cs" />
+    <Compile Include="Utils\Rating.xaml.cs">
+      <DependentUpon>Rating.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminAllCooksView.xaml.cs">
       <DependentUpon>AdminAllCooksView.xaml</DependentUpon>
     </Compile>
@@ -111,6 +115,9 @@
     <Compile Include="Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FeedbackWindow.xaml.cs">
+      <DependentUpon>FeedbackWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -135,6 +142,10 @@
     <Compile Include="Views\UpcomingMealSharesView.xaml.cs">
       <DependentUpon>UpcomingMealSharesView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Utils\Rating.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminAllCooksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FeedbackWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
