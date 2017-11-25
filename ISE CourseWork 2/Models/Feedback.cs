@@ -16,7 +16,10 @@ namespace ISE_CourseWork_2.Models
 
         public string UserId { get; set; }
 
-        public string Type { get; set; }
+        public FeedbackType Type { get; set; }
+
+        public string RegardingPersonId { get; set; }
+
 
         public int Rating { get; set; }
 
@@ -25,25 +28,19 @@ namespace ISE_CourseWork_2.Models
             Id = Guid.NewGuid().ToString();
         }
 
-        public Feedback(int Rating, string Comment, string UserId)
+        public Feedback(FeedbackType Type, int Rating, string RegardingPersonId)
         {
             Id = Guid.NewGuid().ToString();
-            this.UserId = UserId;
-            this.Comment = Comment;
+            this.RegardingPersonId = RegardingPersonId;
             this.Rating = Rating;
+            this.Type = Type;
         }
 
-        public Feedback(int Rating, string Comment)
-        {
-            Id = Guid.NewGuid().ToString();
-            this.Comment = Comment;
-            this.Rating = Rating;
-        }
-
-        public Feedback(int Rating)
+        public Feedback(FeedbackType Type, int Rating)
         {
             Id = Guid.NewGuid().ToString();
             this.Rating = Rating;
+            this.Type = Type;
         }
 
     }

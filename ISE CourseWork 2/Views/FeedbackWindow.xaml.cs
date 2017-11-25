@@ -26,6 +26,20 @@ namespace ISE_CourseWork_2.Views
 
         private string UserId { get; set; }
 
+        private string RegardingPersonId { get; set; }
+
+
+        public FeedbackWindow(string UserId, string RegardingPersonId)
+        {
+            InitializeComponent();
+            this.UserId = UserId;
+            this.RegardingPersonId = RegardingPersonId;
+
+            Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(RegardingPersonId);
+
+            TxtInformation.Text = "Please give your feedback regarding the meal you shared with the cook " + Cook.FirstName + " " + Cook.Surname + ".";
+
+        }
 
         public FeedbackWindow(string UserId)
         {
@@ -43,11 +57,16 @@ namespace ISE_CourseWork_2.Views
             Rating = RatingField.Value;
             Comment = TxtComment.Text;
 
-            Feedback Feedback = new Feedback(Rating);
+            Feedback Feedback = new Feedback(FeedbackType.System, Rating);
 
             if(Comment != "")
             {
                 Feedback.Comment = Comment;
+            }
+
+            if(RegardingPersonId != "")
+            {
+                Feedback.RegardingPersonId = RegardingPersonId;
             }
 
             if (((MainWindow)App.Current.MainWindow).RuntimeDb.SignedIn)

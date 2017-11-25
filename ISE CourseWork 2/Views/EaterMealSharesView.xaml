@@ -38,11 +38,17 @@
                 <DataGridTemplateColumn Header="Accept Proposal">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="RowButton" Click="RowButton_Click" Content="Accept"/>
+                            <Button x:Name="BtnAccept" Click="BtnAccept_Click" Content="Accept"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+                <DataGridTemplateColumn Header="Feedback">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnFeedback" Click="BtnFeedback_Click" Content="Feedback"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

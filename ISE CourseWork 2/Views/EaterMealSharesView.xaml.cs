@@ -58,11 +58,11 @@ namespace ISE_CourseWork_2.Views
             }
 
             CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(TryFindResource("ItemCollecitonViewSource"));
+            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
             itemCollectionViewSource.Source = TableData;
         }
 
-        private void RowButton_Click(object sender, RoutedEventArgs e)
+        private void BtnAccept_Click(object sender, RoutedEventArgs e)
         {
             EaterMealShareRow ClickedRow = ((FrameworkElement)sender).DataContext as EaterMealShareRow;
             ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateMealShareStatus(ClickedRow.Id, MealShareStatus.Accepted);
@@ -72,6 +72,23 @@ namespace ISE_CourseWork_2.Views
              *  TODO This should be done with the INotifyPropertyChanged and an ObservableCollection
              */
             ((MainWindow)App.Current.MainWindow).Main.Content = new EaterMealSharesView();
+        }
+
+        private void BtnFeedback_Click(object sender, RoutedEventArgs e)
+        {
+            EaterMealShareRow ClickedRow = ((FrameworkElement)sender).DataContext as EaterMealShareRow;
+
+            MealShare MealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(ClickedRow.Id);
+
+            if(MealShare.Status == MealShareStatus.Done)
+            {
+                FeedbackWindow FeedbackWindow = new FeedbackWindow(MealShare.EaterId, MealShare.CookId);
+                FeedbackWindow.Show();
+            }
+            else
+            { 
+                MessageBox.Show("You can only give feedback regarding shared meals that already took place.", "Feedback not possible!", MessageBoxButton.OK, MessageBoxImage.None);
+            }
         }
     }
 
