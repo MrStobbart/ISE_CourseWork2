@@ -20,11 +20,11 @@ namespace ISE_CourseWork_2.Views
     /// <summary>
     /// Interaction logic for CookRestrictedHomeView.xaml
     /// </summary>
-    public partial class CookRestrictedHomeView : Page
+    public partial class CookUploadView : Page
     {
         private Cook Cook;
 
-        public CookRestrictedHomeView(Cook Cook)
+        public CookUploadView(Cook Cook)
         {
             InitializeComponent();
             this.Cook = Cook;

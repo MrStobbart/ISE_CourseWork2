@@ -1,4 +1,4 @@
-﻿<Page x:Class="ISE_CourseWork_2.Views.CookRestrictedHomeView"
+﻿<Page x:Class="ISE_CourseWork_2.Views.CookUploadView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,12 +6,13 @@
       xmlns:local="clr-namespace:ISE_CourseWork_2.Views"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="700"
-      Title="CookRestrictedHomeView">
+      Title="CookUploadView">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -21,28 +22,29 @@
             <ColumnDefinition Width="280"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="TxtInformationHeader" HorizontalAlignment="Center" FontSize="18" TextWrapping="Wrap" Margin="0, 20" Grid.ColumnSpan="4" >
+        <TextBlock x:Name="TxtInformationHeader" HorizontalAlignment="Center" FontSize="18" TextWrapping="Wrap" Margin="0, 20" Grid.ColumnSpan="4" TextDecorations="Underline">
             One more step before you can share your meals
         </TextBlock>
-        <TextBlock x:Name="TxtInformation" HorizontalAlignment="Center" FontSize="14" TextWrapping="Wrap" Margin="0, 20" Grid.ColumnSpan="4" Grid.Row="1" TextAlignment="Center" >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <LineBreak/> 
+        <TextBlock x:Name="TxtInformation" HorizontalAlignment="Center" FontSize="14" TextWrapping="Wrap" Margin="0, 20" Grid.ColumnSpan="4" Grid.Row="1" TextAlignment="Left" >
             Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <LineBreak/> 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <LineBreak /> <LineBreak/>
-            Call us if you need help: 1234567890 <LineBreak />
-            You can re-enter this site by logging in again.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <LineBreak />
+            You can do this at a later point in time. <LineBreak/><LineBreak/>
         </TextBlock>
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1" TextAlignment="Center" FontWeight="Bold">
+            Call us if you need help: 1234567890 <LineBreak />
+        </TextBlock>
+        <StackPanel Grid.Row="3" Grid.Column="1">
             <TextBlock HorizontalAlignment="Center" FontSize="14" TextWrapping="Wrap" Margin="0, 10" MinWidth="280" TextAlignment="Center" >
                 <Hyperlink NavigateUri="https://www.food-hygiene-certificate.co.uk/" RequestNavigate="Hyperlink_RequestNavigate">https://www.food-hygiene-certificate.co.uk/</Hyperlink>
             </TextBlock>
             <Button x:Name="BtnUploadPvg" HorizontalAlignment="Center" Content="Upload PVG certificate" Width="230" Margin="5,10" Click="BtnUploadPvg_Click"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="2">
+        <StackPanel Grid.Row="3" Grid.Column="2">
             <TextBlock HorizontalAlignment="Center" FontSize="14" TextWrapping="Wrap" Margin="0, 10" MinWidth="280" TextAlignment="Center">
                 <Hyperlink NavigateUri="https://www.mygov.scot/apply-for-pvg/" RequestNavigate="Hyperlink_RequestNavigate">https://www.mygov.scot/apply-for-pvg/</Hyperlink>
             </TextBlock>
             <Button x:Name="BtnUploadFoodHygiene" Content="Upload food hygiene certificate" Width="230" Margin="5,10" Click="BtnUploadFoodHygiene_Click" />
         </StackPanel>
-        <Button x:Name="BtnContinueToHomePage" VerticalAlignment="Top" Margin="0,20"  Width="200" Height="23"  Grid.Row="3" Grid.Column="1"  Grid.ColumnSpan="2" Content="Continue to home page" Click="BtnContinueToHomePage_Click"/>
+        <Button x:Name="BtnContinueToHomePage" VerticalAlignment="Top" Margin="0,20"  Width="200" Height="23"  Grid.Row="4" Grid.Column="1"  Grid.ColumnSpan="2" Content="Continue to home page" Click="BtnContinueToHomePage_Click"/>
     </Grid>
 </Page>

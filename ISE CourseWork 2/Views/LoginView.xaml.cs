@@ -58,7 +58,7 @@ namespace ISE_CourseWork_2.Views
                             
                             if(Cook.Pvg != PvgStatus.Ok || Cook.FoodHygiene != FoodHygieneStatus.Ok)
                             {
-                                ((MainWindow)App.Current.MainWindow).Main.Content = new CookRestrictedHomeView(Cook);
+                                ((MainWindow)App.Current.MainWindow).Main.Content = new CookUploadView(Cook);
                                 break;
                             }
 

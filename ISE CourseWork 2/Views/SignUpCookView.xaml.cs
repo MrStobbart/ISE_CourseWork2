@@ -49,13 +49,13 @@ namespace ISE_CourseWork_2.Views
                 // Sign in new account
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
 
-                ((MainWindow)App.Current.MainWindow).Main.Content = new CookRestrictedHomeView(NewCook);
+                ((MainWindow)App.Current.MainWindow).Main.Content = new CookUploadView(NewCook);
             }
         }
 
         private bool InputIsValid()
         {
-            FoodPreferences = TxtFoodPreferences.Text;
+            FoodPreferences = TxtFoodPreferences.Text.Trim();
             bool ByFoot = CheckBoxByFoot.IsChecked.Value;
             bool Bike = CheckBoxBike.IsChecked.Value;
             bool Car = CheckBoxCar.IsChecked.Value;

@@ -36,25 +36,19 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            if (InputIsValid())
-            {
-                Eater NewEater = new Eater(Person, FoodPreferences);
+            FoodPreferences = TxtFoodPreferences.Text.Trim();
 
-                // Add data to runtime db
-                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddEater(NewEater);
-                ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(Account);
+            Eater NewEater = new Eater(Person, FoodPreferences);
 
-                // Sign in new account
-                ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
+            // Add data to runtime db
+            ((MainWindow)App.Current.MainWindow).RuntimeDb.AddEater(NewEater);
+            ((MainWindow)App.Current.MainWindow).RuntimeDb.AddAccount(Account);
 
-                ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView(NewEater);
-            }
+            // Sign in new account
+            ((MainWindow)App.Current.MainWindow).RuntimeDb.SignIn(Account);
+
+            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterHomeView(NewEater);
         }
 
-        private bool InputIsValid()
-        {
-
-            return true;
-        }
     }
 }
