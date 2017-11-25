@@ -94,6 +94,9 @@
     <Compile Include="Views\AdminAllEatersView.xaml.cs">
       <DependentUpon>AdminAllEatersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminAllFeedbacksView.xaml.cs">
+      <DependentUpon>AdminAllFeedbacksView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminAllMealSharesView.xaml.cs">
       <DependentUpon>AdminAllMealSharesView.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminAllEatersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminAllFeedbacksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

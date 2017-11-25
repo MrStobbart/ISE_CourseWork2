@@ -66,7 +66,7 @@ namespace ISE_CourseWork_2.Views
                     Feedback.Comment = Comment;
                 }
 
-                if (RegardingPersonId != "")
+                if (RegardingPersonId != null)
                 {
                     Feedback.RegardingPersonId = RegardingPersonId;
                 }

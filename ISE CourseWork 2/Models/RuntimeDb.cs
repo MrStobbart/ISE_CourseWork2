@@ -67,6 +67,11 @@ namespace ISE_CourseWork_2.Models
 
             MealShare MealShare2 = new MealShare(Cook.Id, Eater.Id, DateTime.Now, "Fish");
             AddMealShare(MealShare2);
+
+            Feedback Feedback = new Feedback(FeedbackType.MealShare, 5, Cook.Id);
+            Feedback.UserId = EaterAccount.Id;
+            Feedback.Comment = "Great meal share!";
+            AddFeedback(Feedback);
         }
 
         public void SignIn(Account Account)

@@ -40,5 +40,10 @@ namespace ISE_CourseWork_2.Models
         public Address Address { get; set; }
 
         public string Id { get; }
+
+        public string GetFullName()
+        {
+            return FirstName + " " + Surname;
+        }
     }
 }

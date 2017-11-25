@@ -41,6 +41,7 @@ namespace ISE_CourseWork_2
         {
             ShowDefaultMenuBar();
             RuntimeDb.SignOut();
+            Main.Content = new AboutView();
         }
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)

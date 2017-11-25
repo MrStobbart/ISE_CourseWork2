@@ -11,7 +11,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="500"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -26,17 +26,11 @@
                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit, urna ac posuere luctus, magna enim auctor elit, ut euismod tellus lectus condimentum metus. Nulla elementum nisl ut velit eleifend, nec porta nisi scelerisque. Praesent ullamcorper dui vel commodo sodales. Phasellus elementum erat nec massa ornare, at tincidunt massa imperdiet. Nam non dui sed arcu lacinia accumsan. Mauris eleifend vel nibh ut pellentesque. Sed imperdiet rutrum neque, id ullamcorper metus sagittis ut." 
                 />
             <TextBlock 
+                Margin="0,10"
                 TextWrapping="Wrap" 
                 FontSize="14"
                 Text="Please contact us for further information: 01234567890" 
                 />
-            <StackPanel Orientation="Horizontal">
-                <Label>Bad</Label>
-                <Label>Below avarage</Label>
-                <Label>Mediocre</Label>
-                <Label>Good</Label>
-                <Label>Exceptional</Label>
-            </StackPanel>
         </StackPanel>
 
     </Grid>

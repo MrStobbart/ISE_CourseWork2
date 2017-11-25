@@ -42,6 +42,7 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnShowFeedbacks_Click(object sender, RoutedEventArgs e)
         {
+            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminAllFeedbacksView();
         }
     }
 }
