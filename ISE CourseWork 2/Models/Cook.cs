@@ -58,15 +58,20 @@ namespace ISE_CourseWork_2.Models
             Pvg = PvgStatus.None;
         }
 
-        public bool FoodHygieneIsGoingToRunOut()
+        public void CheckAndUpdateFoodHygieneAccordingToTime()
         {
             TimeSpan DurationSinceOk = DateTime.Now - FoodHygieneOkDateTime;
-            float YearLength = 365.25F;
-            if (DurationSinceOk.TotalDays > YearLength * 1.75F)
+            double YearLength = 365.25;
+            if (DurationSinceOk.TotalDays > YearLength * 1.75)
             {
-                return true;
+                FoodHygiene = FoodHygieneStatus.RenewalWithinThreeMonths;
             }
-            return false;
+            
+            if(DurationSinceOk.TotalDays > YearLength * 2)
+            {
+                FoodHygiene = FoodHygieneStatus.None;
+                FoodHygieneCertificatePath = null;
+            }
         }
 
     }

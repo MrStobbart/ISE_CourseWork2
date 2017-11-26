@@ -18,9 +18,9 @@ namespace ISE_CourseWork_2.Views
     /// <summary>
     /// Interaction logic for AdminView.xaml
     /// </summary>
-    public partial class AdminView : Page
+    public partial class AdminHomeView : Page
     {
-        public AdminView()
+        public AdminHomeView()
         {
             InitializeComponent();
             CalculateValues();

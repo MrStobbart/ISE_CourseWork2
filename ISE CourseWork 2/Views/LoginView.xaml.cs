@@ -32,7 +32,7 @@ namespace ISE_CourseWork_2.Views
         }
 
 
-        private void BtnSignIn_Click(object sender, RoutedEventArgs e)
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             if (InputIsValid())
             {
@@ -65,7 +65,7 @@ namespace ISE_CourseWork_2.Views
                             ((MainWindow)App.Current.MainWindow).Main.Content = new CookHomeView(Cook);
                             break;
                         case AccountType.Administrator:
-                            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminView();
+                            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminHomeView();
                             break;
                         default:
                             ((MainWindow)App.Current.MainWindow).Main.Content = new AboutView();

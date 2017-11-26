@@ -27,12 +27,10 @@ namespace ISE_CourseWork_2.Views
         public CookHomeView(Cook Cook)
         {
             this.Cook = Cook;
+            Cook.CheckAndUpdateFoodHygieneAccordingToTime();
+            ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCook(Cook);
+
             InitializeComponent();
-            if (Cook.FoodHygieneIsGoingToRunOut())
-            {
-                Cook.FoodHygiene = FoodHygieneStatus.RenewalWithinThreeMonths;
-                ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCook(Cook);
-            }
             CheckForCertificates();
         }
 
@@ -92,7 +90,7 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnNewMealShare_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)App.Current.MainWindow).Main.Content = new NewMealShareView(Cook);
+            ((MainWindow)App.Current.MainWindow).Main.Content = new CookNewMealShareView(Cook);
         }
 
 

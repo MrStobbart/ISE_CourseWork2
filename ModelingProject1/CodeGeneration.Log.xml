@@ -6,24 +6,25 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="High" Text="Code generation or text transformation started." />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="Name = ClassTemplate" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="Overwrite = True" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Medium" Text="ModelingProject1's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'ModelingProject1::MealShare' -  (Class) " />
-  <Message Timestamp="2017-11-22T23:49:04" Importance="Medium" Text="'ModelingProject1::MealShare' -  (Class) : success (file created) - C:\Users\Marek\Documents\Visual Studio 2015\Projects\ISE CourseWork 2\ModelingProject1Lib\GeneratedCode\MealShare.cs" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="Name = StructTemplate" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="Overwrite = True" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Medium" Text="ModelingProject1's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'ModelingProject1::MealShare' -  (Class) " />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="Diagnostic" Text="'ModelingProject1::MealShare' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
-  <Message Timestamp="2017-11-22T23:49:05" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2017-11-26T16:36:52" Importance="Medium" Text="ModelingProject1's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'ModelingProject1::Feedback' -  (Class) " />
+  <Error Timestamp="2017-11-26T16:37:08" Importance="High" Text="Cannot create the following project because another project might exist in the same location, or the solution might have a project with the same name: C:\Users\Marek\Documents\Visual Studio 2015\Projects\ISE CourseWork 2\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="'ModelingProject1::Feedback' -  (Class): no file generated because the 'AppliesToElement' method of the template 'ClassTemplate.t4' evaluated to false." />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Medium" Text="ModelingProject1's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'ModelingProject1::Feedback' -  (Class) " />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="Diagnostic" Text="'ModelingProject1::Feedback' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2017-11-26T16:37:08" Importance="High" Text="Code generation complete. Errors: 1. Warnings: 0." />
 </Log>

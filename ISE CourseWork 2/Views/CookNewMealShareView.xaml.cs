@@ -20,7 +20,7 @@ namespace ISE_CourseWork_2.Views
     /// <summary>
     /// Interaction logic for NewMealShareView.xaml
     /// </summary>
-    public partial class NewMealShareView : Page
+    public partial class CookNewMealShareView : Page
     {
         private DateTime SelectedDateTime { get; set; }
         private Eater Eater { get; set; }
@@ -28,7 +28,7 @@ namespace ISE_CourseWork_2.Views
 
         private string Meal { get; set; }
 
-        public NewMealShareView(Cook Cook)
+        public CookNewMealShareView(Cook Cook)
         {
             InitializeComponent();
             this.Cook = Cook;
@@ -39,7 +39,7 @@ namespace ISE_CourseWork_2.Views
             DateTimePicker.DefaultValue = DateTimeDefault;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnCreateMealShare_Click(object sender, RoutedEventArgs e)
         {
             if (InputIsValid())
             {

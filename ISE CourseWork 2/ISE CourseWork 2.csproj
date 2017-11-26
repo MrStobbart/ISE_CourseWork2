@@ -103,8 +103,8 @@
     <Compile Include="Views\AdminManageCookView.xaml.cs">
       <DependentUpon>AdminManageCookView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AdminView.xaml.cs">
-      <DependentUpon>AdminView.xaml</DependentUpon>
+    <Compile Include="Views\AdminHomeView.xaml.cs">
+      <DependentUpon>AdminHomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CookHomeView.xaml.cs">
       <DependentUpon>CookHomeView.xaml</DependentUpon>
@@ -127,14 +127,14 @@
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewMealShareView.xaml.cs">
-      <DependentUpon>NewMealShareView.xaml</DependentUpon>
+    <Compile Include="Views\CookNewMealShareView.xaml.cs">
+      <DependentUpon>CookNewMealShareView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CookMealSharesView.xaml.cs">
       <DependentUpon>CookMealSharesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SelectFriendsView.xaml.cs">
-      <DependentUpon>SelectFriendsView.xaml</DependentUpon>
+    <Compile Include="Views\EaterSelectFriendsView.xaml.cs">
+      <DependentUpon>EaterSelectFriendsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SignUpCookView.xaml.cs">
       <DependentUpon>SignUpCookView.xaml</DependentUpon>
@@ -144,9 +144,6 @@
     </Compile>
     <Compile Include="Views\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UpcomingMealSharesView.xaml.cs">
-      <DependentUpon>UpcomingMealSharesView.xaml</DependentUpon>
     </Compile>
     <Page Include="Utils\Rating.xaml">
       <SubType>Designer</SubType>
@@ -172,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AdminView.xaml">
+    <Page Include="Views\AdminHomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,7 +213,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\NewMealShareView.xaml">
+    <Page Include="Views\CookNewMealShareView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,7 +221,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SelectFriendsView.xaml">
+    <Page Include="Views\EaterSelectFriendsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,10 +234,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SignUpView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UpcomingMealSharesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,9 +18,9 @@ namespace ISE_CourseWork_2.Views
     /// <summary>
     /// Interaction logic for SelectFriendsView.xaml
     /// </summary>
-    public partial class SelectFriendsView : Page
+    public partial class EaterSelectFriendsView : Page
     {
-        public SelectFriendsView()
+        public EaterSelectFriendsView()
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="ISE_CourseWork_2.Views.NewMealShareView"
+﻿<Page x:Class="ISE_CourseWork_2.Views.CookNewMealShareView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="500"
-	Title="NewMealShareView">
+	Title="CookNewMealShareView">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center">
@@ -31,7 +31,7 @@
                 <TextBox x:Name="TxtMeal" Width="160" Margin="0,5"/>
             </StackPanel>
             <TextBox x:Name="TxtWarning" Visibility="Hidden" HorizontalAlignment="Center" BorderThickness="0" Foreground="Red" Margin="0,10"/>
-            <Button Content="Send meal offer" Width="150" Margin="0,5" Click="Button_Click"/> 
+            <Button x:Name="BtnCreateMealShare" Content="Send meal offer" Width="150" Margin="0,5" Click="BtnCreateMealShare_Click"/> 
         </StackPanel>
 
     </Grid>

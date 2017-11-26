@@ -99,7 +99,7 @@ namespace ISE_CourseWork_2
                     Main.Content = new CookHomeView(Cook);
                     break;
                 case AccountType.Administrator:
-                    Main.Content = new AdminView();
+                    Main.Content = new AdminHomeView();
                     break;
             }
         }
