@@ -57,6 +57,13 @@ namespace ISE_CourseWork_2.Views
             itemCollectionViewSource.Source = TableData;
         }
 
+        private void BtnManageCook_Click(object sender, RoutedEventArgs e)
+        {
+            AdminCookRow ClickedRow = ((FrameworkElement)sender).DataContext as AdminCookRow;
+            Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(ClickedRow.Id);
+            ((MainWindow)App.Current.MainWindow).Main.Content = new AdminManageCookView(Cook);
+        }
+
     }
 
     class AdminCookRow

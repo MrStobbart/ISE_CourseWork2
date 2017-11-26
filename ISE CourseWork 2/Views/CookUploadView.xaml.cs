@@ -32,37 +32,35 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnUploadPvg_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog SaveFileDialog = new Microsoft.Win32.SaveFileDialog();
-            SaveFileDialog.FileName = "PVG certificate"; // Default file name
-            SaveFileDialog.DefaultExt = ".pdf"; // Default file extension
-            SaveFileDialog.Filter = "Text documents (.pdf)|*.pdf"; // Filter files by extension
+            Microsoft.Win32.OpenFileDialog OpenFileDialog = new Microsoft.Win32.OpenFileDialog();
+            OpenFileDialog.FileName = "PVG certificate"; // Default file name
+            OpenFileDialog.DefaultExt = ".pdf"; // Default file extension
+            OpenFileDialog.Filter = "Text documents (.pdf)|*.pdf"; // Filter files by extension
 
-            // Show save file dialog box
-            bool? result = SaveFileDialog.ShowDialog();
+            // Show open file dialog box
+            bool? result = OpenFileDialog.ShowDialog();
 
-            // Process save file dialog box results
+            // Process open file dialog box results
             if (result == true)
             {
-                // Save document
-                string filename = SaveFileDialog.FileName;
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.UploadPvgCertificate(Cook.Id, OpenFileDialog.FileName);
             }
         }
 
         private void BtnUploadFoodHygiene_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog SaveFileDialog = new Microsoft.Win32.SaveFileDialog();
-            SaveFileDialog.FileName = "Foodhygiene certificate"; // Default file name
-            SaveFileDialog.DefaultExt = ".pdf"; // Default file extension
-            SaveFileDialog.Filter = "Text documents (.pdf)|*.pdf"; // Filter files by extension
+            Microsoft.Win32.OpenFileDialog OpenFileDialog = new Microsoft.Win32.OpenFileDialog();
+            OpenFileDialog.FileName = "Foodhygiene certificate"; // Default file name
+            OpenFileDialog.DefaultExt = ".pdf"; // Default file extension
+            OpenFileDialog.Filter = "Text documents (.pdf)|*.pdf"; // Filter files by extension
 
-            // Show save file dialog box
-            bool? result = SaveFileDialog.ShowDialog();
+            // Show open file dialog box
+            bool? result = OpenFileDialog.ShowDialog();
 
-            // Process save file dialog box results
+            // Process open file dialog box results
             if (result == true)
             {
-                // Save document
-                string filename = SaveFileDialog.FileName;
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.UploadFoodHygieneCertificate(Cook.Id, OpenFileDialog.FileName);
             }
         }
 

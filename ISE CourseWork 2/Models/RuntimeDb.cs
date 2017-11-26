@@ -105,6 +105,46 @@ namespace ISE_CourseWork_2.Models
             Cooks[index] = NewCook;
         }
 
+        public void UpdateCookPvg(string CookId, PvgStatus Pvg)
+        {
+            int index = Cooks.FindIndex(Cook => Cook.Id == CookId);
+            if (index == -1)
+            {
+                throw new Exception("An cook with the id " + CookId + " does not exist!");
+            }
+            Cooks[index].Pvg = Pvg;
+        }
+
+        public void UpdateCookFoodHygiene(string CookId, FoodHygieneStatus FoodHygiene)
+        {
+            int index = Cooks.FindIndex(Cook => Cook.Id == CookId);
+            if (index == -1)
+            {
+                throw new Exception("An cook with the id " + CookId + " does not exist!");
+            }
+            Cooks[index].FoodHygiene = FoodHygiene;
+        }
+
+        public void UploadPvgCertificate(string CookId, string PvgCertificatePath)
+        {
+            int index = Cooks.FindIndex(Cook => Cook.Id == CookId);
+            if (index == -1)
+            {
+                throw new Exception("An cook with the id " + CookId + " does not exist!");
+            }
+            Cooks[index].PvgCertificatePath = PvgCertificatePath;
+        }
+
+        public void UploadFoodHygieneCertificate(string CookId, string FoodHygieneCertificatePath)
+        {
+            int index = Cooks.FindIndex(Cook => Cook.Id == CookId);
+            if (index == -1)
+            {
+                throw new Exception("An cook with the id " + CookId + " does not exist!");
+            }
+            Cooks[index].FoodHygieneCertificatePath = FoodHygieneCertificatePath;
+        }
+
         public void AddEater(Eater Eater)
         {
             Eaters.Add(Eater);

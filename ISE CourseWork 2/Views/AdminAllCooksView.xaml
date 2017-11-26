@@ -1,4 +1,4 @@
-﻿<Page x:Class="ISE_CourseWork_2.Views.AdminAllCooksView"
+﻿    <Page x:Class="ISE_CourseWork_2.Views.AdminAllCooksView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -37,6 +37,13 @@
                 <DataGridTextColumn Binding="{Binding Path=PhoneNumber}" Header="Phone number" />
                 <DataGridTextColumn Binding="{Binding Path=PvgStatus}" Header="PVG status" />
                 <DataGridTextColumn Binding="{Binding Path=FoodHygieneStatus}" Header="Food hygiene status" />
+                <DataGridTemplateColumn Header="Manage cook">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnManageCook" Click="BtnManageCook_Click" Content="Manage"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
