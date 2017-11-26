@@ -38,9 +38,25 @@ namespace ISE_CourseWork_2.Models
             TravelCapabilities.Add(TravelCapability.Bike);
 
             Cook Cook = new Cook(CookPerson, "Pasta", TravelCapabilities);
+            Cook.FoodHygiene = FoodHygieneStatus.Ok;
+            Cook.Pvg = PvgStatus.Ok;
             AddCook(Cook);
-            Account CookAccount = new Account("cookmail@outlook.com", "cookpass", AccountType.Cook, Cook.Id);
-            Account CookAccountFast = new Account("c", "c", AccountType.Cook, Cook.Id);
+            Account CookAccount = new Account("marek@outlook.com", "marekpass", AccountType.Cook, Cook.Id);
+            Account CookAccountFast = new Account("m", "m", AccountType.Cook, Cook.Id);
+            AddAccount(CookAccount);
+            AddAccount(CookAccountFast);
+
+            Address CookAddress2 = new Address("Queens Street", "12", "Edinburgh", "EH02 3FE");
+            IPerson CookPerson2 = new IPerson("James", "Johnsson", "012937412", CookAddress2);
+
+            List<TravelCapability> TravelCapabilities2 = new List<TravelCapability>();
+            TravelCapabilities.Add(TravelCapability.Car);
+            TravelCapabilities.Add(TravelCapability.PublicTransport);
+
+            Cook Cook2 = new Cook(CookPerson2, "Meat", TravelCapabilities);
+            AddCook(Cook2);
+            Account CookAccount2 = new Account("cookmail@outlook.com", "cookpass", AccountType.Cook, Cook2.Id);
+            Account CookAccountFast2 = new Account("c", "c", AccountType.Cook, Cook2.Id);
             AddAccount(CookAccount);
             AddAccount(CookAccountFast);
 
