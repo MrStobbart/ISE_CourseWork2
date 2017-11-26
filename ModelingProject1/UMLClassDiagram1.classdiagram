@@ -2223,6 +2223,9 @@
           <enumerationLiteral Id="4ea44400-4853-442c-8d50-d97b278b00d9" name="AwaitingResult">
             <elementDefinition Id="460db3e3-4d72-4b5d-8152-dae49c29f9d7" />
           </enumerationLiteral>
+          <enumerationLiteral Id="6faa92b2-1214-4bc7-8c8a-b51846d6ec51" name="AwaitingCheck">
+            <elementDefinition Id="535808bd-ef09-40b2-a484-eacce57ddab7" />
+          </enumerationLiteral>
         </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>

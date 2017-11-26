@@ -3945,6 +3945,9 @@
           <enumerationLiteral
             Id="460db3e3-4d72-4b5d-8152-dae49c29f9d7"
             name="AwaitingResult" />
+          <enumerationLiteral
+            Id="535808bd-ef09-40b2-a484-eacce57ddab7"
+            name="AwaitingCheck" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
