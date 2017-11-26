@@ -86,7 +86,7 @@ namespace ISE_CourseWork_2.Views
 
             if(MealShare.DateTime < DateTime.Now)
             {
-                FeedbackWindow FeedbackWindow = new FeedbackWindow(MealShare.EaterId, MealShare.CookId);
+                FeedbackWindow FeedbackWindow = new FeedbackWindow(MealShare.Id);
                 FeedbackWindow.Show();
             }
             else

@@ -11,18 +11,6 @@ namespace ISE_CourseWork_2.Models
     public class Account
     {
 
-        public Account(string Email, string Password, AccountType Type, string PersonId)
-        {
-            this.Email = Email;
-            this.Password = Password;
-            this.Type = Type;
-            this.PersonId = PersonId;
-            Id = Guid.NewGuid().ToString();
-        }
-        public Account()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
         public string Id { get; }
 
         public string PersonId { get; set; }
@@ -31,11 +19,10 @@ namespace ISE_CourseWork_2.Models
 
         public AccountType Type { get; set; }
 
-
         public string Username { get; set; }
 
-        private string _password;
 
+        private string _password;
         public string Password
         {
             get
@@ -48,6 +35,19 @@ namespace ISE_CourseWork_2.Models
                 // TODO encrypt password
                 _password = value;
             }
+        }
+
+        public Account(string Email, string Password, AccountType Type, string PersonId)
+        {
+            this.Email = Email;
+            this.Password = Password;
+            this.Type = Type;
+            this.PersonId = PersonId;
+            Id = Guid.NewGuid().ToString();
+        }
+        public Account()
+        {
+            Id = Guid.NewGuid().ToString();
         }
     }
 }

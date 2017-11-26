@@ -20,9 +20,15 @@ namespace ISE_CourseWork_2.Models
         private FoodHygieneStatus foodHygiene;
         public FoodHygieneStatus FoodHygiene
         {
-            // TODO check if this works
             get { return foodHygiene; }
-            set { FoodHygieneOkDateTime = DateTime.Now; foodHygiene = value; }
+            set
+            {
+                foodHygiene = value;
+                if(value == FoodHygieneStatus.Ok)
+                {
+                    FoodHygieneOkDateTime = DateTime.Now;
+                }
+            }
         }
 
         public string FoodHygieneCertificatePath { get; set; }
@@ -52,21 +58,15 @@ namespace ISE_CourseWork_2.Models
             Pvg = PvgStatus.None;
         }
 
-        public void SetFoodHygieneOk()
-        {
-            // TODO have this as a proper setter
-            FoodHygiene = FoodHygieneStatus.Ok;
-            FoodHygieneOkDateTime = DateTime.Now;
-        }
-
-        public void CheckForFoodHygieneRenewal()
+        public bool FoodHygieneIsGoingToRunOut()
         {
             TimeSpan DurationSinceOk = DateTime.Now - FoodHygieneOkDateTime;
             float YearLength = 365.25F;
             if (DurationSinceOk.TotalDays > YearLength * 1.75F)
             {
-                FoodHygiene = FoodHygieneStatus.RenewalWithinThreeMonths;
+                return true;
             }
+            return false;
         }
 
     }

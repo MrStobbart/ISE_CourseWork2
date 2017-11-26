@@ -43,16 +43,24 @@ namespace ISE_CourseWork_2.Views
                 string UserName = "";
                 string RegardingName = "";
 
-                if(Feedback.PersonId != "" && Feedback.PersonId != null)
+                if(Feedback.AccountId != "")
                 {
-                    Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(Feedback.PersonId);
-                    UserName = Eater.GetFullName();
+                    Account Account = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindAccount(Feedback.AccountId);
+                    switch (Account.Type)
+                    {
+                        case AccountType.Eater:
+                            UserName = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(Account.PersonId).GetFullName();
+                            break;
+                        case AccountType.Cook:
+                            UserName = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(Account.PersonId).GetFullName();
+                            break;
+                    }
                 }
 
-                if(Feedback.RegardingPersonId != "")
+                if(Feedback.Type == FeedbackType.MealShare)
                 {
-                    Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(Feedback.RegardingPersonId);
-                    RegardingName = Cook.GetFullName();
+                    MealShare MealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(Feedback.MealShareId);
+                    RegardingName = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId).GetFullName();
 
                 }
                 AdminFeedbackRow AdminFeedbackRow = new AdminFeedbackRow(Feedback.Id);

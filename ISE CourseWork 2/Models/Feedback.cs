@@ -10,41 +10,34 @@ namespace ISE_CourseWork_2.Models
 
     public class Feedback
     {
-        public string Comment { get; set; } = "";
-
         public string Id { get; }
-
-        public string PersonId { get; set; } = "";
+        public DateTime DateTime { get;  }
 
         public FeedbackType Type { get; set; }
 
-        public string RegardingPersonId { get; set; } = "";
-
-        public DateTime DateTime { get;  }
-
         public int Rating { get; set; }
 
-        public Feedback()
-        {
-            Id = Guid.NewGuid().ToString();
-            DateTime = DateTime.Now;
-        }
+        public string Comment { get; set; } = "";
 
-        public Feedback(FeedbackType Type, int Rating, string RegardingPersonId)
+        public string AccountId { get; set; } = "";
+
+        public string MealShareId { get; set; } = "";
+
+
+
+        public Feedback(FeedbackType Type)
         {
             Id = Guid.NewGuid().ToString();
-            this.RegardingPersonId = RegardingPersonId;
-            this.Rating = Rating;
-            this.Type = Type;
             DateTime = DateTime.Now;
+            this.Type = Type;
         }
 
         public Feedback(FeedbackType Type, int Rating)
         {
             Id = Guid.NewGuid().ToString();
+            DateTime = DateTime.Now;
             this.Rating = Rating;
             this.Type = Type;
-            DateTime = DateTime.Now;
         }
 
     }

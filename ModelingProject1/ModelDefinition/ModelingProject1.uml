@@ -551,6 +551,31 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d236a32a-c986-4e84-92e5-720866e3d932"
+            name="GetFullName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fabe99d3-cf18-44dd-b83b-c7af9cd2e975"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -801,10 +826,22 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <lowerValueInternal>
+              <literalString
+                Id="95f89fc1-84e6-4dee-8460-6de0c3e64e39"
+                name="Lower"
+                value="1" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="6e8a1ac0-d135-43ec-9436-9de298582c03"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="8e0d60e3-6147-4177-b42e-8d9e346b9903"
-                LastKnownName="List&lt;TravelCapability&gt;"
+              <enumerationMoniker
+                Id="aeffd36b-58ef-484c-b0c1-421a06f58de6"
+                LastKnownName="TravelCapability"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -1039,9 +1076,9 @@
                 value="1" />
             </upperValueInternal>
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="e5c8c5c0-1885-42b3-b1e8-0fc2ba4b4108"
-                LastKnownName="List&lt;String&gt;"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -1063,7 +1100,61 @@
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="d7f54d0a-24c0-4068-9ca9-fbf6245e5b48"
+            name="FoodHygieneCertificatePath"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="413730f4-70ff-4f61-9067-7fdfb1ac4791"
+            name="PvgCertificatePath"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="828d8d0e-163a-4122-964e-e74554241b4c"
+            name="FoodHygieneIsGoingToRunOut"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="063ba1f2-f219-4ba6-ae1f-b9140e1eb02a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1203,6 +1294,31 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b67f75ce-d8ef-4105-b9dc-cbdfcddc4505"
+            name="ToString"
+            isLeaf="true"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9fbb8ea6-74c1-4e68-8731-bcfff61b05ab"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1751,8 +1867,8 @@
             </type_NamedElement>
           </property>
           <property
-            Id="dfc4043f-b47c-46b6-95db-d366361d2eba"
-            name="ProposedDateTimes"
+            Id="99db3c8f-44c2-40f7-88d8-0ca0e379b3f5"
+            name="PicturePath"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1762,9 +1878,9 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="e0b4b259-115f-4944-b6ac-7d3c6b0a1064"
-                LastKnownName="List&lt;DateTime&gt;"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="ModelingProject1.uml" />
             </type_NamedElement>
           </property>
@@ -2262,6 +2378,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="0d2e6df4-c8c1-420e-99b3-675ee8c5d492"
+            isDerived="false"
+            sourceEndRoleName="Feedback"
+            targetEndRoleName="FeedbackType"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="2f2daf1f-9dc8-4390-adbd-19c42dff34c3"
+              LastKnownName="FeedbackType"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e65443ed-b54b-45e7-926b-afb8fddac343"
+                  name="Feedback"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="974b42f0-6e3f-4a80-8a13-9a2e108ed24c"
+                  name="FeedbackType"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -2293,6 +2448,18 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="ae325db4-724b-4f48-9a8e-ef104a8ae204"
+                name="Lower"
+                value="0" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="95d76b4f-9376-4ffc-a0e7-ab0b81f4e3a2"
+                name="Upper"
+                value="1" />
+            </upperValueInternal>
             <type_NamedElement>
               <primitiveTypeMoniker
                 Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
@@ -2320,7 +2487,7 @@
           </property>
           <property
             Id="bf3de2a0-161c-4ea0-9709-e9e979e7e91f"
-            name="PersonId"
+            name="AccountIt"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2329,6 +2496,18 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="dc30febd-00ed-4755-ad87-865c0c597cac"
+                name="Lower"
+                value="0" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="c9e5691b-d5f6-4ea5-8e0f-1b4f85ae952f"
+                name="Upper"
+                value="1" />
+            </upperValueInternal>
             <type_NamedElement>
               <primitiveTypeMoniker
                 Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
@@ -2346,7 +2525,56 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="11bf1480-c723-49ce-8709-133f2c494fe5"
+                name="Lower"
+                value="0" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="39f03191-b132-4de6-84ee-686da04f9ffb"
+                name="Upper"
+                value="1" />
+            </upperValueInternal>
+          </property>
+          <property
+            Id="170f2ac5-125f-406d-ad0f-499609f2a7d3"
+            name="DateTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4a3a0952-a6f1-49b3-8195-68f165b0ad8e"
+                LastKnownName="DateTime"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="115973be-ffd4-4835-9704-b807360fd538"
+            name="Type"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="2f2daf1f-9dc8-4390-adbd-19c42dff34c3"
+                LastKnownName="FeedbackType"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -3203,6 +3431,22 @@
           <enumerationLiteral
             Id="0e7b7645-552b-4671-a493-78ebbdb45d70"
             name="Proposal" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="2f2daf1f-9dc8-4390-adbd-19c42dff34c3"
+        name="FeedbackType"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="74ed534a-8bd2-4c8e-9bba-1caedef8e258"
+            name="System" />
+          <enumerationLiteral
+            Id="c2182332-bb5d-4fd3-a925-76ab8236ebe1"
+            name="MealShare" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>

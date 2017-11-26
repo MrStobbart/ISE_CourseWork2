@@ -83,8 +83,9 @@ namespace ISE_CourseWork_2.Models
             MealShare MealShare2 = new MealShare(Cook.Id, Eater.Id, DateTime.Now.AddMonths(-1), "Fish");
             AddMealShare(MealShare2);
 
-            Feedback Feedback = new Feedback(FeedbackType.MealShare, 5, Cook.Id);
-            Feedback.PersonId = Eater.Id;
+            Feedback Feedback = new Feedback(FeedbackType.MealShare, 5);
+            Feedback.MealShareId = MealShare.Id;
+            Feedback.AccountId = EaterAccount.Id;
             Feedback.Comment = "Great meal share!";
             AddFeedback(Feedback);
 
@@ -92,9 +93,10 @@ namespace ISE_CourseWork_2.Models
             Feedback2.Comment = "Cool system";
             AddFeedback(Feedback2);
 
-            Feedback Feedback3 = new Feedback(FeedbackType.MealShare, 2, Cook.Id);
-            Feedback3.PersonId = Eater.Id;
-            Feedback3.Comment = "Mealshare were ok";
+            Feedback Feedback3 = new Feedback(FeedbackType.MealShare, 2);
+            Feedback3.MealShareId = MealShare2.Id;
+            Feedback3.AccountId = EaterAccount.Id;
+            Feedback3.Comment = "Mealshare was ok";
             AddFeedback(Feedback3);
 
 

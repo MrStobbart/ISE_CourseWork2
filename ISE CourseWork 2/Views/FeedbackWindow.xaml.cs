@@ -24,27 +24,27 @@ namespace ISE_CourseWork_2.Views
 
         private string Comment { get; set; }
 
-        private string PersonId { get; set; }
+        private string MealShareId { get; set; }
 
-        private string RegardingPersonId { get; set; }
+        private MealShare MealShare { get; set; }
+
+        private Cook Cook { get; set; }
+
+        private Eater Eater { get; set; }
 
 
-        public FeedbackWindow(string PersonId, string RegardingPersonId)
+        public FeedbackWindow(string MealShareId)
         {
             InitializeComponent();
-            this.PersonId = PersonId;
-            this.RegardingPersonId = RegardingPersonId;
+            this.MealShareId = MealShareId;
 
-            Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(RegardingPersonId);
+            MealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(MealShareId);
+            Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
+            Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
+
 
             TxtInformation.Text = "Please give your feedback regarding the meal you shared with the cook " + Cook.FirstName + " " + Cook.Surname + ".";
 
-        }
-
-        public FeedbackWindow(string PersonId)
-        {
-            InitializeComponent();
-            this.PersonId = PersonId;
         }
 
         public FeedbackWindow()
@@ -66,19 +66,20 @@ namespace ISE_CourseWork_2.Views
                     Feedback.Comment = Comment;
                 }
 
-                if (RegardingPersonId != null)
+                if(MealShare != null)
                 {
-                    Feedback.RegardingPersonId = RegardingPersonId;
+                    Feedback.Type = FeedbackType.MealShare;
+                    Feedback.MealShareId = MealShareId;
                 }
 
-                if (PersonId != null && PersonId != "")
+
+                if (((MainWindow)App.Current.MainWindow).RuntimeDb.SignedIn)
                 {
-                    Feedback.PersonId = PersonId;
+                    Feedback.AccountId = ((MainWindow)App.Current.MainWindow).RuntimeDb.SignedInAccount.Id;
                 }
 
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddFeedback(Feedback);
 
-                RuntimeDb test = ((MainWindow)App.Current.MainWindow).RuntimeDb;
                 Close();
             }
             

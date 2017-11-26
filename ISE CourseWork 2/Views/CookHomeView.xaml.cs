@@ -28,6 +28,11 @@ namespace ISE_CourseWork_2.Views
         {
             this.Cook = Cook;
             InitializeComponent();
+            if (Cook.FoodHygieneIsGoingToRunOut())
+            {
+                Cook.FoodHygiene = FoodHygieneStatus.RenewalWithinThreeMonths;
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCook(Cook);
+            }
             CheckForCertificates();
         }
 

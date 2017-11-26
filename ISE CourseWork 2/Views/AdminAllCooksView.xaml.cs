@@ -55,10 +55,14 @@ namespace ISE_CourseWork_2.Views
                 int RatingCount = 0;
                 foreach(Feedback Feedback in Feedbacks)
                 {
-                    if(Feedback.RegardingPersonId == Cook.Id)
+                    if(Feedback.Type == FeedbackType.MealShare)
                     {
-                        SumRating += Feedback.Rating;
-                        RatingCount++;
+                        MealShare MealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(Feedback.MealShareId);
+                        if(MealShare.CookId == Cook.Id)
+                        {
+                            SumRating += Feedback.Rating;
+                            RatingCount++;
+                        }
                     }
                 }
                 if (RatingCount == 0)
