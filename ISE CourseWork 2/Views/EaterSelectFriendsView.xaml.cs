@@ -24,5 +24,10 @@ namespace ISE_CourseWork_2.Views
         {
             InitializeComponent();
         }
+
+        private void BtnAddFriend_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
