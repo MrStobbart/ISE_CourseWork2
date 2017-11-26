@@ -410,7 +410,7 @@
               <referencedTypeMoniker Id="bba97078-929c-4f36-a389-2ca420c87c29" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="e4575524-fa9d-420c-87eb-448e61bc8d51" name="FoodHygieneOkDateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e4575524-fa9d-420c-87eb-448e61bc8d51" name="FoodHygieneOkDateTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="daeeabbf-bf0f-40df-bdd9-18dd33011abb" />
             <type_NamedElement>
               <referencedTypeMoniker Id="cca108a5-1a4b-49c7-a6f3-ca1d36d356c0" LastKnownName="DateTime" />
@@ -424,6 +424,12 @@
           </property>
           <property Id="d97c5812-936f-4377-ad54-acc0109c525e" name="PvgCertificatePath" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="413730f4-70ff-4f61-9067-7fdfb1ac4791" />
+          </property>
+          <property Id="6da14527-079c-4613-8d3b-b2f01695dfaa" name="FoodHygieneUploadTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff05ee44-961b-4d2c-acee-b29a91bc1819" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cca108a5-1a4b-49c7-a6f3-ca1d36d356c0" LastKnownName="DateTime" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
@@ -448,6 +454,19 @@
                   <elementDefinition Id="be2a1dc7-b80b-47e7-a5dd-c59eff38dcf2" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="6d04927c-6ecd-4196-8014-ba9397c1484f" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ecfe7d10-ee55-4993-a6e2-fabf7dd702d4" name="FoodHygieneCertificateNeedsCheck" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2f90a342-ce0f-4b46-8c81-607d1b27f310" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="13f475d3-bf2a-4f3f-9bc2-65c7fcf5a91d" direction="Return">
+                  <elementDefinition Id="c34884cb-966f-439c-a786-b30f7eb4c3da" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fdcdf7e5-667d-429c-93ae-bdd91a5825bb" LastKnownName="Boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2522,6 +2541,11 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="bff14f9a-320e-4f7c-9730-b4b274e841ab" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fdcdf7e5-667d-429c-93ae-bdd91a5825bb" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>

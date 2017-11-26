@@ -30,7 +30,15 @@ namespace ISE_CourseWork_2.Views
             InitializeComponent();
             this.Cook = Cook;
             TxtPvgStatus.Text = Cook.Pvg.ToString();
-            TxtFoodHygieneStatus.Text = Cook.FoodHygiene.ToString();
+
+            if (Cook.FoodHygieneCertificateNeedsCheck())
+            {
+                TxtFoodHygieneStatus.Text = "Awaiting check";
+            }
+            else
+            {
+                TxtFoodHygieneStatus.Text = Cook.FoodHygiene.ToString();
+            }
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -49,7 +57,7 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnFoodHygieneApprove_Click(object sender, RoutedEventArgs e)
         {
-            if(Cook.FoodHygiene == FoodHygieneStatus.AwaitingCheck)
+            if (Cook.FoodHygieneCertificateNeedsCheck())
             {
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCookFoodHygiene(Cook.Id, FoodHygieneStatus.Ok);
                 TxtFoodHygieneStatus.Text = FoodHygieneStatus.Ok.ToString();
@@ -76,7 +84,7 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnFoodHygieneCertificate_Click(object sender, RoutedEventArgs e)
         {
-            if (Cook.FoodHygieneCertificatePath != null && Cook.FoodHygiene == FoodHygieneStatus.AwaitingCheck)
+            if (Cook.FoodHygieneCertificatePath != null)
             {
                 try
                 {

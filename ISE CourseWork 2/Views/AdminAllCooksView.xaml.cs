@@ -47,7 +47,15 @@ namespace ISE_CourseWork_2.Views
                 AdminCookRow.City = Cook.Address.City;
                 AdminCookRow.PhoneNumber = Cook.PhoneNumber;
                 AdminCookRow.PvgStatus = Cook.Pvg.ToString();
-                AdminCookRow.FoodHygieneStatus = Cook.FoodHygiene.ToString();
+
+                if (Cook.FoodHygieneCertificateNeedsCheck())
+                {
+                    AdminCookRow.FoodHygieneStatus = "Awaiting check";
+                }
+                else
+                {
+                    AdminCookRow.FoodHygieneStatus = Cook.FoodHygiene.ToString();
+                }
 
                 // Calculate average rating
                 List<Feedback> Feedbacks = ((MainWindow)App.Current.MainWindow).RuntimeDb.Feedbacks;

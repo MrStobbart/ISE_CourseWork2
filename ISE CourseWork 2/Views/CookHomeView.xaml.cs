@@ -54,7 +54,7 @@ namespace ISE_CourseWork_2.Views
                 BtnMealShares.Visibility = Visibility.Visible;
             }
 
-            if (Cook.Pvg == PvgStatus.AwaitingCheck || Cook.FoodHygiene == FoodHygieneStatus.AwaitingCheck)
+            if (Cook.Pvg == PvgStatus.AwaitingCheck || Cook.FoodHygieneCertificateNeedsCheck())
             {
                 TxtInformation.Text = "Your uploaded certificates will be checked by one of our clerks. We will inform you via email once this is done and you can use meal-sharers.";
                 BtnMissingCertificates.Visibility = Visibility.Visible;

@@ -9,13 +9,14 @@ namespace ISE_CourseWork_2.Models
 
     public enum PvgStatus {None, AwaitingCheck, AwaitingResult, Rejected, Ok}
 
-    public enum FoodHygieneStatus {None, AwaitingCheck, RenewalWithinThreeMonths, Ok}
+    public enum FoodHygieneStatus {None, RenewalWithinThreeMonths, Ok}
 
     public enum TravelCapability { ByFoot, Car, Bike, PublicTransport }
 
     public class Cook: IPerson
     {
         private DateTime FoodHygieneOkDateTime { get; set; }
+
 
         private FoodHygieneStatus foodHygiene;
         public FoodHygieneStatus FoodHygiene
@@ -30,8 +31,18 @@ namespace ISE_CourseWork_2.Models
                 }
             }
         }
+        private DateTime FoodHygieneUploadTime { get; set; }
 
-        public string FoodHygieneCertificatePath { get; set; }
+        private string foodHygieneCertificatePath;
+        public string FoodHygieneCertificatePath
+        {
+            get { return foodHygieneCertificatePath; }
+            set
+            {
+                foodHygieneCertificatePath = value;
+                FoodHygieneUploadTime = DateTime.Now;
+            }
+        }
 
         public PvgStatus Pvg { get; set; }
 
@@ -62,16 +73,25 @@ namespace ISE_CourseWork_2.Models
         {
             TimeSpan DurationSinceOk = DateTime.Now - FoodHygieneOkDateTime;
             double YearLength = 365.25;
-            if (DurationSinceOk.TotalDays > YearLength * 1.75)
+            if (FoodHygiene == FoodHygieneStatus.Ok && DurationSinceOk.TotalDays > YearLength * 1.75)
             {
                 FoodHygiene = FoodHygieneStatus.RenewalWithinThreeMonths;
             }
             
-            if(DurationSinceOk.TotalDays > YearLength * 2)
+            if(FoodHygiene == FoodHygieneStatus.RenewalWithinThreeMonths && DurationSinceOk.TotalDays > YearLength * 2)
             {
                 FoodHygiene = FoodHygieneStatus.None;
                 FoodHygieneCertificatePath = null;
             }
+        }
+
+        public bool FoodHygieneCertificateNeedsCheck()
+        {
+            bool NewCertificateCheck = FoodHygieneCertificatePath != null && FoodHygiene == FoodHygieneStatus.None;
+
+            bool CertificateRenewalCheck = FoodHygieneCertificatePath != null && (DateTime.Now - FoodHygieneUploadTime).TotalDays > 100 && FoodHygiene == FoodHygieneStatus.RenewalWithinThreeMonths;
+
+            return NewCertificateCheck || CertificateRenewalCheck;
         }
 
     }

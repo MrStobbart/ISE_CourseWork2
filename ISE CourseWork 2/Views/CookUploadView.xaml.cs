@@ -62,7 +62,6 @@ namespace ISE_CourseWork_2.Views
             if (result == true)
             {
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.UploadFoodHygieneCertificate(Cook.Id, OpenFileDialog.FileName);
-                ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCookFoodHygiene(Cook.Id, FoodHygieneStatus.AwaitingCheck);
             }
         }
 
