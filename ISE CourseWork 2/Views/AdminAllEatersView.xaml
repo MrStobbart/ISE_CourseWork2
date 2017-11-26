@@ -35,6 +35,7 @@
                 <DataGridTextColumn Binding="{Binding Path=ZipCode}" Header="ZIP code" />
                 <DataGridTextColumn Binding="{Binding Path=City}" Header="City" />
                 <DataGridTextColumn Binding="{Binding Path=PhoneNumber}" Header="Phone number" />
+                <DataGridTextColumn Binding="{Binding Path=AverageRating}" Header="Average rating given" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

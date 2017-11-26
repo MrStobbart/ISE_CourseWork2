@@ -14,7 +14,7 @@ namespace ISE_CourseWork_2.Models
 
         public string Id { get; }
 
-        public string UserId { get; set; } = "";
+        public string PersonId { get; set; } = "";
 
         public FeedbackType Type { get; set; }
 

@@ -24,15 +24,15 @@ namespace ISE_CourseWork_2.Views
 
         private string Comment { get; set; }
 
-        private string UserId { get; set; }
+        private string PersonId { get; set; }
 
         private string RegardingPersonId { get; set; }
 
 
-        public FeedbackWindow(string UserId, string RegardingPersonId)
+        public FeedbackWindow(string PersonId, string RegardingPersonId)
         {
             InitializeComponent();
-            this.UserId = UserId;
+            this.PersonId = PersonId;
             this.RegardingPersonId = RegardingPersonId;
 
             Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(RegardingPersonId);
@@ -41,10 +41,10 @@ namespace ISE_CourseWork_2.Views
 
         }
 
-        public FeedbackWindow(string UserId)
+        public FeedbackWindow(string PersonId)
         {
             InitializeComponent();
-            this.UserId = UserId;
+            this.PersonId = PersonId;
         }
 
         public FeedbackWindow()
@@ -71,9 +71,9 @@ namespace ISE_CourseWork_2.Views
                     Feedback.RegardingPersonId = RegardingPersonId;
                 }
 
-                if (((MainWindow)App.Current.MainWindow).RuntimeDb.SignedIn)
+                if (PersonId != null && PersonId != "")
                 {
-                    Feedback.UserId = ((MainWindow)App.Current.MainWindow).RuntimeDb.SignedInAccount.Id;
+                    Feedback.PersonId = PersonId;
                 }
 
                 ((MainWindow)App.Current.MainWindow).RuntimeDb.AddFeedback(Feedback);

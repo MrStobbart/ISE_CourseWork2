@@ -41,20 +41,23 @@ namespace ISE_CourseWork_2.Views
 
             foreach (MealShare MealShare in MealShares)
             {
-                Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
-                Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
-                CookMealShareRow MealShareRow = new CookMealShareRow(MealShare.Id);
-                MealShareRow.EaterName = Eater.FirstName + " " + Eater.Surname;
-                MealShareRow.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
-                MealShareRow.ZipCode = Eater.Address.ZipCode;
-                MealShareRow.City = Eater.Address.City;
-                MealShareRow.PhoneNumber = Eater.PhoneNumber;
-                MealShareRow.Meal = MealShare.Meal;
-                MealShareRow.Status = MealShare.Status.ToString().ToLower();
-                MealShareRow.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
-                MealShareRow.Time = MealShare.DateTime.ToString("hh:mm tt");
+                if(((MainWindow)App.Current.MainWindow).RuntimeDb.SignedInAccount.PersonId == MealShare.CookId)
+                {
+                    Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
+                    Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
+                    CookMealShareRow MealShareRow = new CookMealShareRow(MealShare.Id);
+                    MealShareRow.EaterName = Eater.FirstName + " " + Eater.Surname;
+                    MealShareRow.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
+                    MealShareRow.ZipCode = Eater.Address.ZipCode;
+                    MealShareRow.City = Eater.Address.City;
+                    MealShareRow.PhoneNumber = Eater.PhoneNumber;
+                    MealShareRow.Meal = MealShare.Meal;
+                    MealShareRow.Status = MealShare.Status.ToString().ToLower();
+                    MealShareRow.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
+                    MealShareRow.Time = MealShare.DateTime.ToString("hh:mm tt");
 
-                TableData.Add(MealShareRow);
+                    TableData.Add(MealShareRow);
+                }
             }
 
             CollectionViewSource itemCollectionViewSource;

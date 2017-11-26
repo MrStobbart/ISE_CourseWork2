@@ -40,16 +40,37 @@ namespace ISE_CourseWork_2.Views
 
             foreach (Cook Cook in Cooks)
             {
-                AdminCookRow MealShareRow = new AdminCookRow(Cook.Id);
-                MealShareRow.Name = Cook.FirstName + " " + Cook.Surname;
-                MealShareRow.StreetAndNumber = Cook.Address.Street + " " + Cook.Address.HouseNumber;
-                MealShareRow.ZipCode = Cook.Address.ZipCode;
-                MealShareRow.City = Cook.Address.City;
-                MealShareRow.PhoneNumber = Cook.PhoneNumber;
-                MealShareRow.PvgStatus = Cook.Pvg.ToString();
-                MealShareRow.FoodHygieneStatus = Cook.FoodHygiene.ToString();
+                AdminCookRow AdminCookRow = new AdminCookRow(Cook.Id);
+                AdminCookRow.Name = Cook.FirstName + " " + Cook.Surname;
+                AdminCookRow.StreetAndNumber = Cook.Address.Street + " " + Cook.Address.HouseNumber;
+                AdminCookRow.ZipCode = Cook.Address.ZipCode;
+                AdminCookRow.City = Cook.Address.City;
+                AdminCookRow.PhoneNumber = Cook.PhoneNumber;
+                AdminCookRow.PvgStatus = Cook.Pvg.ToString();
+                AdminCookRow.FoodHygieneStatus = Cook.FoodHygiene.ToString();
 
-                TableData.Add(MealShareRow);
+                // Calculate average rating
+                List<Feedback> Feedbacks = ((MainWindow)App.Current.MainWindow).RuntimeDb.Feedbacks;
+                int SumRating = 0;
+                int RatingCount = 0;
+                foreach(Feedback Feedback in Feedbacks)
+                {
+                    if(Feedback.RegardingPersonId == Cook.Id)
+                    {
+                        SumRating += Feedback.Rating;
+                        RatingCount++;
+                    }
+                }
+                if (RatingCount == 0)
+                {
+                    AdminCookRow.AverageRating = "-";
+                }
+                else
+                {
+                    AdminCookRow.AverageRating = Math.Round(((double)SumRating / (double)RatingCount), 1).ToString();
+                }
+
+                TableData.Add(AdminCookRow);
             }
 
             CollectionViewSource itemCollectionViewSource;
@@ -81,6 +102,8 @@ namespace ISE_CourseWork_2.Views
         public string PvgStatus { get; set; }
 
         public string FoodHygieneStatus { get; set; }
+
+        public string AverageRating { get; set; }
 
         public string Id { get; set; }
 

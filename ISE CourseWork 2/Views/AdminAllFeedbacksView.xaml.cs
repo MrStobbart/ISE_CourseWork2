@@ -43,20 +43,10 @@ namespace ISE_CourseWork_2.Views
                 string UserName = "";
                 string RegardingName = "";
 
-                if(Feedback.UserId != "")
+                if(Feedback.PersonId != "" && Feedback.PersonId != null)
                 {
-                    Account Account = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindAccount(Feedback.UserId);
-                    if(Account.Type == AccountType.Cook)
-                    {
-                        Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(Account.PersonId);
-                        UserName = Cook.GetFullName();
-
-                    }
-                    if(Account.Type == AccountType.Eater)
-                    {
-                        Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(Account.PersonId);
-                        UserName = Eater.GetFullName();
-                    }
+                    Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(Feedback.PersonId);
+                    UserName = Eater.GetFullName();
                 }
 
                 if(Feedback.RegardingPersonId != "")

@@ -41,11 +41,31 @@ namespace ISE_CourseWork_2.Views
             foreach (Eater Eater in Eaters)
             {
                 AdminEaterRow AdminEaterRow = new AdminEaterRow(Eater.Id);
-                AdminEaterRow.Name = Eater.FirstName + " " + Eater.Surname;
+                AdminEaterRow.Name = Eater.GetFullName();
                 AdminEaterRow.StreetAndNumber = Eater.Address.Street + " " + Eater.Address.HouseNumber;
                 AdminEaterRow.ZipCode = Eater.Address.ZipCode;
                 AdminEaterRow.City = Eater.Address.City;
                 AdminEaterRow.PhoneNumber = Eater.PhoneNumber;
+
+                List<Feedback> Feedbacks = ((MainWindow)App.Current.MainWindow).RuntimeDb.Feedbacks;
+                int SumRating = 0;
+                int RatingCount = 0;
+                foreach (Feedback Feedback in Feedbacks)
+                {
+                    if (Feedback.PersonId == Eater.Id && Feedback.Type == FeedbackType.MealShare)
+                    {
+                        SumRating += Feedback.Rating;
+                        RatingCount++;
+                    }
+                }
+                if(RatingCount == 0)
+                {
+                    AdminEaterRow.AverageRating = "-";
+                }
+                else
+                {
+                    AdminEaterRow.AverageRating = Math.Round(((double)SumRating / (double)RatingCount), 1).ToString();
+                }
 
                 TableData.Add(AdminEaterRow);
             }
@@ -68,6 +88,8 @@ namespace ISE_CourseWork_2.Views
         public string City { get; set; }
 
         public string PhoneNumber { get; set; }
+
+        public string AverageRating { get; set; }
 
         public string Id { get; set; }
 

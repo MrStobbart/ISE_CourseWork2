@@ -53,12 +53,12 @@ namespace ISE_CourseWork_2.Models
             TravelCapabilities.Add(TravelCapability.Car);
             TravelCapabilities.Add(TravelCapability.PublicTransport);
 
-            Cook Cook2 = new Cook(CookPerson2, "Meat", TravelCapabilities);
+            Cook Cook2 = new Cook(CookPerson2, "Meat", TravelCapabilities2);
             AddCook(Cook2);
             Account CookAccount2 = new Account("cookmail@outlook.com", "cookpass", AccountType.Cook, Cook2.Id);
             Account CookAccountFast2 = new Account("c", "c", AccountType.Cook, Cook2.Id);
-            AddAccount(CookAccount);
-            AddAccount(CookAccountFast);
+            AddAccount(CookAccount2);
+            AddAccount(CookAccountFast2);
 
 
             Address EaterAddress = new Address("Street", "15", "Edinburgh", "EH11 1FE");
@@ -84,9 +84,20 @@ namespace ISE_CourseWork_2.Models
             AddMealShare(MealShare2);
 
             Feedback Feedback = new Feedback(FeedbackType.MealShare, 5, Cook.Id);
-            Feedback.UserId = EaterAccount.Id;
+            Feedback.PersonId = Eater.Id;
             Feedback.Comment = "Great meal share!";
             AddFeedback(Feedback);
+
+            Feedback Feedback2 = new Feedback(FeedbackType.System, 4);
+            Feedback2.Comment = "Cool system";
+            AddFeedback(Feedback2);
+
+            Feedback Feedback3 = new Feedback(FeedbackType.MealShare, 2, Cook.Id);
+            Feedback3.PersonId = Eater.Id;
+            Feedback3.Comment = "Mealshare were ok";
+            AddFeedback(Feedback3);
+
+
         }
 
         public void SignIn(Account Account)

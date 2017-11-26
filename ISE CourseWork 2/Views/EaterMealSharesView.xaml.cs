@@ -27,8 +27,9 @@ namespace ISE_CourseWork_2.Views
 
         private List<MealShare> MealShares { get; set; }
         private List<EaterMealShareRow> TableData { get; set; }
+        private Eater Eater { get; set; }
 
-        public EaterMealSharesView()
+        public EaterMealSharesView(Eater Eater)
         {
             InitializeComponent();
 
@@ -44,17 +45,20 @@ namespace ISE_CourseWork_2.Views
 
             foreach (MealShare MealShare in MealShares)
             {
-                Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
-                Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
-                EaterMealShareRow MealShareRow = new EaterMealShareRow(MealShare.Id);
-                MealShareRow.CookName = Cook.FirstName + " " + Cook.Surname;
-                MealShareRow.PhoneNumber = Eater.PhoneNumber;
-                MealShareRow.Meal = MealShare.Meal;
-                MealShareRow.Status = MealShare.Status.ToString().ToLower();
-                MealShareRow.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
-                MealShareRow.Time = MealShare.DateTime.ToString("hh:mm tt");
+                if (((MainWindow)App.Current.MainWindow).RuntimeDb.SignedInAccount.PersonId == MealShare.EaterId)
+                {
+                    Eater Eater = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindEater(MealShare.EaterId);
+                    Cook Cook = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindCook(MealShare.CookId);
+                    EaterMealShareRow MealShareRow = new EaterMealShareRow(MealShare.Id);
+                    MealShareRow.CookName = Cook.FirstName + " " + Cook.Surname;
+                    MealShareRow.PhoneNumber = Eater.PhoneNumber;
+                    MealShareRow.Meal = MealShare.Meal;
+                    MealShareRow.Status = MealShare.Status.ToString().ToLower();
+                    MealShareRow.Date = MealShare.DateTime.ToString("dd.MM.yyyy");
+                    MealShareRow.Time = MealShare.DateTime.ToString("hh:mm tt");
 
-                TableData.Add(MealShareRow);
+                    TableData.Add(MealShareRow);
+                }
             }
 
             CollectionViewSource itemCollectionViewSource;
@@ -71,7 +75,7 @@ namespace ISE_CourseWork_2.Views
              *  Reload the site to update the status
              *  TODO This should be done with the INotifyPropertyChanged and an ObservableCollection
              */
-            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterMealSharesView();
+            ((MainWindow)App.Current.MainWindow).Main.Content = new EaterMealSharesView(Eater);
         }
 
         private void BtnFeedback_Click(object sender, RoutedEventArgs e)
@@ -80,7 +84,7 @@ namespace ISE_CourseWork_2.Views
 
             MealShare MealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(ClickedRow.Id);
 
-            if(MealShare.Status == MealShareStatus.Done)
+            if(MealShare.DateTime < DateTime.Now)
             {
                 FeedbackWindow FeedbackWindow = new FeedbackWindow(MealShare.EaterId, MealShare.CookId);
                 FeedbackWindow.Show();

@@ -35,6 +35,7 @@
                 <DataGridTextColumn Binding="{Binding Path=ZipCode}" Header="ZIP code" />
                 <DataGridTextColumn Binding="{Binding Path=City}" Header="City" />
                 <DataGridTextColumn Binding="{Binding Path=PhoneNumber}" Header="Phone number" />
+                <DataGridTextColumn Binding="{Binding Path=AverageRating}" Header="Average rating" />
                 <DataGridTextColumn Binding="{Binding Path=PvgStatus}" Header="PVG status" />
                 <DataGridTextColumn Binding="{Binding Path=FoodHygieneStatus}" Header="Food hygiene status" />
                 <DataGridTemplateColumn Header="Manage cook">
