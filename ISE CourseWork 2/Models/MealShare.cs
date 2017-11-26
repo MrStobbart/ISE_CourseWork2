@@ -23,6 +23,8 @@ namespace ISE_CourseWork_2.Models
 
         public MealShareStatus Status { get; set; }
 
+        public string PicturePath { get; set; }
+
         public MealShare(string CookId, string EaterId, DateTime DateTime, string Meal)
         {
             this.CookId = CookId;

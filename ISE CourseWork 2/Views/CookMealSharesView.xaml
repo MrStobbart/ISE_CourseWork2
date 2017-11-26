@@ -37,6 +37,13 @@
                 <DataGridTextColumn Binding="{Binding Path=Date}" Header="Date" />
                 <DataGridTextColumn Binding="{Binding Path=Time}" Header="Time" />
                 <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
+                <DataGridTemplateColumn Header="Upload Picture">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnUploadPicture" Click="BtnUploadPicture_Click" Content="Upload"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

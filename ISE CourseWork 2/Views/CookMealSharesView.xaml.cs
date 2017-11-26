@@ -62,6 +62,36 @@ namespace ISE_CourseWork_2.Views
             itemCollectionViewSource.Source = TableData;
         }
 
+        private void BtnUploadPicture_Click(object sender, RoutedEventArgs e)
+        {
+            CookMealShareRow ClickedRow = ((FrameworkElement)sender).DataContext as CookMealShareRow;
+            MealShare ClickedMealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(ClickedRow.Id);
+
+            if (ClickedMealShare.DateTime < DateTime.Now)
+            {
+                Microsoft.Win32.OpenFileDialog OpenFileDialog = new Microsoft.Win32.OpenFileDialog();
+                OpenFileDialog.FileName = "Meal share picture"; // Default file name
+                OpenFileDialog.DefaultExt = ".jpg"; // Default file extension
+                OpenFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; // Filter files by extension
+
+                // Show open file dialog box
+                bool? result = OpenFileDialog.ShowDialog();
+
+                // Process open file dialog box results
+                if (result == true)
+                {
+                    ((MainWindow)App.Current.MainWindow).RuntimeDb.UploadPicture(ClickedMealShare.Id, OpenFileDialog.FileName);
+                    ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateMealShareStatus(ClickedMealShare.Id, MealShareStatus.Done);
+                    ((MainWindow)App.Current.MainWindow).Main.Content = new CookMealSharesView();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You can only upload pictures to meal shares that already took place.", "Upload not possible!", MessageBoxButton.OK, MessageBoxImage.None);
+            }
+
+            
+        }
     }
 
     class CookMealShareRow

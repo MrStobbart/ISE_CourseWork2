@@ -201,6 +201,16 @@ namespace ISE_CourseWork_2.Models
             MealShares.Add(MealShare);
         }
 
+        public void UploadPicture(string MealShareId, string PicturePath)
+        {
+            int index = MealShares.FindIndex(MealShare => MealShare.Id == MealShareId);
+            if (index == -1)
+            {
+                throw new Exception("An cook with the id " + MealShareId + " does not exist!");
+            }
+            MealShares[index].PicturePath = PicturePath;
+        }
+
         public void UpdateMealShareStatus(string MealShareId, MealShareStatus NewStatus)
         {
             int index = MealShares.FindIndex(MealShare => MealShare.Id == MealShareId);
