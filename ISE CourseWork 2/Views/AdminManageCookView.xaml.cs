@@ -30,7 +30,7 @@ namespace ISE_CourseWork_2.Views
             InitializeComponent();
             this.Cook = Cook;
             TxtPvgStatus.Text = Cook.Pvg.ToString();
-            TxtFoodHygieneStatus.Text = Cook.Pvg.ToString();
+            TxtFoodHygieneStatus.Text = Cook.FoodHygiene.ToString();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -40,19 +40,25 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnPvgApprove_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCookPvg(Cook.Id, PvgStatus.Ok);
-            TxtPvgStatus.Text = PvgStatus.Ok.ToString(); ;
+            if(Cook.Pvg == PvgStatus.AwaitingCheck)
+            {
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCookPvg(Cook.Id, PvgStatus.Ok);
+                TxtPvgStatus.Text = PvgStatus.Ok.ToString(); ;
+            }
         }
 
         private void BtnFoodHygieneApprove_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCookFoodHygiene(Cook.Id, FoodHygieneStatus.Ok);
-            TxtFoodHygieneStatus.Text = FoodHygieneStatus.Ok.ToString();
+            if(Cook.FoodHygiene == FoodHygieneStatus.AwaitingCheck)
+            {
+                ((MainWindow)App.Current.MainWindow).RuntimeDb.UpdateCookFoodHygiene(Cook.Id, FoodHygieneStatus.Ok);
+                TxtFoodHygieneStatus.Text = FoodHygieneStatus.Ok.ToString();
+            }
         }
 
         private void BtnPvgCertificate_Click(object sender, RoutedEventArgs e)
         {
-            if (Cook.PvgCertificatePath != null)
+            if (Cook.PvgCertificatePath != null && Cook.Pvg == PvgStatus.AwaitingCheck)
             {
                 try
                 {
@@ -70,7 +76,7 @@ namespace ISE_CourseWork_2.Views
 
         private void BtnFoodHygieneCertificate_Click(object sender, RoutedEventArgs e)
         {
-            if (Cook.FoodHygieneCertificatePath != null)
+            if (Cook.FoodHygieneCertificatePath != null && Cook.FoodHygiene == FoodHygieneStatus.AwaitingCheck)
             {
                 try
                 {

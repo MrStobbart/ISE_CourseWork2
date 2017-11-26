@@ -51,7 +51,15 @@ namespace ISE_CourseWork_2.Views
                 BtnMealShares.Visibility = Visibility.Visible;
             }
 
-            if(Cook.Pvg == PvgStatus.None || Cook.FoodHygiene == FoodHygieneStatus.None)
+            if (Cook.Pvg == PvgStatus.AwaitingCheck || Cook.FoodHygiene == FoodHygieneStatus.AwaitingCheck)
+            {
+                TxtInformation.Text = "Your uploaded certificates will be checked by one of our clerks. We will inform you via email once this is done and you can use meal-sharers.";
+                BtnMissingCertificates.Visibility = Visibility.Visible;
+                BtnNewMealShare.Visibility = Visibility.Collapsed;
+                BtnMealShares.Visibility = Visibility.Collapsed;
+            }
+
+            if (Cook.Pvg == PvgStatus.None || Cook.FoodHygiene == FoodHygieneStatus.None)
             {
                 TxtInformation.Text = "Some certificates are still missing to user meal-sharers! Click the button below for more information.";
                 BtnMissingCertificates.Visibility = Visibility.Visible;

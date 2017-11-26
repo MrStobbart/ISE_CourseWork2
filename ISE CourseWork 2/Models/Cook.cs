@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace ISE_CourseWork_2.Models
 {
 
-    public enum PvgStatus {None, AwaitingResult, Rejected, Ok}
+    public enum PvgStatus {None, AwaitingCheck, AwaitingResult, Rejected, Ok}
 
-    public enum FoodHygieneStatus {None, RenewalWithinThreeMonths, Ok}
+    public enum FoodHygieneStatus {None, AwaitingCheck, RenewalWithinThreeMonths, Ok}
 
     public enum TravelCapability { ByFoot, Car, Bike, PublicTransport }
 
