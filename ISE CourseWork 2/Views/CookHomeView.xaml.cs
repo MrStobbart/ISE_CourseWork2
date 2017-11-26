@@ -62,15 +62,24 @@ namespace ISE_CourseWork_2.Views
                 BtnMealShares.Visibility = Visibility.Collapsed;
             }
 
-            if (Cook.Pvg == PvgStatus.None || Cook.FoodHygiene == FoodHygieneStatus.None)
+            if (Cook.FoodHygiene == FoodHygieneStatus.None)
             {
-                TxtInformation.Text = "Some certificates are still missing to user meal-sharers! Click the button below for more information.";
+                TxtInformation.Text = "Some certificates are still missing to user meal-sharers! Click the button below for more information. If you have already uploaded your certificates please wait for us to check them.";
+                BtnMissingCertificates.Visibility = Visibility.Visible;
+                BtnNewMealShare.Visibility = Visibility.Collapsed;
+                BtnMealShares.Visibility = Visibility.Visible;
+            }
+
+            if (Cook.Pvg == PvgStatus.None || Cook.Pvg == PvgStatus.AwaitingCheck)
+            {
+                TxtInformation.Text = "Some certificates are still missing to user meal-sharers! Click the button below for more information. If you have already uploaded your certificates please wait for us to check them.";
                 BtnMissingCertificates.Visibility = Visibility.Visible;
                 BtnNewMealShare.Visibility = Visibility.Collapsed;
                 BtnMealShares.Visibility = Visibility.Collapsed;
             }
 
-            if(Cook.Pvg == PvgStatus.AwaitingResult)
+
+            if (Cook.Pvg == PvgStatus.AwaitingResult)
             {
                 TxtInformation.Text = "Unfortunately, we are still waiting for the result of the criminal background check. We will inform you via email once it is through.";
                 BtnMissingCertificates.Visibility = Visibility.Collapsed;

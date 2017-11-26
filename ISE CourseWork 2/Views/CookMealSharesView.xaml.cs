@@ -69,8 +69,7 @@ namespace ISE_CourseWork_2.Views
         {
             CookMealShareRow ClickedRow = ((FrameworkElement)sender).DataContext as CookMealShareRow;
             MealShare ClickedMealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(ClickedRow.Id);
-
-            if (ClickedMealShare.DateTime < DateTime.Now)
+            if (DateTime.Compare(ClickedMealShare.DateTime, DateTime.Now) < 0)
             {
                 Microsoft.Win32.OpenFileDialog OpenFileDialog = new Microsoft.Win32.OpenFileDialog();
                 OpenFileDialog.FileName = "Meal share picture"; // Default file name

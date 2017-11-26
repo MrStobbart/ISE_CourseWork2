@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel Width="300">
             <TextBlock TextWrapping="Wrap" FontSize="14">
-                The is going to allow the cook to select friends that will then also see their meal-shares.
+                This allows you to select trusted friends and family who are also using meal-sharers to be able to see your upcoming and past meals.
             </TextBlock>
             <Separator Height="20" Visibility="Hidden"/>
             <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="Search Friend or Family" Foreground="Gray"/>

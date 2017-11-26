@@ -84,7 +84,7 @@ namespace ISE_CourseWork_2.Views
 
             MealShare MealShare = ((MainWindow)App.Current.MainWindow).RuntimeDb.FindMealShare(ClickedRow.Id);
 
-            if(MealShare.DateTime < DateTime.Now)
+            if(DateTime.Compare(MealShare.DateTime, DateTime.Now) < 0)
             {
                 FeedbackWindow FeedbackWindow = new FeedbackWindow(MealShare.Id);
                 FeedbackWindow.Show();
